@@ -14,7 +14,11 @@ class ResearcherController extends Controller
     {
         //$reshr = User::role('teacher')->orderBy('department_id')->with('Expertise')->get();
         //$reshr = Department::with(['users' => fn($query) => $query->where('fname', 'like', 'wat%')])->get();
-        $reshr = Program::with(['users' => fn ($query) => $query->role('teacher')->with('expertise')])->where('degree_id', '=', 1)->get();
+        $reshr = Program::with(['users' => function ($query) {
+            return $query->role('teacher')->with('expertise');
+        }])
+        ->where('degree_id', '=', 1)
+        ->get();
         //$reshr = Department::with('users')->join('expertises', 'id', '=', 'expertises.user_id')->get();
 
 
@@ -119,5 +123,14 @@ class ResearcherController extends Controller
         $request = $request->textsearch;
         $a = $this->searchs($id,$request);
         return $a;
+    }
+    public function allResearchers(Request $request)
+    {
+        $users = User::role('teacher')
+            ->with(['program', 'expertise']) // eager load relations (ถ้าจำเป็น)
+            ->orderByRaw("FIELD(position_th, 'ศ.ดร.', 'รศ.ดร.', 'ผศ.ดร.', 'ศ.', 'รศ.', 'ผศ.', 'อ.ดร.', 'อ.')") // เรียงตามตำแหน่ง (ถ้าจำเป็น)
+            ->get();
+    
+        return view('researchers', compact('users')); // ส่ง $users ไปยัง view
     }
 }
