@@ -125,12 +125,30 @@ class ResearcherController extends Controller
         return $a;
     }
     public function allResearchers(Request $request)
-    {
-        $users = User::role('teacher')
-            ->with(['program', 'expertise']) // eager load relations (ถ้าจำเป็น)
-            ->orderByRaw("FIELD(position_th, 'ศ.ดร.', 'รศ.ดร.', 'ผศ.ดร.', 'ศ.', 'รศ.', 'ผศ.', 'อ.ดร.', 'อ.')") // เรียงตามตำแหน่ง (ถ้าจำเป็น)
-            ->get();
-    
-        return view('researchers', compact('users')); // ส่ง $users ไปยัง view
+{
+    $programs = Program::whereIn('program_name_en', [
+        'Computer Science',
+        'Infomation Technology',
+        'Geo-Informatics',
+        'Artificial Intelligence',
+        'Cybersecurity'
+    ])
+    ->where('degree_id', 1) // เลือกเฉพาะ Degree ID = 1
+    ->distinct('program_name_en') // ลบคณะที่ซ้ำกัน
+    ->get();
+
+    $query = User::whereNotNull('academic_ranks_en') // ดึงเฉพาะอาจารย์
+        ->with(['program', 'expertise'])
+        ->orderByRaw("FIELD(academic_ranks_en, 'Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer')");
+
+    if ($request->has('program_id') && $request->program_id !== 'all') {
+        $query->where('program_id', $request->program_id);
     }
+
+    $users = $query->get();
+
+    return view('researchers', compact('users', 'programs'));
+}
+
+
 }
