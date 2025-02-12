@@ -10,4 +10,6 @@ return [
 'publications' => 'Publications (In the Last 5 Years)',
 'education'=>'Education',
 'publications2' => 'Publications',
+'total_articles_5_years' => 'Report the total number of articles ( 5 years : cumulative)',
+'SUMMARY' => 'SUMMARY'
 ];
