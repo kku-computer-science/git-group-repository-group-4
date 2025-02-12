@@ -36,5 +36,16 @@ return [
 'implementation' => 'ดำเนินการ',
 'project_closure' => 'ปิดโครงการ',
 'project_duration' => 'ระยะเวลาโครงการ',
-'Login' => 'เข้าสู่ระบบ'
+'Login' => 'เข้าสู่ระบบ',
+'Excel' => 'ส่งออกไปยัง Excel',
+'paper_name' => 'ชื่อบทความ',
+'author' => 'ผู้เขียน',
+'document_type' => 'ประเภทเอกสาร',
+'page' => 'หน้า',
+'journals_transactions' => 'วารสาร/การตีพิมพ์',
+'citations' => 'การอ้างอิง',
+'doi' => 'DOI',
+'source' => 'แหล่งที่มา',
+'place_of_publication' => 'สถานที่พิมพ์',
+'name' => 'ชื่อ'
 ];

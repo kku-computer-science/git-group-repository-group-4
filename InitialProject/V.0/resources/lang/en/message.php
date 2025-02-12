@@ -37,5 +37,16 @@ return [
 'project_closure' => 'Project Close',
 'project_duration' => 'Project Duration',
 'Login' => 'Login',
+'Excel' => 'Export To Excel',
+'paper_name' => 'Paper Name',
+'author' => 'Author',
+'document_type' => 'Document Type',
+'page' => 'Page',
+'journals_transactions' => 'Journals/Transactions',
+'citations' => 'Citations',
+'doi' => 'DOI',
+'source' => 'Source',
+'name' => 'Name',
+'place_of_publication' => 'Place of Publication',
 
 ];
