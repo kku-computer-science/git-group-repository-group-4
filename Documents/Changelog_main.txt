@@ -1,0 +1,88 @@
+TUF F15@LAPTOP-37VH1A77 MINGW64 /c/xampp/htdocs (main)
+$ git log --oneline
+2a13d0a (HEAD -> main, origin/main) Added Test_Report.xlsx
+a26f6cd Deleted useless files
+56ee518 Managed file in Branch main
+3d41f29 Add test_PBL15.py for test Product backlog item 15 and test_PBL16.py for test Product Backlog item 16
+4cc9cc1 Deleted test design
+2b32029 Added Project_1.0/ for run the Application amd Test_Report.xlsx
+971e80e Deleted file
+eda19b8 Deleted files
+b48579d Remove Project_2-master folder
+7e440e3 Updated README.md
+e874f43 Updated README.md
+f6f1adf Updated README.md (User manual)
+7ff059e Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+1b35d19 Try README.md
+172c8d6 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+c46193b update translate
+9f5e880 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+ca21b46 Updated test case file name.
+704e6cb translate
+set mark: ...skipping...
+2a13d0a (HEAD -> main, origin/main) Added Test_Report.xlsx
+a26f6cd Deleted useless files
+56ee518 Managed file in Branch main
+3d41f29 Add test_PBL15.py for test Product backlog item 15 and test_PBL16.py for test Product Backlog item 16
+4cc9cc1 Deleted test design
+2b32029 Added Project_1.0/ for run the Application amd Test_Report.xlsx
+971e80e Deleted file
+eda19b8 Deleted files
+b48579d Remove Project_2-master folder
+7e440e3 Updated README.md
+e874f43 Updated README.md
+f6f1adf Updated README.md (User manual)
+7ff059e Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+1b35d19 Try README.md
+172c8d6 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+c46193b update translate
+9f5e880 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+ca21b46 Updated test case file name.
+704e6cb translate
+38010a1 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+55f50f9 update
+5fd580e Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+5071aa1 Updated test cases for languages
+ca70927 change  lang/en/message & lang/en/message  and report.blade
+3b06c2b Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+06d606f translate
+5305d65 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+528acd4 Updated test case
+ea39ae1 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+8f06661 translate
+83be92b translate
+98a86b4 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+bfb7f83 change .cardimage in style.css
+634c786 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+035e8fd tranlate reserch pro
+e9da792 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+ef913d1 change profile in style.css
+8aec319 Removed unnecessary files
+bd3a7f0 Removed unnecessary files
+14dc6c4 Merge branch 'keratipat_3204'
+9f3cedd (origin/keratipat_3204) Modified research group blade and research group detail blade
+f15a0ee translate in researcher.blade
+ad569ea translate in researcher.blade
+8a11332 pull main
+e6a6ed2 chang translate in Resource/lang in Home.blade
+c453b9d commit all
+2f0a591 Added RG.sql as recently Database.
+f8813eb Merge branch 'konkanok_1870'
+4ca25ee (origin/konkanok_1870, konkanok_1870) Updated the project
+e41c3d4 Organize files and directories
+2cb18c4 Delete old project file
+5dae304 Update Research Group and Research Group detail blade , add Back button and show Main research areas . Create table Research_focus .
+50dc8ad (Nithinan_2046) Merge remote-tracking branch 'origin/Nithinan_2046' into konkanok_1870
+504f7fa Add files via upload
+e1c95c5 Updated New researchers's Role to get Permission.
+35ed91f Added edit_researchers.sql into folder to be new Database file.
+8965ffe Remove Drop down on Menu_Researchers to make it can see all Researchers instead.
+05e98c0 Upload new Project_2-master from New local repository. And changed menu_Reserchers to show all researchers when users click on instead of show drop down programs.
+4701be0 Remove old Project_2-master from Git tracking cuz I have new Local repository. I need to update. EIEI
+3caf6ce Project file that already added new researchers images
+a5b05e8 Zip file for new user's images, Cleaning SQL file for lately Researchers information
+74a620e เพิ่มไฟล์โปรเจกต์ใน InitialProject
+8315871 เพิ่มไฟล์โปรเจกต์ใน InitialProject
+08e20bd Delete InitialProject/Project_2-master
+44da474 Upload SourceCode to IntialProject
+
