@@ -50,5 +50,6 @@ return [
 'name' => 'ชื่อ',
 'type' => 'ประเภท',
 'registration_number' => 'หมายเลขทะเบียน' ,
-'registration_date' => 'วันที่จดทะเบียน'
+'registration_date' => 'วันที่จดทะเบียน',
+'Record the number of articles that have been cited' => 'สถิติจำนวนบทความที่ได้รับการอ้างอิง'
 ];
