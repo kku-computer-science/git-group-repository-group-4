@@ -4,6 +4,24 @@
     <p class="title">Researchers</p>
 
     <div class="d-flex">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                @if(isset($currentProgram))
+                    {{ $currentProgram->program_name_en }}
+                @else
+                    All
+                @endif
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="{{ route('researchers') }}">All</a></li>
+                @foreach($programs as $program)
+                    <li><a class="dropdown-item" href="{{ route('researchers', ['id' => $program->id]) }}">
+                            {{ $program->program_name_en }}
+                        </a></li>
+                @endforeach
+            </ul>
+        </div>
         <div class="ml-auto">
             <form class="row row-cols-lg-auto g-3" method="GET" action="{{ route('researchers') }}"> {{-- เปลี่ยน route
                 ใน form --}}
