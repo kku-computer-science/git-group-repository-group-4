@@ -371,7 +371,7 @@
             <table id="example5" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                    <th scope="col">{{ __('message.number') }}</th>
+                    <th scope="col">{{ __('message.no') }}</th>
             <th scope="col">{{ __('message.year') }}</th>
             <th scope="col">{{ __('message.name') }}</th>
             <th scope="col">{{ __('message.author') }}</th>
