@@ -50,5 +50,7 @@ return [
 'registration_date' =>'Registration Date',
 'Record the number of articles that have been cited' =>'Record the number of articles that have been cited',
 'book' => 'Book',
-'journal' => 'Journal'
+'journal' => 'Journal',
+'Laboratory Supervisor' => 'Laboratory Supervisor',
+'Student' => 'Student'
 ];

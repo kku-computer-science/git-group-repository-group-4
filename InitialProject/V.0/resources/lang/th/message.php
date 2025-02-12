@@ -50,5 +50,7 @@ return [
 'registration_date' => 'วันที่จดทะเบียน',
 'Record the number of articles that have been cited' => 'สถิติจำนวนบทความที่ได้รับการอ้างอิง',
 'book' => 'หนังสือ',
-'journal' => 'ผลงานวิชาการด้านอื่นๆ'
+'journal' => 'ผลงานวิชาการด้านอื่นๆ',
+'Laboratory Supervisor' => 'หัวหน้าห้องปฏิบัติการ',
+'Student' => 'นักศึกษา'
 ];
