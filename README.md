@@ -39,7 +39,7 @@ You can switch between Thai and English at any time by clicking the **Language**
 - Navigate to the **Researchers** menu.
 - You will see a list of all researchers.
 
-### 4. All Researcher Groups
+### 5. All Researcher Groups
 - Navigate to the **Researchers** menu.
 - You will see a list of all researcher groups.
 
@@ -67,43 +67,16 @@ Click on "Code" and select "Download ZIP."
 10. Next, create a new database and import the data from the version1_0.sql file. In Visual Studio Code, scroll down to find the file in the project.
 11. Copy the data from the version1_0.sql file and paste it into phpMyAdmin to create the database.
 12. Next, go back to the .env file and configure the database connection for the system by setting:
-
-DB_DATABASE to the name of the database you created.
-DB_USERNAME to root.
-DB_PASSWORD to leave it empty.
+DB_DATABASE to the name of the database you created. DB_USERNAME to root. DB_PASSWORD to leave it empty.
 13. Next, generate the application key by going to the Terminal in Visual Studio Code and running the command:php artisan key:generate
 14. Next, check the changes in the .env file to verify that the APP_KEY has been updated with a new key, indicating that the process was successful.
 15. Once all steps are successfully completed, run the application by using the command php artisan serve in the Terminal. Then, go to the link cscp3530040467.cpkkuhost.com to run the application.
-16. 
-Once installed, you can launch the application by clicking on the My Application icon.
-
-## Usage Instructions
-
-### Starting the Application
-To start the application, click on the My Application icon located on your desktop. Upon launching, you will be greeted with the main screen.
-
-1. **Home Screen**: Displays an overview of your tasks and notifications.
-2. **Adding a New Task**: Click the "Add Task" button, fill in the task details, and click "Submit."
-3. **View Reports**: Go to the "Reports" section to view your task history.
-
-#### Example Task: Creating a Task
-1. Go to the **Add Task** menu.
-2. Fill in the task title, due date, and description.
-3. Click **Submit** to add the task to your list.
+16. Once installed, you can launch the application by clicking on the link that show in Terminal.
 
 ## Troubleshooting
 
-### Problem: Application crashes upon launch
-- **Solution**: Ensure your system meets the minimum requirements. If the problem persists, reinstall the application.
-
-### Problem: Cannot access the settings menu
-- **Solution**: Check your internet connection and try again.
-
-## Acknowledgments and Support
-
-Thank you for choosing My Application. If you need any further support, please refer to our help center or contact us via email at support@myapplication.com.
-
-For updates and new features, please check our website: [website link].
+### Problem: Unable to install Composer in Terminal
+- **Solution**: Go to https://getcomposer.org/download/ and download Composer-Setup.exe. Run the installer to install the latest version of Composer when executed, and set up your PATH environment variable so you can simply call composer from any directory. Then try to install composer by command again.
 
 ## Version Updates
 
