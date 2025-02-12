@@ -965,13 +965,14 @@ Colors:
         }
         
         .cardprofile .card .card-image {
-            max-height: 220px;
-            width: auto;
-            border-radius: 4px;
-            object-fit: fill;
-            margin: 16px 0 0 24px;
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            max-height: 220px;  /* กำหนดขนาดสูงสุดของรูปภาพ */
+            width: 100%;  /* ใช้เต็มความกว้างของคอนเทนเนอร์ (คงขนาดให้เหมาะสมกับการแสดงผล) */
+            border-radius: 4px;  /* ขอบมน */
+            object-fit: cover;  /* ครอบรูปภาพให้พอดีกับกรอบโดยไม่ผิดเพี้ยน */
+            margin: 16px 0 0 5px;  /* ระยะห่างจากด้านบนและด้านซ้าย */
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));  /* เงา */
         }
+        
         
         .cardprofile .card .card-text {
             font-family: 'Mitr', sans-serif;
