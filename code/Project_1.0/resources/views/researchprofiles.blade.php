@@ -464,50 +464,64 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
 
 <script>
-    $(document).ready(function() {
+   $(document).ready(function() {
+    // ดึงค่าภาษา จาก <html lang="th"> หรือ <html lang="en">
+    var currentLang = $('html').attr('lang');
 
-        var table1 = $('#example1').DataTable({
-            responsive: true,
-        });
-
-        var table2 = $('#example2').DataTable({
-            responsive: true,
-        });
-        var table3 = $('#example3').DataTable({
-            responsive: true,
-        });
-        var table4 = $('#example4').DataTable({
-            responsive: true,
-        });
-        var table5 = $('#example5').DataTable({
-            responsive: true,
-        });
-        var table6 = $('#example6').DataTable({
-            responsive: true,
-        });
-
-
-        $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function(event) {
-            var tabID = $(event.target).attr('data-bs-target');
-            if (tabID === '#scopus') {
-                table2.columns.adjust().draw()
+    // ตั้งค่าภาษา
+    var languageSettings = {
+        en: {
+            search: "Search:",
+            lengthMenu: "Show _MENU_ entries per page",
+            zeroRecords: "No matching records found",
+            info: "Showing _START_ to _END_ of _TOTAL_ entries",
+            infoEmpty: "No entries available",
+            infoFiltered: "(filtered from _MAX_ total entries)",
+            paginate: {
+                first: "First",
+                last: "Last",
+                next: "Next",
+                previous: "Previous"
             }
-            if (tabID === '#wos') {
-                table3.columns.adjust().draw()
+        },
+        th: {
+            search: "ค้นหา:",
+            lengthMenu: "แสดง _MENU_ รายการต่อหน้า",
+            zeroRecords: "ไม่พบข้อมูลที่ต้องการ",
+            info: "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+            infoEmpty: "ไม่มีข้อมูล",
+            infoFiltered: "(กรองจากทั้งหมด _MAX_ รายการ)",
+            paginate: {
+                first: "หน้าแรก",
+                last: "หน้าสุดท้าย",
+                next: "ถัดไป",
+                previous: "ก่อนหน้า"
             }
-            if (tabID === '#tci') {
-                table4.columns.adjust().draw()
-            }
-            if (tabID === '#book') {
-                table5.columns.adjust().draw()
-            }
-            if (tabID === '#patent') {
-                table6.columns.adjust().draw()
-            }
+        }
+    };
 
-        });
+    // ใช้ค่าภาษาให้เหมาะสม
+    var selectedLang = languageSettings[currentLang] || languageSettings['en']; // Default เป็นอังกฤษ
 
+    // กำหนด DataTable พร้อมภาษาที่เลือก
+    var table1 = $('#example1').DataTable({ responsive: true, language: selectedLang });
+    var table2 = $('#example2').DataTable({ responsive: true, language: selectedLang });
+    var table3 = $('#example3').DataTable({ responsive: true, language: selectedLang });
+    var table4 = $('#example4').DataTable({ responsive: true, language: selectedLang });
+    var table5 = $('#example5').DataTable({ responsive: true, language: selectedLang });
+    var table6 = $('#example6').DataTable({ responsive: true, language: selectedLang });
+
+    // ตรวจสอบว่าเปลี่ยนแท็บไหน แล้วอัปเดตตารางให้ปรับขนาดใหม่
+    $('button[data-bs-toggle="tab"]').on('shown.bs.tab', function(event) {
+        var tabID = $(event.target).attr('data-bs-target');
+        if (tabID === '#scopus') table2.columns.adjust().draw();
+        if (tabID === '#wos') table3.columns.adjust().draw();
+        if (tabID === '#tci') table4.columns.adjust().draw();
+        if (tabID === '#book') table5.columns.adjust().draw();
+        if (tabID === '#patent') table6.columns.adjust().draw();
     });
+});
+
 </script>
 
 <script>
@@ -663,7 +677,7 @@
         //$("#scopus").append('data-to="100"');
         document.getElementById("all").innerHTML += `   
                 <h2 class="timer count-title count-number" data-to="${sum}" data-speed="1500"></h2>
-                <p class="count-text ">SUMMARY</p>`
+                <p class="count-text ">{{__('message.SUMMARY')}}</p>`
 
         document.getElementById("scopus_sum").innerHTML += `   
                 <h2 class="timer count-title count-number" data-to="${sumsco}" data-speed="1500"></h2>
