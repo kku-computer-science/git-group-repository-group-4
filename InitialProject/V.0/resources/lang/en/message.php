@@ -13,5 +13,10 @@ return [
 'total_articles_5_years' => 'Report the total number of articles ( 5 years : cumulative)',
 'SUMMARY' => 'SUMMARY',
 'before' => 'Before',
-'Reference' => 'Reference'
+'Reference' => 'Reference',
+'All' => 'All',
+'Researchers' => 'Researchers',
+'Researchinterests' => 'Research interests',
+'Search' => 'Search',
+'Research Field' => 'Research Field :',
 ];
