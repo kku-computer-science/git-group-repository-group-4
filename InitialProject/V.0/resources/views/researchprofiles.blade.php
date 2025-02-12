@@ -143,10 +143,10 @@
             <button class="nav-link" id="tci-tab" data-bs-toggle="tab" data-bs-target="#tci" type="button" role="tab" aria-controls="tci" aria-selected="false">TCI</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="book-tab" data-bs-toggle="tab" data-bs-target="#book" type="button" role="tab" aria-controls="book" aria-selected="false">หนังสือ</button>
+            <button class="nav-link" id="book-tab" data-bs-toggle="tab" data-bs-target="#book" type="button" role="tab" aria-controls="book" aria-selected="false">{{ __('message.book')}}</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="patent-tab" data-bs-toggle="tab" data-bs-target="#patent" type="button" role="tab" aria-controls="patent" aria-selected="false">ผลงานวิชาการด้านอื่นๆ</button>
+            <button class="nav-link" id="patent-tab" data-bs-toggle="tab" data-bs-target="#patent" type="button" role="tab" aria-controls="patent" aria-selected="false">{{ __('message.journal')}}</button>
         </li>
     </ul>
     <br>
@@ -372,11 +372,11 @@
                 <thead>
                     <tr>
                     <th scope="col">{{ __('message.no') }}</th>
-            <th scope="col">{{ __('message.year') }}</th>
-            <th scope="col">{{ __('message.name') }}</th>
-            <th scope="col">{{ __('message.author') }}</th>
-            <th scope="col">{{ __('message.place_of_publication') }}</th>
-            <th scope="col">{{ __('message.page') }}</th>
+                    <th scope="col">{{ __('message.year') }}</th>
+                    <th scope="col">{{ __('message.name') }}</th>
+                    <th scope="col">{{ __('message.author') }}</th>
+                    <th scope="col">{{ __('message.place_of_publication') }}</th>
+                    <th scope="col">{{ __('message.page') }}</th>
 
                     </tr>
                 </thead>
