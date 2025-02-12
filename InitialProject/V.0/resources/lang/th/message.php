@@ -1,11 +1,9 @@
 <?php
 return [
 'Home' => 'หน้าแรก',
-'Researchers' => 'ผู้วิจัย',
 'ResearchProj' => 'โครงการวิจัย',
 'ResearchGroup' => 'กลุ่มวิจัย',
 'Report' => 'รายงาน',
-'details' =>'รายละเอียดเพิ่มเติม',
 'expertise' =>'ความเชี่ยวชาญ',
 'publications' => 'ผลงานตีพิมพ์ (5 ปี ย้อนหลัง)',
 'education'=>'การศึกษา',
@@ -27,7 +25,6 @@ return [
 'Project Manager' => 'ผู้รับผิดชอบโครงการ',
 'status' => 'สถานะ',
 'project_manager' => 'ผู้จัดการโครงการ',
-'status' => 'สถานะ',
 'research_funding_type' => 'ประเภททุนวิจัย',
 'supporting_agency' => 'หน่วยงานที่สนับสนุนทุน',
 'responsible_unit' => 'หน่วยงานที่รับผิดชอบ',
