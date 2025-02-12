@@ -52,24 +52,24 @@
                             <div class="col-sm-8 overflow-hidden">
                                 <div class="card-body">
                                 <h5 class="card-title">
-                                    @if(app()->getLocale() == 'th')
-                                        {{ $r->fname_th }} {{ $r->lname_th }} <!-- ใช้ชื่อภาษาไทย -->
-                                    @else
-                                        {{ $r->fname_en }} {{ $r->lname_en }} <!-- ใช้ชื่อภาษาอังกฤษ -->
-                                    @endif,
-                                    @if(app()->getLocale() == 'th')
-                                        {{ $r->doctoral_degree_th }} <!-- ใช้ระดับการศึกษาเป็นภาษาไทย -->
-                                    @else
-                                        {{ $r->doctoral_degree }} <!-- ใช้ระดับการศึกษาเป็นภาษาอังกฤษ -->
-                                    @endif
-                                </h5>
-                                <h5 class="card-title-2">
-                                    @if(app()->getLocale() == 'th')
-                                        {{ $r->academic_ranks_th }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาไทย -->
-                                    @else
-                                        {{ $r->academic_ranks_en }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
-                                    @endif
-                                </h5>
+                                @if(app()->getLocale() == 'th')
+                                    {{ $r->fname_th }} {{ $r->lname_th }} <!-- ใช้ชื่อภาษาไทย -->
+                                @else
+                                    {{ $r->fname_en }} {{ $r->lname_en }} <!-- ใช้ชื่อภาษาอังกฤษ -->
+                                @endif,
+                                @if(app()->getLocale() == 'th')
+                                    {{ $r->position_th }} <!-- ใช้ระดับการศึกษาเป็นภาษาไทย -->
+                                @else
+                                    {{ $r->doctoral_degree }} <!-- ใช้ระดับการศึกษาเป็นภาษาอังกฤษ -->
+                                @endif
+                            </h5>
+                            <h5 class="card-title-2">
+                                @if(app()->getLocale() == 'th')
+                                    {{ $r->academic_ranks_th }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาไทย -->
+                                @else
+                                    {{ $r->academic_ranks_en }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
+                                @endif
+                            </h5>
                                     <p class="card-text-1">{{__('message.Research Field')}}</p>
                                     <div class="card-expertise">
                                         <p class="card-text">

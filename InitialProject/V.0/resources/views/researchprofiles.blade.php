@@ -131,7 +131,7 @@
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Summary</button>
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">{{ __('message.SUMMARY')}}</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="scopus-tab" data-bs-toggle="tab" data-bs-target="#scopus" type="button" role="tab" aria-controls="scopus" aria-selected="false">SCOPUS</button>
@@ -154,7 +154,7 @@
 
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="tab-content" style="padding-bottom: 20px;">
-                <a class="btn btn-success" href="{{ route('excel', ['id' => $res->id]) }}" target="_blank">Export To Excel</a>
+                <a class="btn btn-success" href="{{ route('excel', ['id' => $res->id]) }}" target="_blank">{{__('message.Excel')}}</a>
             </div>
             <table id="example1" class="table table-striped" style="width:100%">
                 <thead>
@@ -162,16 +162,16 @@
                         <th><a href="{{ route('excel', ['id' => $res->id]) }}" target="_blank">#Export</a></td>
                     </tr> -->
                     <tr>
-                        <th>No.</th>
-                        <th>Year</th>
-                        <th>Paper Name</th>
-                        <th>Author</th>
-                        <th>Document Type</th>
-                        <th>Page</th>
-                        <th>Journals/Transactions</th>
-                        <th>Ciations</th>
-                        <th>Doi</th>
-                        <th>Source</th>
+                        <th>{{ __('message.no') }}</th>
+                        <th>{{ __('message.year') }}</th>
+                        <th>{{ __('message.paper_name') }}</th>
+                        <th>{{ __('message.author') }}</th>
+                        <th>{{ __('message.document_type') }}</th>
+                        <th>{{ __('message.page') }}</th>
+                        <th>{{ __('message.journals_transactions') }}</th>
+                        <th>{{ __('message.citations') }}</th>
+                        <th>{{ __('message.doi') }}</th>
+                        <th>{{ __('message.source') }}</th>
                     </tr>
                 </thead>
 
@@ -220,15 +220,15 @@
             <table id="example2" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>No.</th>
-                        <th>Year</th>
-                        <th style="width:90%;">Paper Name</th>
-                        <th>Author</th>
-                        <th>Document Type</th>
-                        <th style="width:100%;">Page</th>
-                        <th>Journals/Transactions</th>
-                        <th>Ciations</th>
-                        <th>Doi</th>
+                        <th>{{ __('message.no') }}</th>
+                        <th>{{ __('message.year') }}</th>
+                        <th style="width:90%;">{{ __('message.paper_name') }}</th>
+                        <th>{{ __('message.author') }}</th>
+                        <th>{{ __('message.document_type') }}</th>
+                        <th style="width:100%;">{{ __('message.page') }}</th>
+                        <th>{{ __('message.journals_transactions') }}</th>
+                        <th>{{ __('message.citations') }}</th>
+                        <th>{{ __('message.doi') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -271,15 +271,15 @@
             <table id="example3" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>No.</th>
-                        <th>Year</th>
-                        <th style="width:90%;">Paper Name</th>
-                        <th>Author</th>
-                        <th>Document Type</th>
-                        <th style="width:100%;">Page</th>
-                        <th>Journals/Transactions</th>
-                        <th>Ciations</th>
-                        <th>Doi</th>
+                        <th>{{ __('message.no') }}</th>
+                        <th>{{ __('message.year') }}</th>
+                        <th style="width:90%;">{{ __('message.paper_name') }}</th>
+                        <th>{{ __('message.author') }}</th>
+                        <th>{{ __('message.document_type') }}</th>
+                        <th style="width:100%;">{{ __('message.page') }}</th>
+                        <th>{{ __('message.journals_transactions') }}</th>
+                        <th>{{ __('message.citations') }}</th>
+                        <th>{{ __('message.doi') }}</th>
                     </tr>
                 </thead>
 
@@ -323,15 +323,15 @@
             <table id="example4" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th>No.</th>
-                        <th>Year</th>
-                        <th style="width:90%;">Paper Name</th>
-                        <th>Author</th>
-                        <th>Document Type</th>
-                        <th style="width:100%;">Page</th>
-                        <th>Journals/Transactions</th>
-                        <th>Ciations</th>
-                        <th>Doi</th>
+                    <th>{{ __('message.no') }}</th>
+                        <th>{{ __('message.year') }}</th>
+                        <th style="width:90%;">{{ __('message.paper_name') }}</th>
+                        <th>{{ __('message.author') }}</th>
+                        <th>{{ __('message.document_type') }}</th>
+                        <th style="width:100%;">{{ __('message.page') }}</th>
+                        <th>{{ __('message.journals_transactions') }}</th>
+                        <th>{{ __('message.citations') }}</th>
+                        <th>{{ __('message.doi') }}</th>
                     </tr>
                 </thead>
 
@@ -371,12 +371,12 @@
             <table id="example5" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th scope="col">Number</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">สถานที่พิมพ์</th>
-                        <th scope="col">Page</th>
+                    <th scope="col">{{ __('message.no') }}</th>
+            <th scope="col">{{ __('message.year') }}</th>
+            <th scope="col">{{ __('message.name') }}</th>
+            <th scope="col">{{ __('message.author') }}</th>
+            <th scope="col">{{ __('message.place_of_publication') }}</th>
+            <th scope="col">{{ __('message.page') }}</th>
 
                     </tr>
                 </thead>

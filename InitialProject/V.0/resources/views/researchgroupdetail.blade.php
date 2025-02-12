@@ -63,11 +63,7 @@
                     </h5>
                     <ul class="card-text-2">
                         @foreach ($rg->researchFocus as $focus)
-                            @if(app()->getLocale() == 'en')
                                 <li>{{ $focus->research_topic_en }}</li>
-                            @else
-                                <li>{{ $focus->research_topic_th }}</li>
-                            @endif
                         @endforeach
                     </ul>
                 </div>
