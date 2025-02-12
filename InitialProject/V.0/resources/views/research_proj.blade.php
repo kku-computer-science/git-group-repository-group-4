@@ -147,10 +147,47 @@
 
 <script>
     $(document).ready(function() {
+    // ตรวจสอบค่าภาษา (สมมติว่าคุณใช้ `App::getLocale()` หรือค่าจาก HTML)
+    var currentLang = $('html').attr('lang'); // หรือคุณสามารถดึงค่าจากที่อื่น
 
-        var table1 = $('#example1').DataTable({
-            responsive: true,
-        });
+    // ตั้งค่าภาษา
+    var languageSettings = {
+        en: {
+            search: "Search:", 
+            lengthMenu: "Show _MENU_ entries per page",
+            zeroRecords: "No matching records found",
+            info: "Showing _START_ to _END_ of _TOTAL_ entries",
+            infoEmpty: "No entries available",
+            infoFiltered: "(filtered from _MAX_ total entries)",
+            paginate: {
+                first: "First",
+                last: "Last",
+                next: "Next",
+                previous: "Previous"
+            }
+        },
+        th: {
+            search: "ค้นหา:", 
+            lengthMenu: "แสดง _MENU_ รายการต่อหน้า",
+            zeroRecords: "ไม่พบข้อมูลที่ต้องการ",
+            info: "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+            infoEmpty: "ไม่มีข้อมูล",
+            infoFiltered: "(กรองจากทั้งหมด _MAX_ รายการ)",
+            paginate: {
+                first: "หน้าแรก",
+                last: "หน้าสุดท้าย",
+                next: "ถัดไป",
+                previous: "ก่อนหน้า"
+            }
+        }
+    };
+
+    // ใช้ค่าภาษาให้เหมาะสม
+    var table1 = $('#example1').DataTable({
+        responsive: true,
+        language: languageSettings[currentLang] || languageSettings['en'] // Default เป็นอังกฤษ
     });
+});
+
 </script>
 @stop
