@@ -9,31 +9,72 @@
 # User Manual for My Application
 
 ## Version: 1.0.0
-### Last Updated: February 2025
-
-For any support or inquiries, contact us at:
-- Email: support@myapplication.com
-- Phone: 123-456-7890
+### Last Updated: 12 February 2025
 
 ## General Overview
+Welcome to the Project! This project allows users to easily switch between Thai and English languages at any time. Users can view detailed information about researchers and research groups, with content presented in the selected language. The Project was developed based on requirements gathered from stakeholders interviews to ensure it meets user needs.
 
-My Application is designed to help users manage their tasks efficiently. It provides the following features:
-- **Task Management**: Create, update, and delete tasks.
-- **Notifications**: Get reminders for upcoming tasks.
-- **Reports**: Generate reports of completed tasks.
+## Features
+- **Language Selection**: Switch seamlessly between Thai and English for a fully localized experience.
+- **Researcher Information**: View personal details and information about researchers.
+- **Research Group Information**: Explore details about various research groups and their projects.
+- **All Researchers**: View information of all researchers.
+- **All Researcher groups**: View information of all researcher group.
+
+## How to Use the features
+
+### 1. Language Switching
+You can switch between Thai and English at any time by clicking the **Language** or **ภาษา** button located at the top-right corner of the application. After switching, the entire content, including menus and information, will be updated to the selected language.
+
+### 2. Viewing Researcher Information
+- Navigate to the **Researchers** menu.
+- You will see a list of available researchers. Click on any researcher’s name to view their detailed information.
+- The researcher’s profile includes data such as their full name, academic qualifications, publications, and ongoing research projects.
+
+### 3. Viewing Research Group Information
+- Click on the **Research Groups** menu.
+- You can browse through different research groups. Clicking on a group’s name will display more information about its members and the projects they are working on.
+
+### 4. All Researchers
+- Navigate to the **Researchers** menu.
+- You will see a list of all researchers.
+
+### 4. All Researcher Groups
+- Navigate to the **Researchers** menu.
+- You will see a list of all researcher groups.
 
 ## Installation Instructions
 
 ### Requirements
-- Windows 10 or macOS
+- Windows 10,11 or macOS
 - Internet connection
-- 500 MB of available disk space
+- PHP Version 8.2 or mores
+- Apache (The Latest Version)
+- XAMPP
 
 ### Step-by-Step Installation Guide
-1. Download the application from [download link].
-2. Run the installer and follow the on-screen instructions.
-3. Complete setup by entering your username and password.
+1. Go to the XAMPP Download Page: Open your web browser and visit the official XAMPP website at https://www.apachefriends.org/index.html to download the XAMPP installer.
+2. Choose and download the XAMPP installer for Windows. Once the download is complete, proceed with the installation.
+3. Once the XAMPP installation is complete, navigate to the directory C:\xampp\htdocs to install the system.
+4. Go to GitHub to download the ZIP file from the following website:
+https://github.com/kku-computer-science/git-group-repository-group-4
+Click on "Code" and select "Download ZIP."
+5. Then, take the ZIP file you downloaded and move it to C:\xampp\htdocs, and then extract the files there.
+6. Next, open Visual Studio Code and open the "Project_1.0" folder that you extracted from the files.
+7. Next, open the Terminal in Visual Studio Code and use the command composer install.
+8. Next, create a .env file in the root folder and copy the content from the .env.example file into it.
+9. Next, install the database by opening XAMPP and going to the MySQL Admin menu. Then, create a new database.
+10. Next, create a new database and import the data from the version1_0.sql file. In Visual Studio Code, scroll down to find the file in the project.
+11. Copy the data from the version1_0.sql file and paste it into phpMyAdmin to create the database.
+12. Next, go back to the .env file and configure the database connection for the system by setting:
 
+DB_DATABASE to the name of the database you created.
+DB_USERNAME to root.
+DB_PASSWORD to leave it empty.
+13. Next, generate the application key by going to the Terminal in Visual Studio Code and running the command:php artisan key:generate
+14. Next, check the changes in the .env file to verify that the APP_KEY has been updated with a new key, indicating that the process was successful.
+15. Once all steps are successfully completed, run the application by using the command php artisan serve in the Terminal. Then, go to the link cscp3530040467.cpkkuhost.com to run the application.
+16. 
 Once installed, you can launch the application by clicking on the My Application icon.
 
 ## Usage Instructions
