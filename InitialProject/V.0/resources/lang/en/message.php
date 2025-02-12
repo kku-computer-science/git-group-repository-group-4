@@ -19,4 +19,12 @@ return [
 'Researchinterests' => 'Research interests',
 'Search' => 'Search',
 'Research Field' => 'Research Field :',
+'Academic topics/research projects' => 'Academic  topics/Research projects',
+'no' => 'No.',
+'Project name' => 'Name',
+'details' => 'Details',
+'Project Manager' => 'Project Manage',
+'status' => 'Status',
+'year' => 'Year'
+
 ];

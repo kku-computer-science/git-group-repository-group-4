@@ -18,5 +18,12 @@ return [
 'Researchers' => 'นักวิจัย',
 'Researchinterests' => 'ค้นหา',
 'Search' => 'ค้นหา',
-'Research Field' => 'สาขาการวิจัย'
+'Research Field' => 'สาขาการวิจัย',
+'Academic topics/research projects' =>'โครงการบริการวิชาการ/ โครงการวิจัย',
+'no' => 'ลำดับ',
+'year' => 'ปี',
+'Project name' => 'ชื่อโครงการ',
+'details' => 'รายละเอียด',
+'Project Manager' => 'ผู้รับผิดชอบโครงการ',
+'status' => 'สถานะ',
 ];
