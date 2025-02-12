@@ -371,7 +371,7 @@
             <table id="example5" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                    <th scope="col">{{ __('message.no') }}</th>
+                    <th scope="col">{{ __('message.number') }}</th>
             <th scope="col">{{ __('message.year') }}</th>
             <th scope="col">{{ __('message.name') }}</th>
             <th scope="col">{{ __('message.author') }}</th>
@@ -413,12 +413,12 @@
             <table id="example6" class="table table-striped" style="width:100%">
                 <thead>
                     <tr>
-                        <th scope="col">Number</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">ประเภท</th>
-                        <th scope="col">หมายเลขทะเบียน</th>
-                        <th scope="col">วันที่จดทะเบียน</th>
+                    <th scope="col">{{ __('message.no') }}</th>
+            <th scope="col">{{ __('message.name') }}</th>
+            <th scope="col">{{ __('message.author') }}</th>
+            <th scope="col">{{ __('message.type') }}</th>
+            <th scope="col">{{ __('message.registration_number') }}</th>
+            <th scope="col">{{ __('message.registration_date') }}</th>
 
                     </tr>
                 </thead>

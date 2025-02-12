@@ -44,5 +44,9 @@ return [
 'doi' => 'DOI',
 'source' => 'แหล่งที่มา',
 'place_of_publication' => 'สถานที่พิมพ์',
-'name' => 'ชื่อ'
+'name' => 'ชื่อ',
+'type' => 'ประเภท',
+'registration_number' => 'หมายเลขทะเบียน' ,
+'registration_date' => 'วันที่จดทะเบียน',
+'Record the number of articles that have been cited' => 'สถิติจำนวนบทความที่ได้รับการอ้างอิง'
 ];

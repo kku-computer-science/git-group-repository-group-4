@@ -45,5 +45,8 @@ return [
 'source' => 'Source',
 'name' => 'Name',
 'place_of_publication' => 'Place of Publication',
-
+'type' => 'Type',
+'registration_number' => 'Registration Number',
+'registration_date' =>'Registration Date',
+'Record the number of articles that have been cited' =>'Record the number of articles that have been cited'
 ];
