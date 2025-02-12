@@ -26,4 +26,15 @@ return [
 'details' => 'รายละเอียด',
 'Project Manager' => 'ผู้รับผิดชอบโครงการ',
 'status' => 'สถานะ',
+'project_manager' => 'ผู้จัดการโครงการ',
+'status' => 'สถานะ',
+'research_funding_type' => 'ประเภททุนวิจัย',
+'supporting_agency' => 'หน่วยงานที่สนับสนุนทุน',
+'responsible_unit' => 'หน่วยงานที่รับผิดชอบ',
+'allocated_budget' => 'งบประมาณที่ได้รับจัดสรร',
+'application_submission' => 'ยื่นขอ',
+'implementation' => 'ดำเนินการ',
+'project_closure' => 'ปิดโครงการ',
+'project_duration' => 'ระยะเวลาโครงการ',
+'Login' => 'เข้าสู่ระบบ'
 ];

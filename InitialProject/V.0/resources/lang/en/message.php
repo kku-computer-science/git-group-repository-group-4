@@ -25,6 +25,17 @@ return [
 'details' => 'Details',
 'Project Manager' => 'Project Manage',
 'status' => 'Status',
-'year' => 'Year'
+'year' => 'Year',
+'project_manager' => 'Project Manager',
+'status' => 'Status',
+'research_funding_type' => 'Research Funding Type',
+'supporting_agency' => 'Supporting Agency',
+'responsible_unit' => 'Responsible Unit',
+'allocated_budget' => 'Allocated Budget',
+'application_submission' => 'Application Submission',
+'implementation' => 'Proccessing',
+'project_closure' => 'Project Close',
+'project_duration' => 'Project Duration',
+'Login' => 'Login',
 
 ];
