@@ -10,12 +10,32 @@ use Bibtex;
 use RenanBr\BibTexParser\Listener;
 use RenanBr\BibTexParser\Parser;
 use RenanBr\BibTexParser\Processor;
+use thiagoalessio\TesseractOCR\TesseractOCR;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class HomeController extends Controller
 {
+    
+// public function extractTextFromBanner()
+// {
+//     $text = (new TesseractOCR(public_path('images/banner.jpg')))->run();
+    
+//     // ตรวจสอบว่าข้อความเป็นภาษาอังกฤษหรือไทย
+//     $lang = preg_match('/[ก-๙]/', $text) ? 'th' : 'en';
 
+//     // แปลเป็นอีกภาษาหนึ่ง
+//     $translatedText = (new GoogleTranslate())
+//         ->setSource($lang)
+//         ->setTarget($lang == 'th' ? 'en' : 'th')
+//         ->translate($text);
+
+//     return view('home', compact('text', 'translatedText'));
+// }
+
+    
     public function index()
     {
+      
         //$papers = Paper::all()->orderBy, 'DESC');
         $papers = [];
         $year = range(Carbon::now()->year - 4, Carbon::now()->year);
@@ -193,7 +213,11 @@ class HomeController extends Controller
         // (DB::raw('YEAR(paper_yearpub)')
         //return view('home',compact('papers'));
     }
-
+    // public function home()
+    // {
+    //     $text = " "; // หรือข้อมูลจากฐานข้อมูล / API
+    //     return view('home', compact('text'));
+    // }
     public function getnum()
     {
         $paper_scopus = Paper::whereHas('source', function ($query) {
@@ -217,6 +241,7 @@ class HomeController extends Controller
 
         return compact('paper_scopus','paper_tci','paper_wos');
     }
+    
     public function bibtex($id)
     {
         $paper = Paper::with(['author' => function ($query) {
