@@ -11,5 +11,7 @@ return [
 'education'=>'Education',
 'publications2' => 'Publications',
 'total_articles_5_years' => 'Report the total number of articles ( 5 years : cumulative)',
-'SUMMARY' => 'SUMMARY'
+'SUMMARY' => 'SUMMARY',
+'before' => 'Before',
+'Reference' => 'Reference'
 ];
