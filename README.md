@@ -6,9 +6,7 @@
 3.นางสาวอธิตยา บูชากุล 653380218-5  
 4.นายแทนไทย อรหันตา 653380199-3  
 5.นายนิธินันท์ อารยรุ่งโรจน์ 653380204-6  
-# User Manual for My Application
-
-## Version: 1.0.0
+# User Manual for Our Project!
 ### Last Updated: 12 February 2025
 
 ## General Overview
@@ -81,5 +79,5 @@ DB_DATABASE to the name of the database you created. DB_USERNAME to root. DB_PAS
 ## Version Updates
 
 ### Version 1.0.0
-- Initial release with features: Task Management, Notifications, and Reports.
-
+- Product Backlog Item 15 As a user, I want to check on information of each lab and each researcher.
+- Product Backlog Item 16 As a user, I want to switch language at all time.
