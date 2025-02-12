@@ -15,7 +15,6 @@ return [
 'before' => 'Before',
 'Reference' => 'Reference',
 'All' => 'All',
-'Researchers' => 'Researchers',
 'Researchinterests' => 'Research interests',
 'Search' => 'Search',
 'Research Field' => 'Research Field :',
