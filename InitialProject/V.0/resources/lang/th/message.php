@@ -11,5 +11,12 @@ return [
 'education'=>'การศึกษา',
 'publications2' => 'ผลงานตีพิมพ์',
 'total_articles_5_years' => 'รายงานจำนวนบทความทั้งหมด (5 ปี : สะสม)',
-'SUMMARY'=>'สรุป'
+'SUMMARY'=>'สรุป',
+'before'=> 'ก่อน',
+'Reference' => 'อ้างอิง',
+'All' => 'ทั้งหมด',
+'Researchers' => 'นักวิจัย',
+'Researchinterests' => 'ค้นหา',
+'Search' => 'ค้นหา',
+'Research Field' => 'สาขาการวิจัย'
 ];

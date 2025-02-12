@@ -2,16 +2,22 @@
 
 @section('content')
 <div class="container card-2">
-    <p class="title">Researchers</p>
+    <p class="title">{{ __('message.Researchers')}}</p>
 
     <!-- Dropdown สำหรับกรองประเภทนักวิจัย -->
     <div class="mb-3">
-        <select class="form-select" id="programFilter" onchange="filterResearchers()">
-            <option value="all">All</option>
-            @foreach($programs as $program)
-                <option value="{{ $program->id }}">{{ $program->program_name_en }}</option>
-            @endforeach
-        </select>
+    <select class="form-select" id="programFilter" onchange="filterResearchers()">
+    <option value="all">{{ __('message.All') }}</option> <!-- แปลข้อความ "All" -->
+    @foreach($programs as $program)
+        <option value="{{ $program->id }}">
+            @if(app()->getLocale() == 'th')
+                {{ $program->program_name_th }} <!-- แสดงชื่อโปรแกรมภาษาไทยเมื่อ locale เป็น 'th' -->
+            @else
+                {{ $program->program_name_en }} <!-- แสดงชื่อโปรแกรมภาษาอังกฤษเมื่อ locale เป็น 'en' -->
+            @endif
+        </option>
+    @endforeach
+</select>
     </div>
 
     <!-- Search Bar -->
@@ -20,12 +26,12 @@
             <form class="row row-cols-lg-auto g-3" method="GET" action="{{ route('researchers') }}">
                 <div class="col-md-8">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="textsearch" placeholder="Research interests"
+                        <input type="text" class="form-control" name="textsearch" placeholder="{{__('message.Researchinterests')}}"
                             value="{{ request('textsearch') }}">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-outline-primary">Search</button>
+                    <button type="submit" class="btn btn-outline-primary">{{__('message.Search')}}</button>
                 </div>
             </form>
         </div>
@@ -45,12 +51,34 @@
                             </div>
                             <div class="col-sm-8 overflow-hidden">
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $r->fname_en }} {{ $r->lname_en }}, {{$r->doctoral_degree}}
-                                    </h5>
-                                    <h5 class="card-title-2">{{ $r->academic_ranks_en }}</h5>
-                                    <p class="card-text-1">Research Field:</p>
+                                <h5 class="card-title">
+                                @if(app()->getLocale() == 'th')
+                                    {{ $r->fname_th }} {{ $r->lname_th }} <!-- ใช้ชื่อภาษาไทย -->
+                                @else
+                                    {{ $r->fname_en }} {{ $r->lname_en }} <!-- ใช้ชื่อภาษาอังกฤษ -->
+                                @endif,
+                                @if(app()->getLocale() == 'th')
+                                    {{ $r->position_th }} <!-- ใช้ระดับการศึกษาเป็นภาษาไทย -->
+                                @else
+                                    {{ $r->doctoral_degree }} <!-- ใช้ระดับการศึกษาเป็นภาษาอังกฤษ -->
+                                @endif
+                            </h5>
+                            <h5 class="card-title-2">
+                                @if(app()->getLocale() == 'th')
+                                    {{ $r->academic_ranks_th }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาไทย -->
+                                @else
+                                    {{ $r->academic_ranks_en }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
+                                @endif
+                            </h5>
+                                    <p class="card-text-1">{{__('message.Research Field')}}</p>
                                     <div class="card-expertise">
-                                        <p class="card-text">{{ $r->program->program_name_en }}</p>
+                                        <p class="card-text">
+                                            @if(app()->getLocale() == 'th')
+                                                {{ $r->program->program_name_th }} <!-- แสดงชื่อโปรแกรมภาษาไทย -->
+                                            @else
+                                                {{ $r->program->program_name_en }} <!-- แสดงชื่อโปรแกรมภาษาอังกฤษ -->
+                                            @endif
+                                        </p>
                                     </div>
                                 </div>
                             </div>
