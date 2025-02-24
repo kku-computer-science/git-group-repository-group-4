@@ -88,8 +88,51 @@
             </div>
         @endforeach
     </div>
-
 </div>
+
+<!-- 🔹 ส่วนแสดง "นักศึกษา" -->
+<div class="researcher-container">
+    @foreach ($students as $s)
+        <div class="researcher-item">
+            <div class="card researcher-card" data-field="{{ $s->program_id }}">
+                <a href="{{ route('detail', Crypt::encrypt($s->id)) }}" class="researcher-link">
+                    <div class="row">
+                        <!-- 🔹 รูปภาพ -->
+                        <div class="col-sm-4">
+                            <img class="card-image" 
+                                 src="{{ $s->picture ?? asset('img/default_profile.png') }}" 
+                                 alt="{{ $s->fname_en }} {{ $s->lname_en }}">
+                        </div>
+
+                        <!-- 🔹 ข้อมูลนักศึกษา -->
+                        <div class="col-sm-8 overflow-hidden">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    @if(app()->getLocale() == 'th')
+                                        {{ $s->fname_th }} {{ $s->lname_th }}
+                                    @else
+                                        {{ $s->fname_en }} {{ $s->lname_en }}
+                                    @endif
+                                </h5>
+                                <p class="card-text-1">{{ __('message.Program') }}</p>
+                                <div class="card-expertise">
+                                    <p class="card-text">
+                                        @if(app()->getLocale() == 'th')
+                                            {{ $s->program->program_name_th }}
+                                        @else
+                                            {{ $s->program->program_name_en }}
+                                        @endif
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    @endforeach
+</div>
+
 
 <!-- JavaScript สำหรับกรองข้อมูล -->
 <script>

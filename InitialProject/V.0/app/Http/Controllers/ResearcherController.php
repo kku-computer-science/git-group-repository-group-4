@@ -17,10 +17,12 @@ class ResearcherController extends Controller
         $reshr = Program::with(['users' => function ($query) {
             return $query->role('teacher')->with('expertise');
         }])
+
+        
         ->where('degree_id', '=', 1)
         ->get();
-        //$reshr = Department::with('users')->join('expertises', 'id', '=', 'expertises.user_id')->get();
 
+        //$reshr = Department::with('users')->join('expertises', 'id', '=', 'expertises.user_id')->get();
 
         //return view('researchers',compact('reshr'));
     }
@@ -125,30 +127,36 @@ class ResearcherController extends Controller
         return $a;
     }
     public function allResearchers(Request $request)
-{
-    $programs = Program::whereIn('program_name_en', [
-        'Computer Science',
-        'Infomation Technology',
-        'Geo-Informatics',
-        'Artificial Intelligence',
-        'Cybersecurity'
-    ])
-    ->where('degree_id', 1) // เลือกเฉพาะ Degree ID = 1
-    ->distinct('program_name_en') // ลบคณะที่ซ้ำกัน
-    ->get();
-
-    $query = User::whereNotNull('academic_ranks_en') // ดึงเฉพาะอาจารย์
-        ->with(['program', 'expertise'])
-        ->orderByRaw("FIELD(academic_ranks_en, 'Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer')");
-
-    if ($request->has('program_id') && $request->program_id !== 'all') {
-        $query->where('program_id', $request->program_id);
+    {
+        $programs = Program::whereIn('program_name_en', [
+            'Computer Science',
+            'Infomation Technology',
+            'Geo-Informatics',
+            'Artificial Intelligence',
+            'Cybersecurity'
+        ])
+        ->where('degree_id', 1) // เลือกเฉพาะ Degree ID = 1
+        ->distinct('program_name_en') // ลบคณะที่ซ้ำกัน
+        ->get();
+    
+        // ดึงข้อมูลนักวิจัย (อาจารย์)
+        $query = User::whereNotNull('academic_ranks_en') // ดึงเฉพาะอาจารย์
+            ->with(['program', 'expertise'])
+            ->orderByRaw("FIELD(academic_ranks_en, 'Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer')");
+    
+        // ดึงข้อมูลนักศึกษา (student)
+        $studentsQuery = User::whereHas('roles', function ($q) {
+            $q->where('name', 'student');
+        })->with('program');
+    
+        if ($request->has('program_id') && $request->program_id !== 'all') {
+            $query->where('program_id', $request->program_id);
+            $studentsQuery->where('program_id', $request->program_id);
+        }
+    
+        $users = $query->get();
+        $students = $studentsQuery->get(); // ได้เฉพาะนักศึกษา
+    
+        return view('researchers', compact('users', 'students', 'programs'));
     }
-
-    $users = $query->get();
-
-    return view('researchers', compact('users', 'programs'));
-}
-
-
 }
