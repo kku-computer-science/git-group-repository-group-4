@@ -43,16 +43,23 @@
                 aria-label="Slide 3"></button> -->
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{asset('img/Banner1.png')}}" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="{{asset('img/Banner2.png')}}" class="d-block w-100" alt="...">
-                </div>
-                <!-- <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div> -->
-            </div>
+    @php
+        $locale = App::getLocale(); // รับค่าภาษาปัจจุบัน
+        $banners = [
+            'en' => ['img/Banner1En.png', 'img/Banner2En.png'],
+            'th' => ['img/Banner1.png', 'img/Banner2.png'],
+            'zh' => ['img/Banner1Zh.png', 'img/Banner2Zh.png'],
+        ];
+        $selectedBanners = $banners[$locale] ?? $banners['en']; // ใช้ English เป็นค่าเริ่มต้นหากไม่มีใน $banners
+    @endphp
+
+    @foreach ($selectedBanners as $index => $banner)
+        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+            <img src="{{ asset($banner) }}" class="d-block w-100" alt="Banner">
+        </div>
+    @endforeach
+</div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
