@@ -59,7 +59,6 @@
                                 @endif
                             </h5>
                                 <!-- 🔹 แสดงสาขาวิจัย -->
-                                <p class="card-text-1">{{ __('message.Research Field') }}</p>
 
                                 <div class="card-expertise">
                                     <p class="card-text">
@@ -110,7 +109,6 @@
                                 @endif
                             </h5>
                                 <!-- 🔹 แสดงโปรแกรมที่เรียน -->
-                                <p class="card-text-1">{{ __('message.Research Field') }}</p>
 
                                 <div class="card-expertise">
                                     <p class="card-text">
