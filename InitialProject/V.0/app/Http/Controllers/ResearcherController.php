@@ -131,13 +131,17 @@ class ResearcherController extends Controller
         ->get();
     
         // ดึงข้อมูลนักวิจัย (อาจารย์)
-        $query = User::whereNotNull('academic_ranks_en') // ดึงเฉพาะอาจารย์
-            ->with(['program', 'expertise'])
-            ->orderByRaw("FIELD(academic_ranks_en, 'Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer')");
+        $query = User::whereNotNull('academic_ranks_en') 
+        ->whereNotIn('academic_ranks_en', ['Student']) // กันนักศึกษาออก
+        ->with(['program', 'expertise'])
+        ->orderByRaw("FIELD(academic_ranks_en, 'Professor', 'Associate Professor', 'Assistant Professor', 'Lecturer')");
     
         // ดึงข้อมูลนักศึกษา (student)
         $studentsQuery = User::whereHas('roles', function ($q) {
             $q->where('name', 'student');
+        })->where(function ($query) {
+            $query->whereNull('academic_ranks_en') // นักศึกษาส่วนใหญ่ไม่มี academic rank
+                  ->orWhere('academic_ranks_en', 'Student'); // ถ้ามีก็ต้องเป็น Student
         })->with('program');
     
         if ($request->has('program_id') && $request->program_id !== 'all') {
@@ -147,7 +151,9 @@ class ResearcherController extends Controller
     
         $users = $query->get();
         $students = $studentsQuery->get(); // ได้เฉพาะนักศึกษา
+        
     
         return view('researchers', compact('users', 'students', 'programs'));
+        
     }
 }
