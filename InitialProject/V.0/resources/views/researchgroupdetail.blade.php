@@ -28,6 +28,9 @@
                             @elseif(app()->getLocale() == 'en' and $r->doctoral_degree == 'Ph.D.')
                             {{ str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()}) }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, Ph.D.
                             <br>
+                            @elseif(app()->getLocale() == 'zh') <!-- ถ้าเป็นภาษาจีน จะใช้ข้อมูลภาษาอังกฤษ -->
+                            {{ $r->{'position_en'} }} {{ $r->{'fname_en'} }} {{ $r->{'lname_en'} }}
+                            <br>
                             @else                            
                             {{ $r->{'position_'.app()->getLocale()} }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
                             <br>
@@ -49,16 +52,23 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body" style="position: relative;">
-                    <h5 class="card-title"> {{ $rg->{'group_name_'.app()->getLocale()} }}</h5>
-                    <h3 class="card-text">{{$rg->{'group_detail_'.app()->getLocale()} }}</h3>
+                    <h5 class="card-title">
+                        {{ $rg->{'group_name_'.(app()->getLocale() == 'zh' ? 'en' : app()->getLocale())} }}
+                    </h5>
+
+                    <h3 class="card-text">
+                        {{ $rg->{'group_detail_'.(app()->getLocale() == 'zh' ? 'en' : app()->getLocale())} }}
+                    </h3>
                 </div>
                 <!-- Show Research Focus -->
                 <div class="card-body" style="position: relative;">
                     <h5 class="card-title">
                         @if(app()->getLocale() == 'en')
                             Main Research Areas/Topics
-                        @else
+                        @elseif(app()->getLocale() == 'th')
                             หัวข้อวิจัยที่เป็นจุดเน้นของกลุ่ม
+                        @else
+                            主要研究领域/主题
                         @endif
                     </h5>
                     <ul class="card-text-2">
@@ -72,8 +82,10 @@
     <h5 class="card-title">
         @if(app()->getLocale() == 'en')
             Contact Person
-        @else
+        @elseif(app()->getLocale() == 'th')
             ผู้ติดต่อ
+        @else
+            接触
         @endif
     </h5>
 
@@ -86,9 +98,13 @@
                     {{ $contact->position_en ?? 'N/A' }}{{ $contact->fname_en ?? 'N/A' }}
                     {{ $contact->lname_en ?? 'N/A' }},
                     {{ $contact->doctoral_degree ?? '' }}
-                @else
+                @elseif(app()->getLocale() == 'th')
                     {{ $contact->position_th ?? 'N/A' }}{{ $contact->fname_th ?? 'N/A' }}
                     {{ $contact->lname_th ?? 'N/A' }}
+                @else
+                    {{ $contact->position_en ?? 'N/A' }}{{ $contact->fname_en ?? 'N/A' }}
+                    {{ $contact->lname_en ?? 'N/A' }},
+                    {{ $contact->doctoral_degree ?? '' }}
                 @endif
                 ( {{ $contact->email ?? 'N/A' }} )    
             </h5>
@@ -105,8 +121,10 @@
                 <a href="{{ route('researchgroup') }}" class="btn btn-primary back-btn" style="position: absolute; bottom: 20px; right: 20px;">
                         @if(app()->getLocale() == 'en')
                             Back
-                        @else
+                        @elseif(app()->getLocale() == 'th')
                             ย้อนกลับ
+                        @else
+                            后退
                         @endif
                 </a>
             </div>
