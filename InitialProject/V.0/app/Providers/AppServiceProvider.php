@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Providers;
-
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 
@@ -31,5 +32,7 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('dn', \App\Models\Program::where('degree_id', '=', 1)->get());
             }
         );
+        $locale = Session::get('locale', 'en'); // 'en' เป็นภาษาปริยาย
+        App::setLocale($locale);
     }
 }

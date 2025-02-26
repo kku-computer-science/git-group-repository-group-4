@@ -14,55 +14,52 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">Book</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('books.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD </a>
+            <h4 class="card-title">{{ __('message.book') }}</h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('books.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i>{{ __('message.add') }} </a>
             <!-- <div class="table-responsive"> -->
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>ชื่อ</th>
-                            <th>ปี(พ.ศ.)</th>
-                            <th>แหล่งเผยแพร่</th>
-                            <th>หน้า</th>
-                            <th width="280px">Action</th>
+                        <th>{{ __('message.no') }}</th>
+            <th>{{ __('message.name') }}</th>
+            <th>{{ __('message.year') }}</th>
+            <th>{{ __('message.source') }}</th>
+            <th>{{ __('message.page') }}</th>
+            <th width="280px">{{ __('message.action') }}</th>
                         </tr>
                         <thead>
                         <tbody>
-                            @foreach ($books as $i=>$paper)
-                            <tr>
-                                <td>{{ $i+1 }}</td>
-                                <td>{{ Str::limit($paper->ac_name,50) }}</td>
-                                <td>{{ date('Y', strtotime($paper->ac_year))+543 }}</td>
-                                <td>{{ Str::limit($paper->ac_sourcetitle,50) }}</td>
-                                <td>{{ $paper->ac_page}}</td>
-                                <td>
-                                    <form action="{{ route('books.destroy',$paper->id) }}" method="POST">
+        @foreach ($books as $i => $paper)
+        <tr>
+            <td>{{ $i+1 }}</td>
+            <td>{{ Str::limit($paper->ac_name, 50) }}</td>
+            <td>{{ date('Y', strtotime($paper->ac_year)) + 543 }}</td>
+            <td>{{ Str::limit($paper->ac_sourcetitle, 50) }}</td>
+            <td>{{ $paper->ac_page }}</td>
+            <td>
+                <form action="{{ route('books.destroy', $paper->id) }}" method="POST">
+                    <a class="btn btn-outline-primary btn-sm" href="{{ route('books.show', $paper->id) }}" title="{{ __('message.view') }}">
+                        <i class="mdi mdi-eye"></i>
+                    </a>
 
-                                        <!-- <a class="btn btn-info" href="{{ route('books.show',$paper->id) }}">Show</a> -->
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-outline-primary btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="view" href="{{ route('books.show',$paper->id) }}"><i class="mdi mdi-eye"></i></a>
-                                        </li>
-                                        <!-- <a class="btn btn-primary" href="{{ route('books.edit',$paper->id) }}">Edit</a> -->
-                                        @if(Auth::user()->can('update',$paper))
-                                        <li class="list-inline-item">
-                                            <a class="btn btn-outline-success btn-sm" type="button" data-toggle="tooltip" data-placement="top" title="Edit" href="{{ route('books.edit',$paper->id) }}"><i class="mdi mdi-pencil"></i></a>
-                                        </li>
-                                        @endif
+                    @if(Auth::user()->can('update', $paper))
+                    <a class="btn btn-outline-success btn-sm" href="{{ route('books.edit', $paper->id) }}" title="{{ __('message.edit') }}">
+                        <i class="mdi mdi-pencil"></i>
+                    </a>
+                    @endif
 
-                                        @if(Auth::user()->can('delete',$paper))
-                                        @csrf
-                                        @method('DELETE')
-                                        <li class="list-inline-item">
-                                            <button class="btn btn-outline-danger btn-sm show_confirm" type="submit" data-toggle="tooltip" data-placement="top" title="Delete"><i class="mdi mdi-delete"></i></button>
-                                        </li>
-                                        @endif
-                                        <!-- <button type="submit" class="btn btn-danger">Delete</button> -->
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                    <tbody>
+                    @if(Auth::user()->can('delete', $paper))
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-outline-danger btn-sm show_confirm" type="submit" title="{{ __('message.delete') }}">
+                        <i class="mdi mdi-delete"></i>
+                    </button>
+                    @endif
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
                 </table>
             <!-- </div> -->
             <br>
@@ -78,33 +75,44 @@
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
 <script>
     $(document).ready(function() {
-        var table1 = $('#example1').DataTable({
-            responsive: true,
+        $('#example1').DataTable({
+            fixedHeader: true,
+            language: {
+                search: "{{ __('message.search') }}",
+                lengthMenu: "{{ __('message.show') }} _MENU_ {{ __('message.entries') }}",
+                info: "{{ __('message.showing') }} _START_ {{ __('message.to') }} _END_ {{ __('message.of') }} _TOTAL_ {{ __('message.entries') }}",
+                infoEmpty: "{{ __('message.no_entries') }}",
+                infoFiltered: "({{ __('message.filtered_from') }} _MAX_ {{ __('message.entries') }})",
+                paginate: {
+                    first: "{{ __('message.first') }}",
+                    previous: "{{ __('message.previous') }}",
+                    next: "{{ __('message.next') }}",
+                    last: "{{ __('message.last') }}"
+                }
+            }
+        });
+    });
+
+    $('.show_confirm').click(function(event) {
+        var form = $(this).closest("form");
+        event.preventDefault();
+        swal({
+            title: "{{ __('message.confirm_delete') }}",
+            text: "{{ __('message.delete_warning') }}",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                swal("{{ __('message.delete_success') }}", {
+                    icon: "success",
+                }).then(function() {
+                    location.reload();
+                    form.submit();
+                });
+            }
         });
     });
 </script>
-<script type="text/javascript">
-    $('.show_confirm').click(function(event) {
-        var form = $(this).closest("form");
-        var name = $(this).data("name");
-        event.preventDefault();
-        swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Delete Successfully", {
-                        icon: "success",
-                    }).then(function() {
-                        location.reload();
-                        form.submit();
-                    });
-                }
-            });
-    });
-</script>
+
 @stop

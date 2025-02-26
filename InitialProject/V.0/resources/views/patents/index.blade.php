@@ -14,19 +14,21 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">ผลงานวิชาการอื่นๆ (สิทธิบัตร, อนุสิทธิบัตร,ลิขสิทธิ์)</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('patents.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD </a>
+            <h4 class="card-title">{{ __('message.academic_works') }}<</h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('patents.create') }}">
+    <i class="mdi mdi-plus btn-icon-prepend"></i> {{ __('message.add') }}
+</a>
             <!-- <div class="table-responsive"> -->
                 <table id ="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>ชื่อเรื่อง</th>
-                            <th>ประเภท</th>
-                            <th>วันที่จดทะเบียน</th>
-                            <th>เลขทะเบียน</th>
-                            <th>ผู้จัดทำ</th>
-                            <th width="280px">Action</th>
+                            <th>{{ __('message.no') }}</th>
+            <th>{{ __('message.title') }}</th>
+            <th>{{ __('message.type') }}</th>
+            <th>{{ __('message.registration_date') }}</th>
+            <th>{{ __('message.registration_number') }}</th>
+            <th>{{ __('message.author') }}</th>
+            <th>{{ __('message.action') }}</th>
                         </tr>
                         <thead>
                         <tbody>
@@ -81,8 +83,21 @@
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
 <script>
     $(document).ready(function() {
-        var table1 = $('#example1').DataTable({
-            responsive: true,
+        $('#example1').DataTable({
+            fixedHeader: true,
+            language: {
+                search: "{{ __('message.search') }}",
+                lengthMenu: "{{ __('message.show') }} _MENU_ {{ __('message.entries') }}",
+                info: "{{ __('message.showing') }} _START_ {{ __('message.to') }} _END_ {{ __('message.of') }} _TOTAL_ {{ __('message.entries') }}",
+                infoEmpty: "{{ __('message.no_entries') }}",
+                infoFiltered: "({{ __('message.filtered_from') }} _MAX_ {{ __('message.entries') }})",
+                paginate: {
+                    first: "{{ __('message.first') }}",
+                    previous: "{{ __('message.previous') }}",
+                    next: "{{ __('message.next') }}",
+                    last: "{{ __('message.last') }}"
+                }
+            }
         });
     });
 </script>

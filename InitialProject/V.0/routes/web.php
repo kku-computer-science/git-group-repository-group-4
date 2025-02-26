@@ -33,6 +33,7 @@ use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\PatentController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\SourceController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProfileController;
@@ -72,6 +73,8 @@ Route::middleware(['middleware' => 'PreventBackHistory'])->group(function () {
     Auth::routes();
 });
 
+// ในไฟล์ routes/web.php
+Route::get('lang/{lang}', [LanguageController::class, 'setLanguage'])->name('setLanguage');
 
 
 Route::get('/researchers', [ResearcherController::class, 'allResearchers'])->name('researchers'); // แสดงนักวิจัยทั้งหมด
@@ -87,6 +90,14 @@ Route::get('loadindex', [PDFController::class, 'index']);
 Route::get('pdf', [PDFController::class, 'generateInvoicePDF'])->name('pdf');
 Route::get('docx', [PDFController::class, 'generateInvoiceDOCX'])->name('docx');
 Route::get('excel', [PDFController::class, 'generateInvoiceExcel'])->name('excel');
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'th', 'zh'])) { // รองรับภาษาจีน
+        session(['locale' => $locale]);
+        app()->setLocale($locale);
+    }
+    return back();
+})->name('langswitch');
 
 Route::get('detail/{id}', [ProfileController::class, 'request'])->name('detail');
 Route::get('index', [LocalizationController::class, 'index']);

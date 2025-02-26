@@ -12,18 +12,18 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">กลุ่มวิจัย</h4>
+            <h4 class="card-title">{{__('message.ResearchGroup')}}</h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('researchGroups.create') }}"><i
-                    class="mdi mdi-plus btn-icon-prepend"></i> ADD</a>
+                    class="mdi mdi-plus btn-icon-prepend"></i> {{__('message.add')}}</a>
             <!-- <div class="table-responsive"> -->
                 <table id ="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Group name (ไทย)</th>
-                            <th>Head</th>
-                            <th>Member</th>
-                            <th width="280px">Action</th>
+                            <th>{{__('message.no')}}</th>
+                            <th>{{__('message.group_name_th')}}</th>
+                            <th>{{__('message.group_leader')}}</th>
+                            <th>{{__('message.group_members')}}</th>
+                            <th width="280px">{{__('message.action')}}</th>
                         </tr>
                     </thead>
                     
@@ -89,10 +89,24 @@
 <script src = "http://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js" defer ></script>
 <script src = "https://cdn.datatables.net/1.12.0/js/dataTables.bootstrap4.min.js" defer ></script>
 <script src = "https://cdn.datatables.net/fixedheader/3.2.3/js/dataTables.fixedHeader.min.js" defer ></script>
+
 <script>
     $(document).ready(function() {
-        var table1 = $('#example1').DataTable({
-            responsive: true,
+        var table = $('#example1').DataTable({
+            fixedHeader: true,
+            language: {
+                search: "{{ __('message.search') }}", // Placeholder for the search box
+                lengthMenu: "{{ __('message.show') }} _MENU_ {{ __('message.entries') }}", // Text for entries
+                info: "{{ __('message.showing') }} _START_ {{ __('message.to') }} _END_ {{ __('message.of') }} _TOTAL_ {{ __('message.entries') }}", // Info text
+                infoEmpty: "{{ __('message.no_entries') }}", // Text when there are no entries
+                infoFiltered: "({{ __('message.filtered_from') }} _MAX_ {{ __('message.entries') }})", // Filtered info
+                paginate: {
+                    first: "{{ __('message.first') }}", // First page
+                    previous: "{{ __('message.previous') }}", // Previous page
+                    next: "{{ __('message.next') }}", // Next page
+                    last: "{{ __('message.last') }}" // Last page
+                }
+            }
         });
     });
 </script>

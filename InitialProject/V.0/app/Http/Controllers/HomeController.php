@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Models\Paper;
 use Carbon\Carbon;
@@ -12,6 +12,7 @@ use RenanBr\BibTexParser\Parser;
 use RenanBr\BibTexParser\Processor;
 use thiagoalessio\TesseractOCR\TesseractOCR;
 use Stichoza\GoogleTranslate\GoogleTranslate;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
@@ -276,4 +277,16 @@ class HomeController extends Controller
 
         return response()->json($key, $bb);
     }
+
+
+    public function setLanguage($lang)
+{
+    // เก็บค่าภาษาใน session
+    Session::put('locale', $lang);
+
+    // เปลี่ยนภาษาของแอปพลิเคชัน
+    App::setLocale($lang);
+
+    return redirect()->back();
+}
 }

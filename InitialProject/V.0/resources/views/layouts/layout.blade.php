@@ -93,27 +93,29 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             @foreach (Config::get('languages') as $lang => $language)
                                 @if ($lang != App::getLocale())
-                                    <a class="dropdown-item" href="{{ route('langswitch', $lang) }}"><span
-                                            class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
-                                        {{$language['display']}}</a>
+                                    <a class="dropdown-item" href="{{ route('langswitch', $lang) }}">
+                                        <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span>
+                                        {{$language['display']}}
+                                    </a>
                                 @endif
                             @endforeach
                         </div>
+
+                       
                     </li>
 
 
                 </ul>
-                @if (Route::has('login'))
-                    @auth
-                        <span class="nav-item">
-
-                        </span>
-                    @else
-                        <span class="nav-item">
-                            <a class="btn-solid-sm" href="/login" target="_blank">{{__('message.Login')}}</a>
-                        </span>
-                    @endauth
+                @if (Auth::check()) <!-- เช็คการเข้าสู่ระบบ -->
+                    <span class="nav-item">
+                        <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a> <!-- แสดงลิงก์ที่ต้องการเมื่อเข้าสู่ระบบ -->
+                    </span>
+                @else
+                    <span class="nav-item">
+                        <a class="btn-solid-sm" href="{{ route('login') }}" target="_blank">{{__('message.Login')}}</a>
+                    </span>
                 @endif
+
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
@@ -126,5 +128,6 @@
         </div>
     </footer>
 </body>
+
 
 </html>
