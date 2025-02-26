@@ -61,12 +61,7 @@
                         <h6 class="card-title">{{ trans('message.education') }}</h6>
                         @foreach($res->education as $edu)
     <h6 class="card-text2 col-sm-10">
-        {{ $edu->year }} 
-        @if(app()->getLocale() == 'th')
-            {{ $edu->qua_name }} - {{ $edu->uname }}
-        @else
-            {{ $edu->qua_name_en }} - {{ $edu->uname_en }}
-        @endif
+        {{ $edu->year }}  {{ $edu->qua_name }} - {{ $edu->uname }}
     </h6>
 @endforeach
                         <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"

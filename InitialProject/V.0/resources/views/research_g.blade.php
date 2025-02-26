@@ -22,6 +22,9 @@
                                 @elseif(app()->getLocale() == 'en' and $r->doctoral_degree == 'Ph.D.')
                                     {{ str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()}) }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}, Ph.D.
                                     <br>
+                                @elseif(app()->getLocale() == 'zh') <!-- ถ้าเป็นภาษาจีน จะใช้ข้อมูลภาษาอังกฤษ -->
+                                    {{ $r->{'position_en'} }} {{ $r->{'fname_en'} }} {{ $r->{'lname_en'} }}
+                                    <br>
                                 @else                            
                                     {{ $r->{'position_'.app()->getLocale()} }} {{ $r->{'fname_'.app()->getLocale()} }} {{ $r->{'lname_'.app()->getLocale()} }}
                                     <br>
@@ -33,9 +36,12 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"> {{ $rg->{'group_name_'.app()->getLocale()} }}</>
+                    <h5 class="card-title">
+                        {{ $rg->{'group_name_'.(app()->getLocale() == 'zh' ? 'en' : app()->getLocale())} }}
                     </h5>
-                    <h3 class="card-text">{{ Str::limit($rg->{'group_desc_'.app()->getLocale()}, 350) }}
+
+                    <h3 class="card-text">
+                        {{ Str::limit($rg->{'group_desc_'.(app()->getLocale() == 'zh' ? 'en' : app()->getLocale())}, 350) }}
                     </h3>
                 </div>
                 <!-- Show Research Focus -->
@@ -44,8 +50,10 @@
                     <h5 class="card-title">
                         @if(app()->getLocale() == 'en')
                             Main Research Areas/Topics
-                        @else
+                        @elseif(app()->getLocale() == 'th')
                             หัวข้อวิจัยที่เป็นจุดเน้นของกลุ่ม
+                        @else
+                            主要研究领域/主题
                         @endif
                     </h5>
                     <ul class="card-text-2">
