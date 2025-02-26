@@ -58,12 +58,12 @@ You can switch between Thai and English at any time by clicking the **Language**
 https://github.com/kku-computer-science/git-group-repository-group-4
 Click on "Code" and select "Download ZIP."
 5. Then, take the ZIP file you downloaded and move it to C:\xampp\htdocs, and then extract the files there.
-6. Next, open Visual Studio Code and open the "Project_1.0" folder that you extracted from the files.
+6. Next, open Visual Studio Code and open the "Project_2.0" folder in code folder and that you extracted from the files.
 7. Next, open the Terminal in Visual Studio Code and use the command composer install.
 8. Next, create a .env file in the root folder and copy the content from the .env.example file into it.
 9. Next, install the database by opening XAMPP and going to the MySQL Admin menu. Then, create a new database.
-10. Next, create a new database and import the data from the version1_0.sql file. In Visual Studio Code, scroll down to find the file in the project.
-11. Copy the data from the version1_0.sql file and paste it into phpMyAdmin to create the database.
+10. Next, create a new database and import the data from the database.sql file. In Visual Studio Code, scroll down to find the file in the project.
+11. Copy the data from the database.sql file and paste it into phpMyAdmin to create the database.
 12. Next, go back to the .env file and configure the database connection for the system by setting:
 DB_DATABASE to the name of the database you created. DB_USERNAME to root. DB_PASSWORD to leave it empty.
 13. Next, generate the application key by going to the Terminal in Visual Studio Code and running the command:php artisan key:generate
