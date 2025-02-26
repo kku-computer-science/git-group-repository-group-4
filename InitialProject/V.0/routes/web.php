@@ -80,8 +80,9 @@ Route::get('lang/{lang}', [LanguageController::class, 'setLanguage'])->name('set
 Route::get('/researchers', [ResearcherController::class, 'allResearchers'])->name('researchers'); // แสดงนักวิจัยทั้งหมด
 Route::get('researchers/{id}', [ResearcherController::class, 'request'])->name('researchers.by_program'); // แสดงนักวิจัยตามสาขา (เปลี่ยนชื่อ route)
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/researchers/search', [ResearcherController::class, 'search'])->name('researchers.search');
 
-Route::get('researchers/{id}/search', [ResearcherController::class, 'search'])->name('searchresearchers');
+
 Route::get('/researchproject', [App\Http\Controllers\ResearchProjController::class, 'index'])->name('researchproject');
 Route::get('/researchgroup', [App\Http\Controllers\ResearchgroupsController::class, 'index'])->name('researchgroup');
 Route::get('researchgroupdetail/{id}', [ResearchGroupDetailController::class, 'request'])->name('researchgroupdetail');
