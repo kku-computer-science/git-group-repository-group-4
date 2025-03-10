@@ -1,112 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-10T16:26:54.917685" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Researcher" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_researcher\test_researcher.robot">
-<test id="s1-t1" name="Test Researcher Information Change" line="11">
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-10T17:15:51.136828" rpa="false" schemaversion="5">
+<suite id="s1" name="test TH" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_researcher\test_TH.robot">
+<test id="s1-t1" name="Test Researcher Information Change - Thai" line="11">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-10T16:26:55.160794" level="INFO">Opening browser 'chrome' to base url 'https://cscp3530040467.cpkkuhost.com/'.</msg>
+<msg time="2025-03-10T17:15:51.385393" level="INFO">Opening browser 'chrome' to base url 'https://cscp3530040467.cpkkuhost.com/'.</msg>
 <arg>${URL}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-10T16:26:55.160794" elapsed="5.263775"/>
+<status status="PASS" start="2025-03-10T17:15:51.385393" elapsed="5.763501"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-10T16:27:01.426438" level="INFO">Slept 1 second.</msg>
-<arg>1s</arg>
+<msg time="2025-03-10T17:16:00.155303" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-10T16:27:00.424569" elapsed="1.001869"/>
+<status status="PASS" start="2025-03-10T17:15:57.148894" elapsed="3.006409"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-10T16:27:01.427145" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<msg time="2025-03-10T17:16:00.155303" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
 <arg>${RESEARCHER_MENU}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-10T16:27:01.427145" elapsed="1.823018"/>
+<status status="PASS" start="2025-03-10T17:16:00.155303" elapsed="3.286571"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-10T16:27:05.254404" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-03-10T17:16:05.459232" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-10T16:27:03.250163" elapsed="2.004241"/>
+<status status="PASS" start="2025-03-10T17:16:03.448810" elapsed="2.010422"/>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-10T16:27:05.256532" level="INFO">Current location is 'https://cscp3530040467.cpkkuhost.com/researchers'.</msg>
+<msg time="2025-03-10T17:16:05.459232" level="INFO">Current location is 'https://cscp3530040467.cpkkuhost.com/researchers'.</msg>
 <arg>https://cscp3530040467.cpkkuhost.com/researchers</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-10T16:27:05.254404" elapsed="0.002128"/>
+<status status="PASS" start="2025-03-10T17:16:05.459232" elapsed="0.000000"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-10T16:27:05.256532" level="INFO">Opening url 'https://cscp3530040467.cpkkuhost.com/detail/eyJpdiI6IjErSENiSWZLL1hGbDEvZ1VncUlGVmc9PSIsInZhbHVlIjoieTdvZzhydWgrS1hRNzIrNTJFaDEyZz09IiwibWFjIjoiYTYwMTAyNWFmZjkyYzllOTE2NjkxNmMwMDBlNGQ1M2QxNDkwZTM4OGI2YTYzYzljZWYwNGQ2M2FmYzM1ZDEwMSIsInRhZyI6IiJ9'</msg>
+<msg time="2025-03-10T17:16:05.459232" level="INFO">Opening url 'https://cscp3530040467.cpkkuhost.com/detail/eyJpdiI6IjErSENiSWZLL1hGbDEvZ1VncUlGVmc9PSIsInZhbHVlIjoieTdvZzhydWgrS1hRNzIrNTJFaDEyZz09IiwibWFjIjoiYTYwMTAyNWFmZjkyYzllOTE2NjkxNmMwMDBlNGQ1M2QxNDkwZTM4OGI2YTYzYzljZWYwNGQ2M2FmYzM1ZDEwMSIsInRhZyI6IiJ9'</msg>
 <arg>${RESEARCHER_PROFILE}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-10T16:27:05.256532" elapsed="0.908362"/>
+<status status="PASS" start="2025-03-10T17:16:05.459232" elapsed="1.119770"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-10T16:27:08.173921" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2025-03-10T17:16:09.594271" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-10T16:27:06.165909" elapsed="2.008012"/>
+<status status="PASS" start="2025-03-10T17:16:06.579002" elapsed="3.015269"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-10T16:27:08.173921" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<msg time="2025-03-10T17:16:09.594271" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
 <arg>//a[@id='navbarDropdownMenuLink']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-10T16:27:08.173921" elapsed="0.062937"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-10T16:27:08.236858" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(text(), 'ไทย')]'.</msg>
-<msg time="2025-03-10T16:27:08.386941" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-10T16:27:08.386941" level="FAIL">Element with locator '//a[@class='dropdown-item' and contains(text(), 'ไทย')]' not found.</msg>
-<arg>//a[@class='dropdown-item' and contains(text(), 'ไทย')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-10T16:27:08.236858" elapsed="0.152084">Element with locator '//a[@class='dropdown-item' and contains(text(), 'ไทย')]' not found.</status>
+<status status="PASS" start="2025-03-10T17:16:09.594271" elapsed="0.058902"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T17:16:11.669464" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-10T16:27:08.388942" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-10T17:16:09.654180" elapsed="2.015284"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<arg>researcher_english.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
-</kw>
-<kw name="Element Text Should Contain">
-<arg>//h2</arg>
-<arg>Name</arg>
-<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>//a[@id='navbarDropdownMenuLink']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>//a[@class='dropdown-item' and contains(text(), '中文')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-10T17:16:11.669464" level="INFO">Opening url 'https://cscp3530040467.cpkkuhost.com/lang/th'</msg>
+<arg>https://cscp3530040467.cpkkuhost.com/lang/th</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-10T17:16:11.669464" elapsed="2.334795"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<arg>2s</arg>
+<msg time="2025-03-10T17:16:19.014487" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-10T17:16:14.004889" elapsed="5.009598"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<arg>researcher_chinese.png</arg>
+<msg time="2025-03-10T17:16:19.120840" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_thai.png"&gt;&lt;img src="researcher_thai.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researcher_thai.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-10T16:27:08.390950" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-10T17:16:19.014487" elapsed="0.107320"/>
 </kw>
-<kw name="Element Text Should Contain">
-<arg>//h2</arg>
-<arg>名字</arg>
-<status status="NOT RUN" start="2025-03-10T16:27:08.392017" elapsed="0.000000"/>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-10T17:16:19.122769" level="INFO">Executing JavaScript:
+window.scrollTo(0, 100)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 100)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-10T17:16:19.121807" elapsed="0.004840"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-10T17:16:29.377184" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-10T17:16:29.377184" level="FAIL">Element '//table//td[contains(text(),'ผู้เขียน')]/following-sibling::td[1]' not visible after 10 seconds.</msg>
+<arg>//table//td[contains(text(),'ผู้เขียน')]/following-sibling::td[1]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-10T17:16:19.126647" elapsed="10.251536">Element '//table//td[contains(text(),'ผู้เขียน')]/following-sibling::td[1]' not visible after 10 seconds.</status>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>//table//td[contains(text(),'ผู้เขียน')]/following-sibling::td[1]</arg>
+<arg>ญานิกา คงโสรส</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-10T17:16:29.378994" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>//table//td</arg>
+<arg>บทความ</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-10T17:16:29.379408" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>//table//td</arg>
+<arg>ประเภทเอกสาร</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-10T17:16:29.379408" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>//table//td[contains(text(),'ปี')]/following-sibling::td[1]</arg>
+<arg>2022</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-10T17:16:29.379408" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>//table//td[contains(text(),'ชื่อบทความ')]/following-sibling::td[1]</arg>
+<arg>An enhanced fuzzy-based clustering protocol with an improved shuffled frog leaping algorithm for WSNs</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-10T17:16:29.380414" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>//table//td[contains(text(),'ประเภทเอกสาร')]/following-sibling::td[1]</arg>
+<arg>วารสาร</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-10T17:16:29.380414" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-03-10T16:27:08.392017" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-10T17:16:29.380414" elapsed="0.000000"/>
 </kw>
-<doc>ทดสอบว่าข้อมูลนักวิจัยเปลี่ยนไปตามภาษาที่เลือก</doc>
-<status status="FAIL" start="2025-03-10T16:26:55.160794" elapsed="13.231223">Element with locator '//a[@class='dropdown-item' and contains(text(), 'ไทย')]' not found.</status>
+<doc>ทดสอบข้อมูลนักวิจัยในภาษาไทย</doc>
+<status status="FAIL" start="2025-03-10T17:15:51.385393" elapsed="37.995021">Element '//table//td[contains(text(),'ผู้เขียน')]/following-sibling::td[1]' not visible after 10 seconds.</status>
 </test>
-<status status="FAIL" start="2025-03-10T16:26:54.919472" elapsed="13.473451"/>
+<status status="FAIL" start="2025-03-10T17:15:51.136828" elapsed="38.245619"/>
 </suite>
 <statistics>
 <total>
@@ -115,7 +143,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Test Researcher" id="s1" pass="0" fail="1" skip="0">Test Researcher</stat>
+<stat name="test TH" id="s1" pass="0" fail="1" skip="0">test TH</stat>
 </suite>
 </statistics>
 <errors>
