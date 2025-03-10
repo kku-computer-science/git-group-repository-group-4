@@ -442,9 +442,14 @@ return [
         'last' => 'Last',
         'confirm_delete' => 'Are you sure?',
         'delete_warning' => 'If you delete this, it will be gone forever.',
-        'delete_success' => 'Delete Successfully'
-  
-    
+        'delete_success' => 'Delete Successfully',
+        'paper_types' => [
+            'Journal' => 'Journal',
+            'Conference Proceeding' => 'Conference Proceeding',
+            'Book Series' => 'Book Series',
+            'Book' => 'Book',
+        ],
+
 
 
 
