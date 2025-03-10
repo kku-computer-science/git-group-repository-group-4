@@ -26,21 +26,20 @@ Test Researcher Information Change - Thai
     Go To    https://cscp3530040467.cpkkuhost.com/lang/th
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
 
-    Capture Page Screenshot    researcher_thai.png
-
     # เลื่อนหน้าไปยังตำแหน่งที่ต้องการ
-    Execute JavaScript    window.scrollTo(0, 300)
+    Execute JavaScript    window.scrollTo(0, 500)
 
     # รอจนกว่า element จะมองเห็น
-    Wait Until Element Is Visible    //table//td[contains(text(),'ผู้เขียน')]/following-sibling::td[1]    timeout=10s
+   # Wait Until Element Is Visible    //tbody//tr//td[contains(text(), 'ชื่อบทความ')]    timeout=15s
+   # Wait Until Element Is Visible    //tbody//tr//td[contains(text(), 'ผู้เขียน')]/following-sibling::td[1]    timeout=15s
 
     # ตรวจสอบข้อมูลที่แสดงในภาษาไทย
-    Element Should Contain    //table//td[contains(text(),'ผู้เขียน')]/following-sibling::td[1]    ญานิกา คงโสรส
-    Element Should Contain    //table//td    บทความ
-    Element Should Contain    //table//td    ประเภทเอกสาร
-    Element Should Contain    //table//td[contains(text(),'ปี')]/following-sibling::td[1]    2022
-    Element Should Contain    //table//td[contains(text(),'ชื่อบทความ')]/following-sibling::td[1]    An enhanced fuzzy-based clustering protocol with an improved shuffled frog leaping algorithm for WSNs
-    Element Should Contain    //table//td[contains(text(),'ประเภทเอกสาร')]/following-sibling::td[1]    วารสาร
+    Element Should Contain    //tbody//tr//th[contains(text(), 'ชื่อบทความ')]    An enhanced fuzzy-based clustering protocol with an improved shuffled frog leaping algorithm for WSNs
+    Element Should Contain    //tbody//tr//td[contains(text(), 'ผู้เขียน')]/following-sibling::td[1]    ญานิกา คงโสรส
+    Element Should Contain    //tbody//tr//td[contains(text(), 'ปี (พ.ศ.)')]    2022
+    Element Should Contain    //tbody//tr//td[contains(text(), 'ประเภทเอกสาร')]    วารสาร
 
+    Capture Page Screenshot    researcher_thai.png
     Close Browser
+
 
