@@ -325,4 +325,11 @@ return [
     'confirm_delete' => '您确定吗？',
     'delete_warning' => '删除后将无法恢复',
     'delete_success' => '删除成功',
+
+    'paper_types' => [
+        'Journal' => '期刊',
+        'Conference Proceeding' => '会议论文集',
+        'Book Series' => '丛书',
+        'Book' => '书籍',
+    ],
 ];

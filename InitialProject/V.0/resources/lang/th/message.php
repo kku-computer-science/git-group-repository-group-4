@@ -441,8 +441,13 @@ return [
     'last' => 'หน้าสุดท้าย',
     'confirm_delete' => 'คุณแน่ใจหรือไม่?',
     'delete_warning' => 'หากคุณลบข้อมูลนี้จะไม่สามารถกู้คืนได้',
-    'delete_success' => 'ลบข้อมูลเรียบร้อย'
-
+    'delete_success' => 'ลบข้อมูลเรียบร้อย',
+    'paper_types' => [
+        'Journal' => 'วารสาร',
+        'Conference Proceeding' => 'เอกสารประชุมวิชาการ',
+        'Book Series' => 'ชุดหนังสือ',
+        'Book' => 'หนังสือ',
+    ],
 
         
 

@@ -197,7 +197,7 @@
                             </span>
                             @endforeach
                         </td>
-                        <td>{{$paper->paper_type}}</td>
+                        <td>{{ __('message.paper_types.' . $paper->paper_type) }}</td>
                         <td style="width:100%;">{{$paper->paper_page}}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
