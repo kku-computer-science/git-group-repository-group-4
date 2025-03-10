@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-10T16:26:54.917685" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Researcher" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_researcher\test_researcher.robot">
+<test id="s1-t1" name="Test Researcher Information Change" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:26:55.160794" level="INFO">Opening browser 'chrome' to base url 'https://cscp3530040467.cpkkuhost.com/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-10T16:26:55.160794" elapsed="5.263775"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T16:27:01.426438" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T16:27:00.424569" elapsed="1.001869"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:27:01.427145" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<arg>${RESEARCHER_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T16:27:01.427145" elapsed="1.823018"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T16:27:05.254404" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T16:27:03.250163" elapsed="2.004241"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:27:05.256532" level="INFO">Current location is 'https://cscp3530040467.cpkkuhost.com/researchers'.</msg>
+<arg>https://cscp3530040467.cpkkuhost.com/researchers</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-10T16:27:05.254404" elapsed="0.002128"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:27:05.256532" level="INFO">Opening url 'https://cscp3530040467.cpkkuhost.com/detail/eyJpdiI6IjErSENiSWZLL1hGbDEvZ1VncUlGVmc9PSIsInZhbHVlIjoieTdvZzhydWgrS1hRNzIrNTJFaDEyZz09IiwibWFjIjoiYTYwMTAyNWFmZjkyYzllOTE2NjkxNmMwMDBlNGQ1M2QxNDkwZTM4OGI2YTYzYzljZWYwNGQ2M2FmYzM1ZDEwMSIsInRhZyI6IiJ9'</msg>
+<arg>${RESEARCHER_PROFILE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-10T16:27:05.256532" elapsed="0.908362"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T16:27:08.173921" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T16:27:06.165909" elapsed="2.008012"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:27:08.173921" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T16:27:08.173921" elapsed="0.062937"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:27:08.236858" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(text(), 'ไทย')]'.</msg>
+<msg time="2025-03-10T16:27:08.386941" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-10T16:27:08.386941" level="FAIL">Element with locator '//a[@class='dropdown-item' and contains(text(), 'ไทย')]' not found.</msg>
+<arg>//a[@class='dropdown-item' and contains(text(), 'ไทย')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-10T16:27:08.236858" elapsed="0.152084">Element with locator '//a[@class='dropdown-item' and contains(text(), 'ไทย')]' not found.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-10T16:27:08.388942" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>researcher_english.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Contain">
+<arg>//h2</arg>
+<arg>Name</arg>
+<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//a[@class='dropdown-item' and contains(text(), '中文')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-10T16:27:08.389943" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>researcher_chinese.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-03-10T16:27:08.390950" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Contain">
+<arg>//h2</arg>
+<arg>名字</arg>
+<status status="NOT RUN" start="2025-03-10T16:27:08.392017" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-10T16:27:08.392017" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบว่าข้อมูลนักวิจัยเปลี่ยนไปตามภาษาที่เลือก</doc>
+<status status="FAIL" start="2025-03-10T16:26:55.160794" elapsed="13.231223">Element with locator '//a[@class='dropdown-item' and contains(text(), 'ไทย')]' not found.</status>
+</test>
+<status status="FAIL" start="2025-03-10T16:26:54.919472" elapsed="13.473451"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Researcher" id="s1" pass="0" fail="1" skip="0">Test Researcher</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

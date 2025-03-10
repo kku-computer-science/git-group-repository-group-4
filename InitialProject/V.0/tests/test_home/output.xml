@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-10T16:11:36.138968" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_home\test.robot">
+<test id="s1-t1" name="Test Thai Language Display" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:36.389027" level="INFO">Opening browser 'chrome' to base url 'https://cscp3530040467.cpkkuhost.com/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-10T16:11:36.389027" elapsed="5.369950"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:41.758977" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T16:11:41.758977" elapsed="0.091014"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:41.850975" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., 'ภาษาไทย')]'.</msg>
+<msg time="2025-03-10T16:11:42.044481" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-10T16:11:42.044481" level="FAIL">Element with locator '//a[@class='dropdown-item' and contains(., 'ภาษาไทย')]' not found.</msg>
+<arg>//a[@class='dropdown-item' and contains(., '${THAI}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-10T16:11:41.850975" elapsed="0.194504">Element with locator '//a[@class='dropdown-item' and contains(., 'ภาษาไทย')]' not found.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-10T16:11:42.046477" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>thai_language.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-03-10T16:11:42.046477" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Contain">
+<arg>//div[@id='paper2']//p</arg>
+<arg>Arch-int</arg>
+<status status="NOT RUN" start="2025-03-10T16:11:42.046477" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Contain">
+<arg>//div[@id='paper2']//p</arg>
+<arg>Ho</arg>
+<status status="NOT RUN" start="2025-03-10T16:11:42.047477" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-10T16:11:42.047477" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบว่าหน้าเว็บภาษาไทย แสดงชื่อนักวิจัยเป็นภาษาไทยและบทความเป็นภาษาอังกฤษ</doc>
+<status status="FAIL" start="2025-03-10T16:11:36.389027" elapsed="5.658450">Element with locator '//a[@class='dropdown-item' and contains(., 'ภาษาไทย')]' not found.</status>
+</test>
+<test id="s1-t2" name="Test English Language Display" line="23">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:42.051628" level="INFO">Opening browser 'chrome' to base url 'https://cscp3530040467.cpkkuhost.com/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-10T16:11:42.051628" elapsed="5.346528"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:47.398156" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T16:11:47.398156" elapsed="0.094975"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:47.494295" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., 'English')]'.</msg>
+<msg time="2025-03-10T16:11:47.711040" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-10T16:11:47.712043" level="FAIL">Element with locator '//a[@class='dropdown-item' and contains(., 'English')]' not found.</msg>
+<arg>//a[@class='dropdown-item' and contains(., '${ENGLISH}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-10T16:11:47.494295" elapsed="0.217748">Element with locator '//a[@class='dropdown-item' and contains(., 'English')]' not found.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-10T16:11:47.713040" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>english_language.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-03-10T16:11:47.713040" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Contain">
+<arg>//div[@id='paper2']//p</arg>
+<arg>Arch-int</arg>
+<status status="NOT RUN" start="2025-03-10T16:11:47.713040" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Contain">
+<arg>//div[@id='paper2']//p</arg>
+<arg>Ho</arg>
+<status status="NOT RUN" start="2025-03-10T16:11:47.713040" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-10T16:11:47.714070" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบว่าหน้าเว็บภาษาอังกฤษ แสดงชื่อนักวิจัยและบทความเป็นภาษาอังกฤษ</doc>
+<status status="FAIL" start="2025-03-10T16:11:42.049635" elapsed="5.664435">Element with locator '//a[@class='dropdown-item' and contains(., 'English')]' not found.</status>
+</test>
+<test id="s1-t3" name="Test Chinese Language Display" line="34">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:47.719039" level="INFO">Opening browser 'chrome' to base url 'https://cscp3530040467.cpkkuhost.com/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-10T16:11:47.718050" elapsed="5.779031"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:53.497081" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T16:11:53.497081" elapsed="0.180254"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:53.678335" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., '中文')]'.</msg>
+<arg>//a[@class='dropdown-item' and contains(., '${CHINESE}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-10T16:11:53.677335" elapsed="1.435353"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-10T16:11:57.116467" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-10T16:11:55.113690" elapsed="2.002777"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-10T16:11:57.274474" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="chinese_language.png"&gt;&lt;img src="chinese_language.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>chinese_language.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-10T16:11:57.116467" elapsed="0.158007"/>
+</kw>
+<kw name="Element Text Should Contain">
+<msg time="2025-03-10T16:11:57.276479" level="FAIL">No keyword with name 'Element Text Should Contain' found. Did you mean:
+    SeleniumLibrary.Element Should Contain
+    SeleniumLibrary.Element Should Not Contain</msg>
+<arg>//div[@id='paper2']//p</arg>
+<arg>Arch-int</arg>
+<status status="FAIL" start="2025-03-10T16:11:57.276479" elapsed="0.000000">No keyword with name 'Element Text Should Contain' found. Did you mean:
+    SeleniumLibrary.Element Should Contain
+    SeleniumLibrary.Element Should Not Contain</status>
+</kw>
+<kw name="Element Text Should Contain">
+<arg>//div[@id='paper2']//p</arg>
+<arg>Ho</arg>
+<status status="NOT RUN" start="2025-03-10T16:11:57.276479" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-10T16:11:57.276479" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบว่าหน้าเว็บภาษาจีน แสดงชื่อนักวิจัยเป็นภาษาอังกฤษและบทความเป็นภาษาอังกฤษ</doc>
+<status status="FAIL" start="2025-03-10T16:11:47.716057" elapsed="9.561424">No keyword with name 'Element Text Should Contain' found. Did you mean:
+    SeleniumLibrary.Element Should Contain
+    SeleniumLibrary.Element Should Not Contain</status>
+</test>
+<status status="FAIL" start="2025-03-10T16:11:36.142743" elapsed="21.134738"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="0" fail="3" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
