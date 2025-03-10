@@ -60,8 +60,11 @@
                         <h6 class="card-text1">E-mail: <?php echo e($res->email); ?></h6>
                         <h6 class="card-title"><?php echo e(trans('message.education')); ?></h6>
                         <?php $__currentLoopData = $res->education; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $edu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <h6 class="card-text2 col-sm-10"> <?php echo e($edu->year); ?> <?php echo e($edu->qua_name); ?> <?php echo e($edu->uname); ?></h6>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    <h6 class="card-text2 col-sm-10">
+        <?php echo e($edu->year); ?>  <?php echo e($edu->qua_name); ?> - <?php echo e($edu->uname); ?>
+
+    </h6>
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
                             <?php echo e(trans('message.expertise')); ?>
@@ -190,9 +193,18 @@
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php $__currentLoopData = $paper->teacher; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $author): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <span >
-                                <a href="<?php echo e(route('detail',Crypt::encrypt($author->id))); ?>">
-                                    <teacher><?php echo e($author -> fname_en); ?> <?php echo e($author -> lname_en); ?></teacher></a>
+                            <span>
+                                <a href="<?php echo e(route('detail', Crypt::encrypt($author->id))); ?>">
+                                    <teacher>
+                                        <?php if(app()->getLocale() == 'th'): ?>
+                                            <?php echo e($author->fname_th); ?> <?php echo e($author->lname_th); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e($author->fname_en); ?> <?php echo e($author->lname_en); ?>
+
+                                        <?php endif; ?>
+                                    </teacher>
+                                </a>
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>

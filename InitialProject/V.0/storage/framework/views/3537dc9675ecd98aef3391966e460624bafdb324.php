@@ -4,30 +4,14 @@
 <div class="container card-2">
     <p class="title"><?php echo e(__('message.Researchers')); ?></p>
 
-    <!-- Dropdown สำหรับกรองประเภทนักวิจัย -->
-    <div class="mb-3">
-    <select class="form-select" id="programFilter" onchange="filterResearchers()">
-    <option value="all"><?php echo e(__('message.All')); ?></option> <!-- แปลข้อความ "All" -->
-    <?php $__currentLoopData = $programs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $program): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <option value="<?php echo e($program->id); ?>">
-            <?php if(app()->getLocale() == 'th'): ?>
-                <?php echo e($program->program_name_th); ?> <!-- แสดงชื่อโปรแกรมภาษาไทยเมื่อ locale เป็น 'th' -->
-            <?php else: ?>
-                <?php echo e($program->program_name_en); ?> <!-- แสดงชื่อโปรแกรมภาษาอังกฤษเมื่อ locale เป็น 'en' -->
-            <?php endif; ?>
-        </option>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-</select>
-    </div>
-
-    <!-- Search Bar -->
+    <!-- ช่องค้นหานักวิจัย -->
     <div class="d-flex">
         <div class="ml-auto">
-            <form class="row row-cols-lg-auto g-3" method="GET" action="<?php echo e(route('researchers')); ?>">
+            <form class="row row-cols-lg-auto g-3" method="GET" action="<?php echo e(route('researchers.search')); ?>">
                 <div class="col-md-8">
                     <div class="input-group">
-                        <input type="text" class="form-control" name="textsearch" placeholder="<?php echo e(__('message.Researchinterests')); ?>"
-                            value="<?php echo e(request('textsearch')); ?>">
+                        <input type="text" class="form-control" name="textsearch"
+                            placeholder="<?php echo e(__('message.Researchinterests')); ?>" value="<?php echo e(request('textsearch')); ?>">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -37,19 +21,23 @@
         </div>
     </div>
 
-    <!-- รายชื่อนักวิจัย -->
-    <div class="researcher-container">
-        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="researcher-item">
-                <div class="card researcher-card" data-field="<?php echo e($r->program_id); ?>">
-                    <a href="<?php echo e(route('detail', Crypt::encrypt($r->id))); ?>" class="researcher-link">
-                        <!-- <p class="debug-text">DEBUG: <?php echo e($r->program_id); ?></p> Debug -->
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <img class="card-image" src="<?php echo e($r->picture ?? asset('img/default_profile.png')); ?>"
-                                    alt="<?php echo e($r->fname_en); ?> <?php echo e($r->lname_en); ?>">
-                            </div>
-                            <div class="col-sm-8 overflow-hidden">
+    <!-- ผลลัพธ์การค้นหานักวิจัย -->
+        <!-- รายชื่อนักวิจัย -->
+<div class="researcher-container">
+    <!-- 🔹 ส่วนแสดง "นักวิจัย" -->
+    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $r): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="researcher-item">
+            <div class="card researcher-card" data-field="<?php echo e($r->program_id); ?>">
+                <a href="<?php echo e(route('detail', Crypt::encrypt($r->id))); ?>" class="researcher-link">
+                    <div class="row">
+                        <!-- 🔹 รูปโปรไฟล์ -->
+                        <div class="col-sm-4">
+                            <img class="card-image" src="<?php echo e($r->picture ?? asset('img/default_profile.png')); ?>" 
+                                alt="<?php echo e($r->fname_en); ?> <?php echo e($r->lname_en); ?>">
+                        </div>
+
+                        <!-- 🔹 ข้อมูลนักวิจัย -->
+                        <div class="col-sm-8 overflow-hidden">
                                 <div class="card-body">
                                 <h5 class="card-title">
                                 <?php if(app()->getLocale() == 'th'): ?>
@@ -70,53 +58,84 @@
                                     <?php echo e($r->academic_ranks_en); ?> <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
                                 <?php endif; ?>
                             </h5>
-                                    <p class="card-text-1"><?php echo e(__('message.Research Field')); ?></p>
-                                    <div class="card-expertise">
-                                        <p class="card-text">
-                                            <?php if(app()->getLocale() == 'th'): ?>
-                                                <?php echo e($r->program->program_name_th); ?> <!-- แสดงชื่อโปรแกรมภาษาไทย -->
-                                            <?php else: ?>
-                                                <?php echo e($r->program->program_name_en); ?> <!-- แสดงชื่อโปรแกรมภาษาอังกฤษ -->
-                                            <?php endif; ?>
-                                        </p>
-                                    </div>
+                                <!-- 🔹 แสดงสาขาวิจัย -->
+
+                                <div class="card-expertise">
+                                    <p class="card-text">
+                                        <?php if(app()->getLocale() == 'th'): ?>
+                                            <?php echo e($r->program->program_name_th); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e($r->program->program_name_en); ?>
+
+                                        <?php endif; ?>
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </div>
-
+        </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>
 
-<!-- JavaScript สำหรับกรองข้อมูล -->
-<script>
-    function filterResearchers() {
-        let dropdown = document.getElementById('programFilter');
-        let selectedProgramId = dropdown.value;
-        let researchers = document.querySelectorAll('.researcher-item');
+<div class="researcher-container">
+    <!-- 🔹 ส่วนแสดง "นักศึกษา" -->
+    <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="researcher-item">
+            <div class="card researcher-card" data-field="<?php echo e($s->program_id); ?>">
+                <a href="<?php echo e(route('detail', Crypt::encrypt($s->id))); ?>" class="researcher-link">
+                    <div class="row">
+                        <!-- 🔹 รูปโปรไฟล์ -->
+                        <div class="col-sm-4">
+                            <img class="card-image" src="<?php echo e($s->picture ?? asset('img/default_profile.png')); ?>" 
+                                alt="<?php echo e($s->fname_en); ?> <?php echo e($s->lname_en); ?>">
+                        </div>
 
-        researchers.forEach(item => {
-            let researcherField = item.querySelector('.researcher-card').getAttribute('data-field');
+                        <!-- 🔹 ข้อมูลนักศึกษา -->
+                        <div class="col-sm-8 overflow-hidden">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?php if(app()->getLocale() == 'th'): ?>
+                                        <?php echo e($s->fname_th); ?> <?php echo e($s->lname_th); ?>   
+                                    <?php else: ?>
+                                        <?php echo e($s->fname_en); ?> <?php echo e($s->lname_en); ?>  
+                                    <?php endif; ?>
+                                </h5>
+                                <h5 class="card-title-2">
+                                <?php if(app()->getLocale() == 'th'): ?>
+                                    <?php echo e($s->academic_ranks_th); ?> <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาไทย -->
+                                <?php else: ?>
+                                    <?php echo e($s->academic_ranks_en); ?> <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
+                                <?php endif; ?>
+                            </h5>
+                                <!-- 🔹 แสดงโปรแกรมที่เรียน -->
 
-            if (selectedProgramId === "all" || researcherField === selectedProgramId) {
-                item.style.display = "block";
-            } else {
-                item.style.display = "none";
-            }
-        });
-    }
+                                <div class="card-expertise">
+                                    <p class="card-text">
+                                        <?php if(app()->getLocale() == 'th'): ?>
+                                            <?php echo e($s->program->program_name_th); ?>
 
-</script>
+                                        <?php else: ?>
+                                            <?php echo e($s->program->program_name_en); ?>
 
-<!-- CSS -->
+                                        <?php endif; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+</div>
+
 <style>
     .researcher-container {
         display: grid;
         grid-template-columns: repeat(2, minmax(300px, 1fr));
-        /* แถวละ 2 คน */
         gap: 20px;
         padding: 20px;
         justify-items: center;
@@ -139,17 +158,6 @@
     .researcher-card:hover {
         transform: scale(1.05);
     }
-
-    /* ปรับขนาด dropdown */
-    #programFilter {
-        font-size: 0.875rem;
-        /* ลดขนาดฟอนต์ */
-        padding: 0.375rem 0.75rem;
-        /* ลดระยะห่างภายใน */
-        max-width: 200px;
-        /* กำหนดความกว้างสูงสุด */
-    }
-
 
     @media (max-width: 768px) {
         .researcher-container {
