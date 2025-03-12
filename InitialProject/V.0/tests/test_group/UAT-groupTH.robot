@@ -60,14 +60,14 @@ ${REPORT_MENU}               //a[@class='nav-link' and contains(text(), 'Report'
 
 
 *** Test Cases ***
-Test Open Researchers Page
-    [Documentation]    ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย
+Test Open Group Page
+    [Documentation]    ทดสอบการเปิดหน้า "Group" และการเปลี่ยนภาษาเป็นไทย
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
-    Click Element    ${RESEARCHER_MENU}
+    Click Element    ${RESEARCHGROUP_MENU}
     Sleep    2s
-    Location Should Be    http://127.0.0.1:8000/researchers
-    Capture Page Screenshot    researcher_page.png
+    Location Should Be    http://127.0.0.1:8000/researchgroup
+    Capture Page Screenshot    group_page.png
     
     # คลิกที่เมนูภาษาอังกฤษก่อน
     Click Element    //a[@id='navbarDropdownMenuLink']
@@ -78,27 +78,33 @@ Test Open Researchers Page
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
-    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บ
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[2]
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[3]  
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[6] 
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[8]
+    # ตรวจสอบชื่อที่แสดงในหน้าเว็บเป็นภาษาไทยโดยใช้ normalize-space
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'อ. ดร. วาสนา พุฒกลาง')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'รศ.ดร. ชัยพล กีรติกสิกร')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ผศ.ดร. ณกร วัฒนกิจ')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ผศ.ดร. พิพัธน์ เรืองแสง')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ผศ.ดร. รัศมี สุวรรณวีระกำธร')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ผศ.ดร. อุราวรรณ จันทร์เกษ')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'อ. ดร. ศรัณย์ อภิชนตระกูล')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'อ.ดร. ศักดิ์พจน์ ทองเลี่ยมนาค')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ศ.ดร. จักรชัย โสอินทร์')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'รศ.ดร. สมจิตร อาจอินทร์')]
 
-    Capture Page Screenshot    researcher_page_thai.png
+    Capture Page Screenshot    group_page_thai.png
     Close Browser
 
-Test Open Researchers Profile Page
+Test Open Group details Page
     [Documentation]    ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
     Click Element    ${RESEARCHER_MENU}
     Sleep    2s
     Location Should Be    http://127.0.0.1:8000/researchers
-    Capture Page Screenshot    researcher_page.png
-    Go To    ${RESEARCHER_PROFILE}
+    Capture Page Screenshot    group_page2.png
+    Go To    ${RESEARCHDETAILS_MENU}
     Sleep    2s
-    Location Should Be    http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9
-    Capture Page Screenshot    researcherprofile_page.png
+    Location Should Be    http://127.0.0.1:8000/researchgroupdetail/3
+    Capture Page Screenshot    detail_page.png
 
     # คลิกที่เมนูภาษาอังกฤษก่อน
     Click Element    //a[@id='navbarDropdownMenuLink']
@@ -109,12 +115,11 @@ Test Open Researchers Profile Page
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
-    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บ
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[4]
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[5]  
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[8] 
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[7]
+   # ตรวจสอบชื่อที่เพิ่มเข้ามา
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'พงศธร วงศ์พราวมาศ')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'เศวตสิทธิ์ อิ่มนาง')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ธีรธรรม บุญประภาพันธุ์')]
 
-    Capture Page Screenshot    researcherprofile_page_thai.png
+    Capture Page Screenshot    detail_page_thai.png
     Close Browser
 

@@ -53,8 +53,8 @@
                         <?php else: ?>
                         <h6 class="card-text"><b><?php echo e($res->fname_en); ?> <?php echo e($res->lname_en); ?></b>
                             <?php endif; ?></h6>
-                            <h6 class="card-text1">
-                                 <b>
+                        <h6 class="card-text1">
+                        <b>
                                     <?php if(app()->getLocale() == 'th'): ?>
                                         <?php echo e($res->academic_ranks_th); ?>
 
@@ -65,18 +65,15 @@
                                         <?php echo e($res->academic_ranks_cn); ?>
 
                                     <?php endif; ?>
-                                 </b>
-                            </h6>
-
+                       </b>
                         <!-- <h6 class="card-text1">Department of <?php echo e($res->program->program_name_en); ?></h6> -->
                         <!-- <h6 class="card-text1">College of Computing</h6>
                     <h6 class="card-text1">Khon Kaen University</h6> -->
                         <h6 class="card-text1">E-mail: <?php echo e($res->email); ?></h6>
                         <h6 class="card-title"><?php echo e(trans('message.education')); ?></h6>
                         <?php $__currentLoopData = $res->education; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $edu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <h6 class="card-text2 col-sm-10">
-                            <?php echo e($edu->year); ?>  
-                            
+    <h6 class="card-text2 col-sm-10">
+    <?php echo e($edu->year); ?>           
                             <!-- 🔹 แสดงผลตามภาษาที่เลือก -->
                             <?php if(app()->getLocale() == 'th'): ?>
                                 <?php echo e($edu->qua_name); ?> - <?php echo e($edu->uname); ?>
@@ -88,7 +85,7 @@
                                 <?php echo e($edu->qua_name_cn); ?> - <?php echo e($edu->uname_cn); ?>
 
                             <?php endif; ?>
-                        </h6>
+    </h6>
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
@@ -218,13 +215,22 @@
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php $__currentLoopData = $paper->teacher; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $author): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <span >
-                                <a href="<?php echo e(route('detail',Crypt::encrypt($author->id))); ?>">
-                                    <teacher><?php echo e($author -> fname_en); ?> <?php echo e($author -> lname_en); ?></teacher></a>
+                            <span>
+                                <a href="<?php echo e(route('detail', Crypt::encrypt($author->id))); ?>">
+                                    <teacher>
+                                        <?php if(app()->getLocale() == 'th'): ?>
+                                            <?php echo e($author->fname_th); ?> <?php echo e($author->lname_th); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e($author->fname_en); ?> <?php echo e($author->lname_en); ?>
+
+                                        <?php endif; ?>
+                                    </teacher>
+                                </a>
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
-                        <td><?php echo e($paper->paper_type); ?></td>
+                        <td><?php echo e(__('message.paper_types.' . $paper->paper_type)); ?></td>
                         <td style="width:100%;"><?php echo e($paper->paper_page); ?></td>
                         <td><?php echo e($paper->paper_sourcetitle); ?></td>
                         <td><?php echo e($paper->paper_citation); ?></td>
@@ -280,7 +286,7 @@
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
-                        <td><?php echo e($paper->paper_type); ?></td>
+                        <td><?php echo e(__('message.paper_types.' . $paper->paper_type)); ?></td>
                         <td style="width:100%;"><?php echo e($paper->paper_page); ?></td>
                         <td><?php echo e($paper->paper_sourcetitle); ?></td>
                         <td><?php echo e($paper->paper_citation); ?></td>
@@ -332,7 +338,7 @@
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
-                        <td><?php echo e($paper->paper_type); ?></td>
+                        <td><?php echo e(__('message.paper_types.' . $paper->paper_type)); ?></td>
                         <td style="width:100%;"><?php echo e($paper->paper_page); ?></td>
                         <td><?php echo e($paper->paper_sourcetitle); ?></td>
                         <td><?php echo e($paper->paper_citation); ?></td>
@@ -384,7 +390,7 @@
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
-                        <td><?php echo e($paper->paper_type); ?></td>
+                        <td><?php echo e(__('message.paper_types.' . $paper->paper_type)); ?></td>
                         <td style="width:100%;"><?php echo e($paper->paper_page); ?></td>
                         <td><?php echo e($paper->paper_sourcetitle); ?></td>
                         <td><?php echo e($paper->paper_citation); ?></td>
@@ -832,5 +838,4 @@
 });
 </script> -->
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\resources\views/researchprofiles.blade.php ENDPATH**/ ?>
