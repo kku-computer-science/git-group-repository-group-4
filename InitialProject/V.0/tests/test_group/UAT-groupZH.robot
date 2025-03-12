@@ -61,40 +61,41 @@ ${REPORT_MENU}               //a[@class='nav-link' and contains(text(), 'Report'
 
 *** Test Cases ***
 Test Open Group Page
-    [Documentation]    ทดสอบการเปิดหน้า "Group" และการเปลี่ยนภาษาเป็นไทย
+    [Documentation]    ทดสอบการเปิดหน้า "Group" และการเปลี่ยนภาษาเป็นจีน
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
     Click Element    ${RESEARCHGROUP_MENU}
     Sleep    2s
     Location Should Be    http://127.0.0.1:8000/researchgroup
-    Capture Page Screenshot    group_page.png
+    Capture Page Screenshot    group_page2.png
     
     # คลิกที่เมนูภาษาอังกฤษก่อน
     Click Element    //a[@id='navbarDropdownMenuLink']
     Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
-    # ไปที่ URL ของภาษาไทย
-    Go To    http://127.0.0.1:8000/lang/th
+    # ไปที่ URL ของภาษาจีน
+    Go To    http://127.0.0.1:8000/lang/zh
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
-    # ตรวจสอบชื่อที่แสดงในหน้าเว็บเป็นภาษาไทยโดยใช้ normalize-space
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'อ. ดร. วาสนา พุฒกลาง')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'รศ.ดร. ชัยพล กีรติกสิกร')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ผศ.ดร. ณกร วัฒนกิจ')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ผศ.ดร. พิพัธน์ เรืองแสง')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ผศ.ดร. รัศมี สุวรรณวีระกำธร')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ผศ.ดร. อุราวรรณ จันทร์เกษ')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'อ. ดร. ศรัณย์ อภิชนตระกูล')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'อ.ดร. ศักดิ์พจน์ ทองเลี่ยมนาค')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ศ.ดร. จักรชัย โสอินทร์')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'รศ.ดร. สมจิตร อาจอินทร์')]
+    # ตรวจสอบชื่อในหน้าเว็บ
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Wasana Putklang')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Chaiyapon Keeratikasikorn')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Nagon Watanakij')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Pipat Reungsang')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Rasamee Suwanwerakamtorn')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Urawan Chanket')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Sarun Apichontrakul')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Sakpod Tongleamnak')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Chakchai So-In')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Somjit Arch-int')]
 
-    Capture Page Screenshot    group_page_thai.png
+    Capture Page Screenshot    group_page_zh.png
+
     Close Browser
 
 Test Open Group details Page
-    [Documentation]    ทดสอบการเปิดหน้า "Group" และการเปลี่ยนภาษาเป็นไทย
+    [Documentation]    ทดสอบการเปิดหน้า "Group" และการเปลี่ยนภาษาเป็นจีน
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
     Click Element    ${RESEARCHGROUP_MENU}
@@ -104,22 +105,22 @@ Test Open Group details Page
     Go To    ${RESEARCHDETAILS_MENU}
     Sleep    2s
     Location Should Be    http://127.0.0.1:8000/researchgroupdetail/3
-    Capture Page Screenshot    detail_page.png
+    Capture Page Screenshot    detail_page2.png
 
     # คลิกที่เมนูภาษาอังกฤษก่อน
     Click Element    //a[@id='navbarDropdownMenuLink']
     Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
-    # ไปที่ URL ของภาษาไทย
-    Go To    http://127.0.0.1:8000/lang/th
+    # ไปที่ URL ของภาษาจีน
+    Go To    http://127.0.0.1:8000/lang/zh
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
-   # ตรวจสอบชื่อที่เพิ่มเข้ามา
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'พงศธร วงศ์พราวมาศ')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'เศวตสิทธิ์ อิ่มนาง')]
-    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'ธีรธรรม บุญประภาพันธุ์')]
+   # ตรวจสอบชื่อในหน้าเว็บ
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Pongsathorn Wongprawamas')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Sewattisit Imnang')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Teerathum Boonprapapun')]
 
-    Capture Page Screenshot    detail_page_thai.png
+    Capture Page Screenshot    detail_english2.png
     Close Browser
 
