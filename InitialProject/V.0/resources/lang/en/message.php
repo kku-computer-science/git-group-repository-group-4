@@ -122,6 +122,7 @@ return [
     'update' => 'Update',
     "Add Expertise" => 'Add Expertise',
     'funds' => 'Funds',
+    'Funds' => 'Funds',
     'add' => 'ADD',
     'no' => 'No.',
     'fund_name' => 'Fund name',

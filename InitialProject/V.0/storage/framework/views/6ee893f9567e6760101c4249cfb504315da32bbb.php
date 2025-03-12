@@ -14,7 +14,7 @@
     <?php endif; ?>
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title"><?php echo e(__('message.academic_works')); ?><</h4>
+            <h4 class="card-title"><?php echo e(__('message.academic_works')); ?></h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('patents.create')); ?>">
     <i class="mdi mdi-plus btn-icon-prepend"></i> <?php echo e(__('message.add')); ?>
 
@@ -37,15 +37,25 @@
                             <tr>
                                 <td><?php echo e($i+1); ?></td>
                                 <td><?php echo e(Str::limit($paper->ac_name,50)); ?></td>
-                                <td><?php echo e($paper->ac_type); ?></td>
+                                <td><?php echo e(__('message.patents.' . $paper->ac_type)); ?></td>
                                 <td><?php echo e($paper->ac_year); ?></td>
                                 <td><?php echo e($paper->ac_refnumber,50); ?></td>
-                                <td><?php $__currentLoopData = $paper->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php echo e($a->fname_th); ?> <?php echo e($a->lname_th); ?>
+                                <td>
+                                    <?php $__currentLoopData = $paper->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $a): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <?php
+                                            $locale = App::getLocale();
+                                            // ถ้าภาษาเป็น zh ให้ใช้ en แทน
+                                            if ($locale === 'zh') {
+                                                $locale = 'en';
+                                            }
+                                        ?>
 
-                                    <?php if(!$loop->last): ?>,<?php endif; ?>
+                                        <?php echo e($locale === 'th' ? $a->fname_th : $a->fname_en); ?> 
+                                        <?php echo e($locale === 'th' ? $a->lname_th : $a->lname_en); ?>
+
+
+                                        <?php if(!$loop->last): ?>,<?php endif; ?>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
                                 </td>
                                 <td>
                                     <form action="<?php echo e(route('patents.destroy',$paper->id)); ?>" method="POST">
@@ -109,15 +119,15 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: `<?php echo e(__('message.are_you_sure')); ?>`,
+                text: "<?php echo e(__('message.delete_warning')); ?>",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("<?php echo e(__('message.deleted_successfully')); ?>", {
                         icon: "success",
                     }).then(function() {
                         location.reload();

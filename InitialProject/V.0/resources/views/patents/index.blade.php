@@ -14,7 +14,7 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">{{ __('message.academic_works') }}<</h4>
+            <h4 class="card-title">{{ __('message.academic_works') }}</h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('patents.create') }}">
     <i class="mdi mdi-plus btn-icon-prepend"></i> {{ __('message.add') }}
 </a>
