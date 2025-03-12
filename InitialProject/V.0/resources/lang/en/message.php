@@ -496,11 +496,6 @@ return [
            'ทุนภายใน' => 'Internal Project Funding',
            'ทุนภายนอก' => 'External Project Funding',
         ],
-        'funds_level' => [
-        'สูง' => 'High',
-        'กลาง' => 'Medium',
-        'ล่าง' => 'Low',
-         ],
         'Group_name' => 'Research Group Name',
 
         'create_research_group' => 'Create Research Group',

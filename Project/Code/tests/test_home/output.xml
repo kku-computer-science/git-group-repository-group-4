@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-13T00:41:38.845170" rpa="false" schemaversion="5">
+<suite id="s1" name="UAT-homeZH" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_home\UAT-homeZH.robot">
+<test id="s1-t1" name="Test Open Home Page" line="59">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:39.146567" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-13T00:41:39.146567" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:41:39.146567" elapsed="2.378279"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:41:44.540453" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:41:41.531013" elapsed="3.009440"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:44.540453" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Home')]'.</msg>
+<arg>${HOME_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:41:44.540453" elapsed="0.809978"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:41:47.356944" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:41:45.350431" elapsed="2.007509"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:47.383787" level="INFO">Current location is 'http://127.0.0.1:8000/'.</msg>
+<arg>http://127.0.0.1:8000/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:41:47.358954" elapsed="0.025885"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:47.698011" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="home_page.png"&gt;&lt;img src="home_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>home_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-13T00:41:47.385789" elapsed="0.312222"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:47.698011" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:41:47.698011" elapsed="0.069811"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:41:49.776046" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:41:47.767822" elapsed="2.008224"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:49.776046" level="INFO">Opening url 'http://127.0.0.1:8000/lang/zh'</msg>
+<arg>http://127.0.0.1:8000/lang/zh</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:41:49.776046" elapsed="0.717405"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:41:55.498638" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:41:50.494494" elapsed="5.004144"/>
+</kw>
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:55.575828" level="INFO">${banner_src} = http://127.0.0.1:8000/img/Banner1Zh.png</msg>
+<var>${banner_src}</var>
+<arg>xpath=//div[@class="carousel-inner"]/div[1]/img</arg>
+<arg>src</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:41:55.498638" elapsed="0.077190"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${banner_src}</arg>
+<arg>Banner1Zh.png</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-03-13T00:41:55.575828" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:55.575828" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-13T00:41:55.575828" elapsed="0.025379"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:41:57.616862" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:41:55.601207" elapsed="2.015655"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//button[contains(text(), '2022')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-13T00:41:57.616862" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Click Element</arg>
+<arg>xpath=//button[contains(text(), '2022')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-13T00:41:57.616862" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-13T00:41:57.616862" elapsed="0.000000"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-03-13T00:41:55.575828" elapsed="2.041034"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>1</value>
+<status status="PASS" start="2025-03-13T00:41:55.575828" elapsed="2.041034"/>
+</for>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:41:57.616862" level="INFO">Clicking element 'xpath=//button[contains(text(), '2022')]'.</msg>
+<arg>xpath=//button[contains(text(), '2022')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:41:57.616862" elapsed="0.259053"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:42:00.884903" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:41:57.877163" elapsed="3.007740"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:42:00.994211" level="INFO">${hidden_content} = Reasoning in inconsistent prioritized knowledge bases: an argumentative approach ( L. Ho, S. Arch-int, N. Arch-int), International Journal of Electrical and Computer Engineering, 12, 2022. [url] [doi]...</msg>
+<var>${hidden_content}</var>
+<arg>xpath=//div[@id='paper2']//p[contains(@class, 'hidden')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:42:00.884903" elapsed="0.109308"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${hidden_content}</arg>
+<arg>L. Ho, S. Arch-int, N. Arch-int</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-03-13T00:42:00.994211" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${hidden_content}</arg>
+<arg>2022</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2025-03-13T00:42:00.994211" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Home" และการเปลี่ยนภาษาเป็นจีน</doc>
+<status status="PASS" start="2025-03-13T00:41:39.146567" elapsed="21.847644"/>
+</test>
+<status status="PASS" start="2025-03-13T00:41:38.845170" elapsed="22.149041"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="UAT-homeZH" id="s1" pass="1" fail="0" skip="0">UAT-homeZH</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-13T00:41:39.146567" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+</errors>
+</robot>
