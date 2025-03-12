@@ -36,7 +36,7 @@
                             <td>{{ Str::limit($fund->fund_name,80) }}</td>
                             <td>
                                 @if(app()->getLocale() == 'th')
-                                    {{ $fund->fund_type_th }}
+                                    {{ $fund->fund_type }}
                                 @elseif(app()->getLocale() == 'zh')
                                     {{ $fund->fund_type_cn }}
                                 @else
@@ -45,7 +45,7 @@
                             </td>
                             <td>
                                 @if(app()->getLocale() == 'th')
-                                    {{ $fund->fund_level_th }}
+                                    {{ $fund->fund_level }}
                                 @elseif(app()->getLocale() == 'zh')
                                     {{ $fund->fund_level_cn }}
                                 @else
