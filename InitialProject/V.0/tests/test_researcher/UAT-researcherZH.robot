@@ -118,12 +118,12 @@ Test Open Researchers Profile Page
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
-   # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บด้วย XPath
+    泰国亚洲理工学院')]
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '教授')]
+# ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บด้วย XPath
     Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2526 理学士（数学） - 孔敬大学')]
     Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2528 教育硕士（应用统计学） - 国家发展管理学院')]
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2544 技术科学博士（计算机科学） - 泰国亚洲理工学院')]
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '教授')]
-
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2544 技术科学博士（计算机科学） -
     Capture Page Screenshot    researcherprofile_page_thai.png
 
     # เลื่อนหน้าจอลงจนพบ "ประเภทเอกสาร"

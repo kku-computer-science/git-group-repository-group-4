@@ -61,7 +61,7 @@ ${REPORT_MENU}               //a[@class='nav-link' and contains(text(), 'Report'
 
 *** Test Cases ***
 Test Open Project Page
-    [Documentation]    ทดสอบการเปิดหน้า "Project" และการเปลี่ยนภาษาเป็นไทย
+    [Documentation]    ทดสอบการเปิดหน้า "Project" และการเปลี่ยนภาษาเป็นจีน
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
     Click Element    ${RESEARCHPROJECT_MENU}
@@ -74,24 +74,24 @@ Test Open Project Page
     Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
     # ไปที่ URL ของภาษาไทย
-    Go To    http://127.0.0.1:8000/lang/th
+    Go To    http://127.0.0.1:8000/lang/zh
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
-   # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บโดยใช้ XPath
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'ระยะเวลาโครงการ')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '1 สิงหาคม 2563 ถึง 19 สิงหาคม 2563')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'ประเภททุนวิจัย')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'ทุนภายนอก')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'หน่วยงานที่สนับสนุนทุน')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'สำนักงานปลัดกระทรวงอุดมศึกษา วิทยาศาสตร์ วิจัยและนวัตกรรม')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'หน่วยงานที่รับผิดชอบ')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'สาขาวิชาวิทยาการคอมพิวเตอร์')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'งบประมาณที่ได้รับจัดสรร')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '90,000 บาท')]
+   # ตรวจสอบข้อความในหน้าเว็บที่แปลแล้ว
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '项目期限')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '2020年08月01日 至 2020年08月19日')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '研究资助类型')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '外部项目资助')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '资助机构')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '高等教育、科研和创新部')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '负责单位')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '计算机科学')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '分配预算')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), '90,000 铢')]
 
-    # ตรวจสอบชื่อและตำแหน่งในหน้าเว็บ
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'อ. ธนพล ตั้งชูพงศ์')]
-    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'อ.ดร. วรัญญา วรรณศรี')]
+    # ตรวจสอบชื่ออาจารย์ในหน้าเว็บ (ในกรณีที่ข้อความเป็นภาษาอังกฤษ)
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'Lecturer Thanaphon Tangchoopong')]
+    Page Should Contain Element    xpath=//span[contains(normalize-space(.), 'Lecturer Warunya Wunnasri')]
     Capture Page Screenshot    project_page_thai.png
     Close Browser
 
