@@ -74,7 +74,7 @@
                                 <option value="ลิขสิทธิ์ (สิ่งบันทึกเสียง)">{{ __('message.copyright_sound_recording') }}</option>
                             </optgroup>
 
-                            <optgroup label="{{ __('other') }}">
+                            <optgroup label="{{ __('message.other') }}">
                                 <option value="ความลับทางการค้า">{{ __('message.trade_secret') }}</option>
                                 <option value="เครื่องหมายการค้า">{{ __('message.trademark') }}</option>
                             </optgroup>

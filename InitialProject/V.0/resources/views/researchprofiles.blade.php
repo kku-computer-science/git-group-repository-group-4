@@ -273,7 +273,15 @@
                             @foreach ($paper->teacher as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>
+                                        @if(app()->getLocale() == 'th')
+                                            {{ $author->fname_th }} {{ $author->lname_th }}
+                                        @else
+                                            {{ $author->fname_en }} {{ $author->lname_en }}
+                                        @endif
+                                    </teacher>
+                                
+                                </a>
                             </span>
                             @endforeach
                         </td>
@@ -325,7 +333,14 @@
                             @foreach ($paper->teacher as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>
+                                        @if(app()->getLocale() == 'th')
+                                            {{ $author->fname_th }} {{ $author->lname_th }}
+                                        @else
+                                            {{ $author->fname_en }} {{ $author->lname_en }}
+                                        @endif
+                                    </teacher>
+                                </a>
                             </span>
                             @endforeach
                         </td>
@@ -377,7 +392,15 @@
                             @foreach ($paper->teacher as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>
+                                        @if(app()->getLocale() == 'th')
+                                            {{ $author->fname_th }} {{ $author->lname_th }}
+                                        @else
+                                            {{ $author->fname_en }} {{ $author->lname_en }}
+                                        @endif
+                                    </teacher>
+                                
+                                </a>
                             </span>
                             @endforeach
                         </td>
@@ -416,13 +439,24 @@
                         <td>
                             @foreach ($paper->author as $author)
                             <span>
-                                <a>{{$author -> author_fname}} {{$author -> author_lname}}</a>
+                                <a>aa{{$author -> author_fname}} {{$author -> author_lname}}</a>
 
                             </span>
                             @endforeach
+
                             @foreach ($paper->user as $author)
                             <span>
-                                <a> {{$author -> fname_en}} {{$author -> lname_en}}</a>
+                                <a>
+
+                                <teacher>
+                                        @if(app()->getLocale() == 'th')
+                                            {{ $author->fname_th }} {{ $author->lname_th }}
+                                        @else
+                                            {{ $author->fname_en }} {{ $author->lname_en }}
+                                        @endif
+                                </teacher>
+
+                                </a>
                             </span>
                             @endforeach
                         </td>
@@ -464,12 +498,20 @@
                             @foreach ($paper->user as $author)
                             <span>
                                 <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
-                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
+                                    <teacher>
+                                        @if(app()->getLocale() == 'th')
+                                            {{ $author->fname_th }} {{ $author->lname_th }}
+                                        @else
+                                            {{ $author->fname_en }} {{ $author->lname_en }}
+                                        @endif
+                                    </teacher>
+                                
+                                </a>
 
                             </span>
                             @endforeach
                         </td>
-                        <td>{{$paper->ac_type}}</td>
+                        <td>{{ __('message.patents.' . $paper->ac_type) }}</td>
                         <td>{{$paper->ac_refnumber }}</td>
                         <td>{{$paper->ac_year}}</td>
 

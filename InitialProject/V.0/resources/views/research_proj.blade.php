@@ -52,10 +52,47 @@
                                         @endif
                                     </span>
                                 @else
+<<<<<<< HEAD
                                     <span style="font-weight: bold;">
                                         {{ __('message.project_duration') }}
                                     </span>
                                     <span></span>
+=======
+                                {{ __('message.funds.' . $re->fund->fund_type) }}
+                                <!--{{$re->fund->fund_type}}-->
+                                @endif</span>
+                        </div>
+                        <div style="padding-bottom: 10px;">
+                            <span style="font-weight: bold;">{{__('message.supporting_agency')}}</span>
+                            <span style="padding-left: 10px;"> @if(is_null($re->fund))
+                                @else
+                                {{ __('message.support_resource.' . $re->fund->support_resource) }}
+                               
+                                @endif</span>
+                        </div>
+                        <div style="padding-bottom: 10px;">
+                            <span style="font-weight: bold;">{{__('message.responsible_unit')}}</span>
+                            <span style="padding-left: 10px;">
+                                {{ __('message.department.' . $re->responsible_department) }}
+                                <!--{{$re->responsible_department}}-->
+                            </span>
+                        </div>
+                        <div style="padding-bottom: 10px;">
+
+                            <span style="font-weight: bold;">{{__('message.allocated_budget')}}</span>
+                            <span style="padding-left: 10px;"> {{number_format($re->budget)}} {{__('message.currency')}}</span>
+                        </div>
+                    </td>
+
+                    <td style="vertical-align: top;text-align: left;">
+                    <div style="padding-bottom: 10px;">
+                        <span>
+                            @foreach($re->user as $user)
+                                @if(App::getLocale() == 'th')
+                                    {{ $user->position_th }} {{ $user->fname_th }} {{ $user->lname_th }}<br>
+                                @else
+                                    {{ $user->position_en }} {{ $user->fname_en }} {{ $user->lname_en }}<br>
+>>>>>>> f820464a4736fd23b4d06c9cbd93be7df3b903c5
                                 @endif
                             </div>
 
