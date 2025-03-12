@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T18:03:51.629851" rpa="false" schemaversion="5">
+<suite id="s1" name="UAT-website" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\UAT-website.robot">
+<test id="s1-t1" name="Test Open Researchers Page" line="63">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:03:51.955647" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T18:03:51.955647" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T18:03:51.955647" elapsed="2.340030"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:03:57.297808" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:03:54.295677" elapsed="3.002131"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:03:57.297808" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<arg>${RESEARCHER_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T18:03:57.297808" elapsed="0.609283"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:03:59.907515" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:03:57.907091" elapsed="2.000424"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:03:59.925422" level="INFO">Current location is 'http://127.0.0.1:8000/researchers'.</msg>
+<arg>http://127.0.0.1:8000/researchers</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T18:03:59.907515" elapsed="0.019926"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:00.125875" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_page.png"&gt;&lt;img src="researcher_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researcher_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T18:03:59.927441" elapsed="0.198434"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:00.126882" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T18:04:00.125875" elapsed="0.065140"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:02.200502" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:00.191015" elapsed="2.009487"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:02.200502" level="INFO">Opening url 'http://127.0.0.1:8000/lang/th'</msg>
+<arg>http://127.0.0.1:8000/lang/th</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-12T18:04:02.200502" elapsed="0.787100"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:08.000104" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:02.989323" elapsed="5.010781"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:08.110776" level="INFO">Current page contains text 'สาขาวิชาวิทยาการคอมพิวเตอร์และเทคโนโลยีสารสนเทศ'.</msg>
+<arg>${EXPECTED_WORDS_USER_TH}[2]</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-12T18:04:08.000104" elapsed="0.110672"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:08.128607" level="INFO">Current page contains text 'สาขาวิชาเทคโนโลยีสารสนเทศ'.</msg>
+<arg>${EXPECTED_WORDS_USER_TH}[3]</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-12T18:04:08.110776" elapsed="0.017831"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:08.142368" level="INFO">Current page contains text 'รองศาสตราจารย์'.</msg>
+<arg>${EXPECTED_WORDS_USER_TH}[6]</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-12T18:04:08.128607" elapsed="0.013761"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:08.158244" level="INFO">Current page contains text 'ศาสตราจารย์'.</msg>
+<arg>${EXPECTED_WORDS_USER_TH}[8]</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-12T18:04:08.142368" elapsed="0.015876"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:08.307435" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_page_thai.png"&gt;&lt;img src="researcher_page_thai.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researcher_page_thai.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T18:04:08.158244" elapsed="0.149191"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:08.308434" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-12T18:04:08.308434" elapsed="0.005800"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:09.328856" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:08.315274" elapsed="1.013582"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:09.328856" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:09.328856" elapsed="0.002011"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-03-12T18:04:08.308434" elapsed="1.022433"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:09.330867" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-12T18:04:09.330867" elapsed="0.009134"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:10.344494" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:09.340001" elapsed="1.004493"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:10.344494" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:10.344494" elapsed="0.000000"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-03-12T18:04:09.330867" elapsed="1.013627"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:10.344494" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-12T18:04:10.344494" elapsed="0.018694"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:11.368807" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:10.363188" elapsed="1.005619"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:11.368807" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:11.368807" elapsed="0.000000"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2025-03-12T18:04:10.344494" elapsed="1.024313"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:11.368807" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-12T18:04:11.368807" elapsed="0.019633"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:12.396165" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:11.388440" elapsed="1.007725"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:12.396165" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:12.396165" elapsed="0.000000"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2025-03-12T18:04:11.368807" elapsed="1.027358"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:12.396165" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-12T18:04:12.396165" elapsed="0.023059"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:13.425435" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:12.419224" elapsed="1.006211"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:13.425435" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:13.425435" elapsed="0.000000"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2025-03-12T18:04:12.396165" elapsed="1.029270"/>
+</iter>
+<iter>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:13.425435" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-12T18:04:13.425435" elapsed="0.020420"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:14.450748" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:13.445855" elapsed="1.004893"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Page Should Contain Element</arg>
+<arg>xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:14.450748" elapsed="0.002023"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${i}' == '9'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T18:04:14.452771" elapsed="0.000000"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2025-03-12T18:04:13.425435" elapsed="1.027336"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>6</value>
+<status status="PASS" start="2025-03-12T18:04:08.307435" elapsed="6.145336"/>
+</for>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:14.644101" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_page_thai.png"&gt;&lt;img src="researcher_page_thai.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researcher_page_thai.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T18:04:14.452771" elapsed="0.191330"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T18:04:14.645185" elapsed="2.164406"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย</doc>
+<status status="PASS" start="2025-03-12T18:03:51.955647" elapsed="24.853944"/>
+</test>
+<test id="s1-t2" name="Test Open Researchers Profile Page" line="101">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:16.809591" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T18:04:16.809591" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T18:04:16.809591" elapsed="2.405170"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:22.216195" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:19.214761" elapsed="3.001434"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:22.216195" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<arg>${RESEARCHER_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T18:04:22.216195" elapsed="0.640480"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:24.868727" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:22.856675" elapsed="2.012052"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:24.884433" level="INFO">Current location is 'http://127.0.0.1:8000/researchers'.</msg>
+<arg>http://127.0.0.1:8000/researchers</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T18:04:24.868727" elapsed="0.015706"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:25.077267" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_page.png"&gt;&lt;img src="researcher_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researcher_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T18:04:24.884433" elapsed="0.192834"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:25.078483" level="INFO">Opening url 'http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9'</msg>
+<arg>${RESEARCHER_PROFILE}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-12T18:04:25.078483" elapsed="0.788080"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:27.880099" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:25.868754" elapsed="2.011345"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:27.896148" level="INFO">Current location is 'http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9'.</msg>
+<arg>http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T18:04:27.880099" elapsed="0.016049"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:28.066921" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcherprofile_page.png"&gt;&lt;img src="researcherprofile_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researcherprofile_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T18:04:27.896148" elapsed="0.170773"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:28.067965" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T18:04:28.067965" elapsed="0.064420"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:30.142168" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:28.132385" elapsed="2.009783"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:30.142168" level="INFO">Opening url 'http://127.0.0.1:8000/lang/th'</msg>
+<arg>http://127.0.0.1:8000/lang/th</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-12T18:04:30.142168" elapsed="1.233049"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:36.388113" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:31.376256" elapsed="5.011857"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:36.422036" level="INFO">Current page contains element 'xpath=//h6[contains(normalize-space(.), '2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น')]'.</msg>
+<arg>xpath=//h6[contains(normalize-space(.), '2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T18:04:36.388113" elapsed="0.033923"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:36.457872" level="INFO">Current page contains element 'xpath=//h6[contains(normalize-space(.), '2528 พบ.ม. (สถิติประยุกต์) - สถาบันบัณฑิตพัฒนบริหารศาสตร์')]'.</msg>
+<arg>xpath=//h6[contains(normalize-space(.), '2528 พบ.ม. (สถิติประยุกต์) - สถาบันบัณฑิตพัฒนบริหารศาสตร์')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T18:04:36.422036" elapsed="0.035836"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:36.489732" level="INFO">Current page contains element 'xpath=//h6[contains(normalize-space(.), '2544 วท.ด. (วิทยาการคอมพิวเตอร์) - สถาบันเทคโนโลยีแห่งเอเชีย ประเทศไทย')]'.</msg>
+<arg>xpath=//h6[contains(normalize-space(.), '2544 วท.ด. (วิทยาการคอมพิวเตอร์) - สถาบันเทคโนโลยีแห่งเอเชีย ประเทศไทย')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T18:04:36.457872" elapsed="0.031860"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:36.523767" level="INFO">Current page contains element 'xpath=//h6[contains(normalize-space(.), 'ศาสตราจารย์')]'.</msg>
+<arg>xpath=//h6[contains(normalize-space(.), 'ศาสตราจารย์')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T18:04:36.489732" elapsed="0.034035"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:36.678594" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcherprofile_page_thai.png"&gt;&lt;img src="researcherprofile_page_thai.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researcherprofile_page_thai.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T18:04:36.523767" elapsed="0.154827"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:36.679589" level="INFO">Executing JavaScript:
+document.querySelector('html, body').scrollBy(0, 500);
+Without any arguments.</msg>
+<arg>document.querySelector('html, body').scrollBy(0, 500);</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-12T18:04:36.679589" elapsed="0.007171"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T18:04:38.690532" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T18:04:36.686760" elapsed="2.003772"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:38.722221" level="INFO">Current page contains element 'xpath=//td[contains(normalize-space(.), 'วารสาร')]'.</msg>
+<arg>xpath=//td[contains(normalize-space(.), 'วารสาร')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T18:04:38.690532" elapsed="0.031689"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T18:04:38.753885" level="INFO">Current page contains element 'xpath=//teacher[contains(normalize-space(.), 'ศาสตรา วงศ์ธนวสุ')]'.</msg>
+<arg>xpath=//teacher[contains(normalize-space(.), 'ศาสตรา วงศ์ธนวสุ')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T18:04:38.722221" elapsed="0.031664"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T18:04:38.753885" elapsed="2.225551"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย</doc>
+<status status="PASS" start="2025-03-12T18:04:16.809591" elapsed="24.169845"/>
+</test>
+<status status="PASS" start="2025-03-12T18:03:51.629851" elapsed="49.349585"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="UAT-website" id="s1" pass="2" fail="0" skip="0">UAT-website</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-12T18:03:51.955647" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T18:04:16.809591" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+</errors>
+</robot>
