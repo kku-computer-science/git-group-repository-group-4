@@ -343,6 +343,9 @@ return [
         'ทุนภายใน' => '内部项目资助',
         'ทุนภายนอก' => '外部项目资助',
     ],
-
+    'create_research_group' => '创建研究小组',
+    'edit_research_group_details' => '填写研究小组详细信息的修改',
+    'image' => '图片',
+    'edit_research_group' => '修改研究小组信息',
 
 ];

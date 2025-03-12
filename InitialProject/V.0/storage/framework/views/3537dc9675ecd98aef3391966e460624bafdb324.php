@@ -52,10 +52,13 @@
                                 <?php endif; ?>
                             </h5>
                             <h5 class="card-title-2">
-                                <?php if(app()->getLocale() == 'th'): ?>
+                            <?php if(app()->getLocale() == 'th'): ?>
                                     <?php echo e($r->academic_ranks_th); ?> <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาไทย -->
-                                <?php else: ?>
+                                <?php elseif(app()->getLocale() == 'en'): ?>
                                     <?php echo e($r->academic_ranks_en); ?> <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
+                                <?php else: ?>
+                                    <?php echo e($r->academic_ranks_cn); ?>
+
                                 <?php endif; ?>
                             </h5>
                                 <!-- 🔹 แสดงสาขาวิจัย -->
@@ -65,8 +68,11 @@
                                         <?php if(app()->getLocale() == 'th'): ?>
                                             <?php echo e($r->program->program_name_th); ?>
 
-                                        <?php else: ?>
+                                        <?php elseif(app()->getLocale() == 'en'): ?>
                                             <?php echo e($r->program->program_name_en); ?>
+
+                                        <?php else: ?>
+                                            <?php echo e($r->program->program_name_cn); ?>
 
                                         <?php endif; ?>
                                     </p>
@@ -106,18 +112,24 @@
                                 <h5 class="card-title-2">
                                 <?php if(app()->getLocale() == 'th'): ?>
                                     <?php echo e($s->academic_ranks_th); ?> <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาไทย -->
-                                <?php else: ?>
+                                <?php elseif(app()->getLocale() == 'en'): ?>
                                     <?php echo e($s->academic_ranks_en); ?> <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
+                                <?php else: ?>
+                                    <?php echo e($s->academic_ranks_cn); ?>
+
                                 <?php endif; ?>
                             </h5>
                                 <!-- 🔹 แสดงโปรแกรมที่เรียน -->
 
                                 <div class="card-expertise">
                                     <p class="card-text">
-                                        <?php if(app()->getLocale() == 'th'): ?>
+                                    <?php if(app()->getLocale() == 'th'): ?>
                                             <?php echo e($s->program->program_name_th); ?>
 
-                                        <?php else: ?>
+                                        <?php elseif(app()->getLocale() == 'zh'): ?>
+                                            <?php echo e($s->program->program_name_cn); ?>
+
+                                        <?php elseif(app()->getLocale() == 'en'): ?>
                                             <?php echo e($s->program->program_name_en); ?>
 
                                         <?php endif; ?>
@@ -167,4 +179,5 @@
 </style>
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\resources\views/researchers.blade.php ENDPATH**/ ?>

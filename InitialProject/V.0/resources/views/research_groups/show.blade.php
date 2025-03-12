@@ -31,25 +31,29 @@
                 <p class="card-text col-sm-9">{{ $researchGroup->group_detail_en }}</p>
             </div>
             <div class="row mt-3">
-                <p class="card-text col-sm-3"><b>{{ trans('message.group_leader') }}</b></p>
-                <p class="card-text col-sm-9">
-                    @foreach($researchGroup->user as $user)
-                    @if ($user->pivot->role == 1)
-                    {{ $user->position_th }} {{ $user->fname_th }} {{ $user->lname_th }}
-                    @endif
-                    @endforeach
-                </p>
-            </div>
-            <div class="row mt-1">
-                <p class="card-text col-sm-3"><b>{{ trans('message.group_members') }}</b></p>
-                <p class="card-text col-sm-9">
-                    @foreach($researchGroup->user as $user)
-                    @if ($user->pivot->role == 2)
-                    {{ $user->position_th }} {{ $user->fname_th }} {{ $user->lname_th }},
-                    @endif
-                    @endforeach
-                </p>
-            </div>
+                    <p class="card-text col-sm-3"><b>{{ trans('message.group_leader') }}</b></p>
+                    <p class="card-text col-sm-9">
+                        @foreach($researchGroup->user as $user)
+                            @if ($user->pivot->role == 1)
+                                {{ $user->{"position_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())} ?: $user->{"position_en"} }}
+                                {{ $user->{"fname_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())} ?: $user->{"fname_en"} }}
+                                {{ $user->{"lname_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())} ?: $user->{"lname_en"} }}
+                            @endif
+                        @endforeach
+                    </p>
+                </div>
+                <div class="row mt-1">
+                    <p class="card-text col-sm-3"><b>{{ trans('message.group_members') }}</b></p>
+                    <p class="card-text col-sm-9">
+                        @foreach($researchGroup->user as $user)
+                            @if ($user->pivot->role == 2)
+                                {{ $user->{"position_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())} ?: $user->{"position_en"} }}
+                                {{ $user->{"fname_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())} ?: $user->{"fname_en"} }}
+                                {{ $user->{"lname_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())} ?: $user->{"lname_en"} }},
+                            @endif
+                        @endforeach
+                    </p>
+                </div>
             <a class="btn btn-primary mt-5" href="{{ route('researchGroups.index') }}">{{ trans('message.back') }}</a>
         </div>
     </div>
