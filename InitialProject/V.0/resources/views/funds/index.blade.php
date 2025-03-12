@@ -14,32 +14,18 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-<<<<<<< HEAD
-            <h4 class="card-title">{{ trans('message.Funds') }}</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('funds.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> {{ trans('message.add') }}</a>
-=======
             <h4 class="card-title">{{ __('message.fund_research') }}</h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('funds.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> </i> {{ __('message.add') }}</a>
             </a>
->>>>>>> 456c3e131f3ead0fef22146c146e83bdfd44b7bc
             <div class="table-responsive">
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
-<<<<<<< HEAD
-                            <th>{{ trans('message.no') }}</th>
-                            <th>{{ trans('message.fund_name') }}</th>
-                            <th>{{ trans('message.fund_type') }}</th>
-                            <th>{{ trans('message.fund_level') }}</th>
-                            <!-- <th>Create by</th> -->
-                            <th>{{ trans('message.action') }}</th>
-=======
                         <th>{{ __('message.no') }}</th>
                         <th>{{ __('message.fund_name') }}</th>
                         <th>{{ __('message.fund_type') }}</th>
                         <th>{{ __('message.fund_level') }}</th>
                         <th>{{ __('message.action') }}</th>
->>>>>>> 456c3e131f3ead0fef22146c146e83bdfd44b7bc
                         </tr>
                     </thead>
                     <tbody>
