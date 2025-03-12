@@ -31,27 +31,26 @@
                     <tbody>
                         @foreach ($funds as $i=>$fund)
                         <tr>
-
                             <td>{{ $i+1 }}</td>
                             <td>{{ Str::limit($fund->fund_name,80) }}</td>
                             <td>
-                                @if(app()->getLocale() == 'th')
-                                    {{ $fund->fund_type }}
-                                @elseif(app()->getLocale() == 'zh')
-                                    {{ $fund->fund_type_cn }}
-                                @else
-                                    {{ $fund->fund_type_en }}
-                                @endif
-                            </td>
-                            <td>
-                                @if(app()->getLocale() == 'th')
-                                    {{ $fund->fund_level }}
-                                @elseif(app()->getLocale() == 'zh')
-                                    {{ $fund->fund_level_cn }}
-                                @else
-                                    {{ $fund->fund_level_en }}
-                                @endif
-                            </td>
+    @if(app()->getLocale() == 'th')
+        {{ __('message.funds.'.$fund->fund_type) }}
+    @elseif(app()->getLocale() == 'zh')
+        {{ __('message.funds.'.$fund->fund_type) }}
+    @else
+        {{ __('message.funds.'.$fund->fund_type) }}
+    @endif
+</td>
+<td>
+    @if(!empty($fund->fund_level) && __('message.funds_level.'.$fund->fund_level, [], app()->getLocale()) !== 'message.funds_level.'.$fund->fund_level)
+        {{ __('message.funds_level.'.$fund->fund_level) }}
+    @else
+        {{ '' }}
+    @endif
+</td>
+
+
                             <!-- <td>{{ $fund->user->fname_en }} {{ $fund->user->lname_en }}</td> -->
 
                             <td>
