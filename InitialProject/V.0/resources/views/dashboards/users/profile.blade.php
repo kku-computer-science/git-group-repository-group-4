@@ -54,6 +54,8 @@
             </div>
         </div>
         <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+            
+            <!-- Account -->
             <div class="tab-pane " id="account" role="tabpanel" aria-labelledby="account-tab">
                 <h3 class="mb-4"><span class="menu-title">@lang('message.profile_settings')</span></h3>
                 <form class="form-horizontal" method="POST" action="{{ route('adminUpdateInfo') }}" id="AdminInfoForm">
@@ -158,7 +160,7 @@
                 </form>
             </div>
 
-
+            <!--Password section -->
             <div class="tab-pane fade " id="password" role="tabpanel" aria-labelledby="password-tab">
                 <form class="form-horizontal" action="{{ route('adminChangePassword') }}" method="POST" id="changePasswordAdminForm">
                     <h3 class="mb-4">@lang('message.Password Settings')</h3>
@@ -316,7 +318,7 @@
             </form>
 
 
-
+            <!-- Expertise-->
             </div>
             <div class="tab-pane fade show{{old('tab') == 'expertise' ? ' active' : null}}" id="expertise" role="tabpanel" aria-labelledby="expertise-tab">
                 <h3 class="mb-4">{{ __('message.Expertise') }}</h3>

@@ -4,12 +4,10 @@ Library           String
 
 *** Variables ***
 ${SERVER}                    http://127.0.0.1:8000
-${USER_USERNAME}             admin@gmail.com
-${USER_PASSWORD}             12345678
+${USER_USERNAME}             chakso@kku.ac.th
+${USER_PASSWORD}             123456789
 ${LOGIN URL}                 ${SERVER}/login
 ${USER URL}                  ${SERVER}/dashboard
-${CHROME_BROWSER_PATH}       C:/Program Files/Google/ChromeNew/chrome-win64/chrome.exe
-${CHROME_DRIVER_PATH}        C:/driver/chromedriver-win64/chromedriver.exe
 ${VIEW_BUTTON_XPATH}         //a[contains(@class, 'btn-outline-primary')]/i[contains(@class, 'mdi-eye')]
 ${EDIT_BUTTON_XPATH}         //a[contains(@class, 'btn-outline-success') or @title='Edit']
 ${ADD_BUTTON_XPATH}          //a[contains(@class, 'btn-primary') and contains(@class, 'btn-menu') and .//i[contains(@class, 'mdi-plus')]]
@@ -90,6 +88,7 @@ Test log in Page
     Location Should Be    ${USER URL}
 
     # ตรวจสอบว่า "ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์" แสดงใน Dashboard
+    Page Should Contain    ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์
 
 Test Navigate To User Profile
     [Documentation]    Test that clicking "โปรไฟล์ผู้ใช้" to the User Profile page without re-login.
@@ -111,6 +110,13 @@ Test Navigate To User Profile
     Click Element    xpath=//a[@id='password-tab' and contains(@class, 'nav-link') and contains(., 'รหัสผ่าน')]
     Sleep    3s
 
+    Click Element    xpath=//a[@id='expertise-tab' and contains(@class, 'nav-link') and contains(., 'ความเชี่ยวชาญ')]
+    Sleep    3s
+
+    Click Element    xpath=//a[@id='education-tab' and contains(@class, 'nav-link') and contains(., 'การศึกษา')]
+    Sleep    3s
+
+
 Test Navigate To Funds Management
     [Documentation]    Test that clicking "จัดการกองทุน" navigates to the funds management page.
 
@@ -124,6 +130,7 @@ Test Navigate To Funds Management
     Page Should Contain    ทุนวิจัย 
     Page Should Contain    ทุนภายใน
 
+
 Test Navigate To Research Projects
     [Documentation]    Test that clicking "โครงการวิจัย" navigates to the research projects page.
 
@@ -134,7 +141,7 @@ Test Navigate To Research Projects
     Location Should Be    ${SERVER}/researchProjects
 
     # ตรวจสอบชื่อหัวหน้ากลุ่มเป็น "Ngamnij" โดยระบุคอลัมน์ที่ 4
-    Element Should Contain    xpath=//tr[@role='row']//td[4]    พุธษดี
+    Element Should Contain    xpath=//tr[@role='row']//td[4]    จักรชัย
 
 Test Navigate To Research Groups
     [Documentation]    Test that clicking "กลุ่มวิจัย" navigates to the research groups page.

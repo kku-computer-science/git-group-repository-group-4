@@ -35,19 +35,35 @@
                     <tr>
                         <td>{{ $i+1 }}</td>
                         <td>{{ $researchProject->project_year }}</td>
-                        <td>{{ Str::limit($researchProject->project_name,70) }}</td>
+                        <td>
+                            {{ Str::limit($researchProject->project_name, 70) }}
+                        </td>
+
                         <td>
                             @foreach($researchProject->user as $user)
-                            @if ($user->pivot->role == 1)
-                            {{ $user->fname_en }}
-                            @endif
+                                @if ($user->pivot->role == 1)
+                                    @if (App::getLocale() == 'zh')
+                                        {{ $user->fname_zh ?? $user->fname_en ?? $user->fname_th }}
+                                    @elseif (App::getLocale() == 'en')
+                                        {{ $user->fname_en ?? $user->fname_th }}
+                                    @else
+                                        {{ $user->fname_th }}
+                                    @endif
+                                @endif
                             @endforeach
                         </td>
+
                         <td>
                             @foreach($researchProject->user as $user)
-                            @if ($user->pivot->role == 2)
-                            {{ $user->fname_en }}
-                            @endif
+                                @if ($user->pivot->role == 2)
+                                    @if (App::getLocale() == 'zh')
+                                        {{ $user->fname_zh ?? $user->fname_en ?? $user->fname_th }}
+                                    @elseif (App::getLocale() == 'en')
+                                        {{ $user->fname_en ?? $user->fname_th }}
+                                    @else
+                                        {{ $user->fname_th }}
+                                    @endif
+                                @endif
                             @endforeach
                         </td>
                         <td>

@@ -14,18 +14,32 @@
     <?php endif; ?>
     <div class="card" style="padding: 16px;">
         <div class="card-body">
+<<<<<<< HEAD
+            <h4 class="card-title"><?php echo e(__('message.fund_research')); ?></h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('funds.create')); ?>"><i class="mdi mdi-plus btn-icon-prepend"></i> </i> <?php echo e(__('message.add')); ?></a>
+            </a>
+=======
             <h4 class="card-title"><?php echo e(trans('message.Funds')); ?></h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('funds.create')); ?>"><i class="mdi mdi-plus btn-icon-prepend"></i> <?php echo e(trans('message.add')); ?></a>
+>>>>>>> 5164813ebcfa26b6b485710544ceed3f7d197ed9
             <div class="table-responsive">
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
+<<<<<<< HEAD
+                        <th><?php echo e(__('message.no')); ?></th>
+                        <th><?php echo e(__('message.fund_name')); ?></th>
+                        <th><?php echo e(__('message.fund_type')); ?></th>
+                        <th><?php echo e(__('message.fund_level')); ?></th>
+                        <th><?php echo e(__('message.action')); ?></th>
+=======
                             <th><?php echo e(trans('message.no')); ?></th>
                             <th><?php echo e(trans('message.fund_name')); ?></th>
                             <th><?php echo e(trans('message.fund_type')); ?></th>
                             <th><?php echo e(trans('message.fund_level')); ?></th>
                             <!-- <th>Create by</th> -->
                             <th><?php echo e(trans('message.action')); ?></th>
+>>>>>>> 5164813ebcfa26b6b485710544ceed3f7d197ed9
                         </tr>
                     </thead>
                     <tbody>
@@ -34,8 +48,30 @@
 
                             <td><?php echo e($i+1); ?></td>
                             <td><?php echo e(Str::limit($fund->fund_name,80)); ?></td>
-                            <td><?php echo e($fund->fund_type); ?></td>
-                            <td><?php echo e($fund->fund_level); ?></td>
+                            <td>
+                                <?php if(app()->getLocale() == 'th'): ?>
+                                    <?php echo e($fund->fund_type); ?>
+
+                                <?php elseif(app()->getLocale() == 'zh'): ?>
+                                    <?php echo e($fund->fund_type_cn); ?>
+
+                                <?php else: ?>
+                                    <?php echo e($fund->fund_type_en); ?>
+
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php if(app()->getLocale() == 'th'): ?>
+                                    <?php echo e($fund->fund_level); ?>
+
+                                <?php elseif(app()->getLocale() == 'zh'): ?>
+                                    <?php echo e($fund->fund_level_cn); ?>
+
+                                <?php else: ?>
+                                    <?php echo e($fund->fund_level_en); ?>
+
+                                <?php endif; ?>
+                            </td>
                             <!-- <td><?php echo e($fund->user->fname_en); ?> <?php echo e($fund->user->lname_en); ?></td> -->
 
                             <td>
@@ -115,7 +151,7 @@
                     }).then(function() {
                         location.reload();
                         form.submit();
-                    });
+                    }); 
                 }
             });
     });
