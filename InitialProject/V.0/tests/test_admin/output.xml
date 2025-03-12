@@ -1,195 +1,282 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T23:37:40.228343" rpa="false" schemaversion="5">
-<suite id="s1" name="UAT-adminTH" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_admin\UAT-adminTH.robot">
+<robot generator="Robot 7.1.1 (Python 3.10.4 on win32)" generated="2025-03-13T00:27:27.043848" rpa="false" schemaversion="5">
+<suite id="s1" name="UAT-adminTH" source="C:\Users\tanta\OneDrive\Documents\git-group-repository-group-4\InitialProject\V.0\tests\test_admin\UAT-adminTH.robot">
 <test id="s1-t1" name="Test log in Page" line="68">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:40.530158" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/login'.</msg>
+<msg time="2025-03-13T00:27:27.334958" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/login'.</msg>
+<msg time="2025-03-13T00:27:28.546717" level="WARN">The chromedriver version (131.0.6778.264) detected in PATH at C:\Users\tanta\OneDrive\Documents\ROBOT_FRAMEWORK\selenium\webdriver\chromedriver.exe might not be compatible with the detected chrome version (134.0.6998.36); currently, chromedriver 134.0.6998.88 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg time="2025-03-13T00:27:31.841702" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-13T00:27:31.841702" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 131
+Current browser version is 134.0.6998.36 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7DDBE80D5+2992373]
+	(No symbol) [0x00007FF7DD87BFD0]
+	(No symbol) [0x00007FF7DD71590A]
+	(No symbol) [0x00007FF7DD757662]
+	(No symbol) [0x00007FF7DD7566CB]
+	(No symbol) [0x00007FF7DD7509E3]
+	(No symbol) [0x00007FF7DD74BC39]
+	(No symbol) [0x00007FF7DD79A6AC]
+	(No symbol) [0x00007FF7DD799C90]
+	(No symbol) [0x00007FF7DD78F113]
+	(No symbol) [0x00007FF7DD75A918]
+	(No symbol) [0x00007FF7DD75BA81]
+	GetHandleVerifier [0x00007FF7DDC46A2D+3379789]
+	GetHandleVerifier [0x00007FF7DDC5C32D+3468109]
+	GetHandleVerifier [0x00007FF7DDC50043+3418211]
+	GetHandleVerifier [0x00007FF7DD9DC78B+847787]
+	(No symbol) [0x00007FF7DD88757F]
+	(No symbol) [0x00007FF7DD882FC4]
+	(No symbol) [0x00007FF7DD88315D]
+	(No symbol) [0x00007FF7DD872979]
+	BaseThreadInitThunk [0x00007FFECC41E8D7+23]
+	RtlUserThreadStart [0x00007FFECE61BF6C+44]
+</msg>
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-12T23:37:40.530158" elapsed="3.368952"/>
+<status status="FAIL" start="2025-03-13T00:27:27.334958" elapsed="4.601758">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 131
+Current browser version is 134.0.6998.36 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7DDBE80D5+2992373]
+	(No symbol) [0x00007FF7DD87BFD0]
+	(No symbol) [0x00007FF7DD71590A]
+	(No symbol) [0x00007FF7DD757662]
+	(No symbol) [0x00007FF7DD7566CB]
+	(No symbol) [0x00007FF7DD7509E3]
+	(No symbol) [0x00007FF7DD74BC39]
+	(No symbol) [0x00007FF7DD79A6AC]
+	(No symbol) [0x00007FF7DD799C90]
+	(No symbol) [0x00007FF7DD78F113]
+	(No symbol) [0x00007FF7DD75A918]
+	(No symbol) [0x00007FF7DD75BA81]
+	GetHandleVerifier [0x00007FF7DDC46A2D+3379789]
+	GetHandleVerifier [0x00007FF7DDC5C32D+3468109]
+	GetHandleVerifier [0x00007FF7DDC50043+3418211]
+	GetHandleVerifier [0x00007FF7DD9DC78B+847787]
+	(No symbol) [0x00007FF7DD88757F]
+	(No symbol) [0x00007FF7DD882FC4]
+	(No symbol) [0x00007FF7DD88315D]
+	(No symbol) [0x00007FF7DD872979]
+	BaseThreadInitThunk [0x00007FFECC41E8D7+23]
+	RtlUserThreadStart [0x00007FFECE61BF6C+44]
+</status>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=navbarDropdownMenuLink</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-12T23:37:43.901128" elapsed="0.065818"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.936716" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:43.970071" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
 <arg>id=navbarDropdownMenuLink</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:43.966946" elapsed="0.107975"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.937715" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath=//div[contains(@class, "dropdown-menu show")]</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-12T23:37:44.075921" elapsed="0.054348"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.937715" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:44.131268" level="INFO">Clicking element 'xpath=//a[contains(@href, "/lang/th")]'.</msg>
 <arg>xpath=//a[contains(@href, "/lang/th")]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:44.131268" elapsed="0.517975"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.937715" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T23:37:49.656770" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T23:37:44.649243" elapsed="5.007527"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.938790" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:49.658788" level="INFO">Typing text 'admin@gmail.com' into text field 'id=username'.</msg>
 <arg>id=username</arg>
 <arg>${USER_USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:49.656770" elapsed="0.284731"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.938790" elapsed="0.000000"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:49.941501" level="INFO">Typing text '12345678' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${USER_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:49.941501" elapsed="0.051547"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.938790" elapsed="0.000000"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:49.993048" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
 <arg>xpath=//button[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:49.993048" elapsed="0.076575"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.939794" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T23:37:52.070643" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T23:37:50.069623" elapsed="2.001020"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.939794" elapsed="0.000000"/>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:52.342725" level="INFO">Current location is 'http://127.0.0.1:8000/dashboard'.</msg>
 <arg>${USER URL}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T23:37:52.071714" elapsed="0.272589"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.939794" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:52.397052" level="INFO">Current page contains text 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์'.</msg>
 <arg>ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T23:37:52.345322" elapsed="0.051730"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.940782" elapsed="0.000000"/>
 </kw>
 <doc>Test admin login and navigate to each page after language change from English to Thai.</doc>
-<status status="PASS" start="2025-03-12T23:37:40.530158" elapsed="11.868126"/>
+<status status="FAIL" start="2025-03-13T00:27:27.333960" elapsed="4.606822">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 131
+Current browser version is 134.0.6998.36 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
+Stacktrace:
+	GetHandleVerifier [0x00007FF7DDBE80D5+2992373]
+	(No symbol) [0x00007FF7DD87BFD0]
+	(No symbol) [0x00007FF7DD71590A]
+	(No symbol) [0x00007FF7DD757662]
+	(No symbol) [0x00007FF7DD7566CB]
+	(No symbol) [0x00007FF7DD7509E3]
+	(No symbol) [0x00007FF7DD74BC39]
+	(No symbol) [0x00007FF7DD79A6AC]
+	(No symbol) [0x00007FF7DD799C90]
+	(No symbol) [0x00007FF7DD78F113]
+	(No symbol) [0x00007FF7DD75A918]
+	(No symbol) [0x00007FF7DD75BA81]
+	GetHandleVerifier [0x00007FF7DDC46A2D+3379789]
+	GetHandleVerifier [0x00007FF7DDC5C32D+3468109]
+	GetHandleVerifier [0x00007FF7DDC50043+3418211]
+	GetHandleVerifier [0x00007FF7DD9DC78B+847787]
+	(No symbol) [0x00007FF7DD88757F]
+	(No symbol) [0x00007FF7DD882FC4]
+	(No symbol) [0x00007FF7DD88315D]
+	(No symbol) [0x00007FF7DD872979]
+	BaseThreadInitThunk [0x00007FFECC41E8D7+23]
+	RtlUserThreadStart [0x00007FFECE61BF6C+44]
+</status>
 </test>
 <test id="s1-t2" name="Test Navigate To User Profile" line="95">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:52.405178" level="INFO">Clicking element 'xpath=//span[contains(text(), 'โปรไฟล์ผู้ใช้')]'.</msg>
+<msg time="2025-03-13T00:27:31.942785" level="INFO">Clicking element 'xpath=//span[contains(text(), 'โปรไฟล์ผู้ใช้')]'.</msg>
+<msg time="2025-03-13T00:27:31.943785" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-13T00:27:31.943785" level="FAIL">No browser is open.</msg>
 <arg>xpath=//span[contains(text(), 'โปรไฟล์ผู้ใช้')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:52.404015" elapsed="1.077544"/>
+<status status="FAIL" start="2025-03-13T00:27:31.941716" elapsed="0.038347">No browser is open.</status>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:53.487951" level="INFO">Current location is 'http://127.0.0.1:8000/profile'.</msg>
 <arg>${SERVER}/profile</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T23:37:53.481559" elapsed="0.006392"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.981064" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:53.512384" level="INFO">Current page contains text 'บัญชี'.</msg>
 <arg>บัญชี</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T23:37:53.487951" elapsed="0.024433"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.981064" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:53.513383" level="INFO">Clicking element 'xpath=//a[@id='account-tab' and contains(@class, 'nav-link') and contains(., 'บัญชี')]'.</msg>
 <arg>xpath=//a[@id='account-tab' and contains(@class, 'nav-link') and contains(., 'บัญชี')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:53.512384" elapsed="0.074904"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.981064" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T23:37:56.592023" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T23:37:53.587288" elapsed="3.004735"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.982064" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:56.592023" level="INFO">Clicking element 'xpath=//a[@id='password-tab' and contains(@class, 'nav-link') and contains(., 'รหัสผ่าน')]'.</msg>
 <arg>xpath=//a[@id='password-tab' and contains(@class, 'nav-link') and contains(., 'รหัสผ่าน')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:56.592023" elapsed="0.105710"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.982064" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T23:37:59.713848" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T23:37:56.698738" elapsed="3.015110"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.982064" elapsed="0.000000"/>
 </kw>
 <doc>Test that clicking "โปรไฟล์ผู้ใช้" to the User Profile page without re-login.</doc>
-<status status="PASS" start="2025-03-12T23:37:52.400281" elapsed="7.313567"/>
+<status status="FAIL" start="2025-03-13T00:27:31.941716" elapsed="0.040348">No browser is open.</status>
 </test>
 <test id="s1-t3" name="Test Navigate To Funds Management" line="115">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:37:59.713848" level="INFO">Clicking element 'xpath=//span[contains(text(), 'จัดการกองทุน')]'.</msg>
+<msg time="2025-03-13T00:27:31.984069" level="INFO">Clicking element 'xpath=//span[contains(text(), 'จัดการกองทุน')]'.</msg>
+<msg time="2025-03-13T00:27:31.984069" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-13T00:27:31.984069" level="FAIL">No browser is open.</msg>
 <arg>xpath=//span[contains(text(), 'จัดการกองทุน')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:37:59.713848" elapsed="1.134587"/>
+<status status="FAIL" start="2025-03-13T00:27:31.984069" elapsed="0.001000">No browser is open.</status>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:38:00.855366" level="INFO">Current location is 'http://127.0.0.1:8000/funds'.</msg>
 <arg>${SERVER}/funds</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T23:38:00.849490" elapsed="0.005876"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.985069" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:38:00.871050" level="INFO">Current page contains text 'ทุนวิจัย'.</msg>
 <arg>ทุนวิจัย</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T23:38:00.855366" elapsed="0.015684"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.985069" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:38:00.886589" level="INFO">Current page contains text 'ทุนภายใน'.</msg>
 <arg>ทุนภายใน</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T23:38:00.871050" elapsed="0.015539"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.985069" elapsed="0.000000"/>
 </kw>
 <doc>Test that clicking "จัดการกองทุน" navigates to the funds management page.</doc>
-<status status="PASS" start="2025-03-12T23:37:59.713848" elapsed="1.173603"/>
+<status status="FAIL" start="2025-03-13T00:27:31.983073" elapsed="0.001996">No browser is open.</status>
 </test>
 <test id="s1-t4" name="Test Navigate To Research Projects" line="128">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:38:00.889290" level="INFO">Clicking element 'xpath=//span[contains(text(), 'โครงการวิจัย')]'.</msg>
+<msg time="2025-03-13T00:27:31.987068" level="INFO">Clicking element 'xpath=//span[contains(text(), 'โครงการวิจัย')]'.</msg>
+<msg time="2025-03-13T00:27:31.987068" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-13T00:27:31.987068" level="FAIL">No browser is open.</msg>
 <arg>xpath=//span[contains(text(), 'โครงการวิจัย')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T23:38:00.888284" elapsed="0.581091"/>
+<status status="FAIL" start="2025-03-13T00:27:31.986068" elapsed="0.001000">No browser is open.</status>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:38:01.477293" level="INFO">Current location is 'http://127.0.0.1:8000/researchProjects'.</msg>
 <arg>${SERVER}/researchProjects</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T23:38:01.469375" elapsed="0.007918"/>
+<status status="NOT RUN" start="2025-03-13T00:27:31.987068" elapsed="0.000000"/>
 </kw>
 <kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T23:38:01.589688" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T23:38:01.590682" level="FAIL">Element 'xpath=//tr[@role='row']//td[4]' should have contained text 'พุธษดี' but its text was 'Pusadee'.</msg>
 <arg>xpath=//tr[@role='row']//td[4]</arg>
 <arg>พุธษดี</arg>
 <doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="FAIL" start="2025-03-12T23:38:01.477293" elapsed="0.154511">Element 'xpath=//tr[@role='row']//td[4]' should have contained text 'พุธษดี' but its text was 'Pusadee'.</status>
+<status status="NOT RUN" start="2025-03-13T00:27:31.987068" elapsed="0.000999"/>
 </kw>
 <doc>Test that clicking "โครงการวิจัย" navigates to the research projects page.</doc>
-<status status="FAIL" start="2025-03-12T23:38:00.888284" elapsed="0.743520">Element 'xpath=//tr[@role='row']//td[4]' should have contained text 'พุธษดี' but its text was 'Pusadee'.</status>
+<status status="FAIL" start="2025-03-13T00:27:31.986068" elapsed="0.001999">No browser is open.</status>
 </test>
-<status status="FAIL" start="2025-03-12T23:37:40.228343" elapsed="21.404631"/>
+<test id="s1-t5" name="Test Navigate To Research Groups" line="140">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:27:31.989581" level="INFO">Clicking element 'xpath=//span[contains(text(), 'กลุ่มวิจัย')]'.</msg>
+<msg time="2025-03-13T00:27:31.989581" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-13T00:27:31.989581" level="FAIL">No browser is open.</msg>
+<arg>xpath=//span[contains(text(), 'กลุ่มวิจัย')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-13T00:27:31.989581" elapsed="0.000000">No browser is open.</status>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<arg>${SERVER}/researchGroups</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" start="2025-03-13T00:27:31.989581" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>xpath=//tr[@role='row']//td[3]</arg>
+<arg>วาสนา</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-13T00:27:31.990590" elapsed="0.000000"/>
+</kw>
+<doc>Test that clicking "กลุ่มวิจัย" navigates to the research groups page.</doc>
+<status status="FAIL" start="2025-03-13T00:27:31.989070" elapsed="0.001520">No browser is open.</status>
+</test>
+<status status="FAIL" start="2025-03-13T00:27:27.045849" elapsed="4.944741"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="UAT-adminTH" id="s1" pass="3" fail="1" skip="0">UAT-adminTH</stat>
+<stat pass="0" fail="5" skip="0" id="s1" name="UAT-adminTH">UAT-adminTH</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-03-13T00:27:28.546717" level="WARN">The chromedriver version (131.0.6778.264) detected in PATH at C:\Users\tanta\OneDrive\Documents\ROBOT_FRAMEWORK\selenium\webdriver\chromedriver.exe might not be compatible with the detected chrome version (134.0.6998.36); currently, chromedriver 134.0.6998.88 is recommended for chrome 134.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

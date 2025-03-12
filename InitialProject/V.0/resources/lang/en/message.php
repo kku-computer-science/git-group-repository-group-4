@@ -169,6 +169,7 @@ return [
         'cancel' => 'Cancel',
     'fund_detail' => 'Fund Detail',
     'fund_description' => 'Fund Information',
+    'fund_info' => 'Fund Information', 
     'fund_name' => 'Fund Name',
     'fund_year' => 'Year',
     'fund_details' => 'Fund Details',
