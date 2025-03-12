@@ -187,15 +187,15 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: `{{ __('message.are_you_sure') }}`,
+                text: "{{ __('message.delete_warning') }}",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("{{ __('message.deleted_successfully') }}", {
                         icon: "success",
                     }).then(function() {
                         location.reload();

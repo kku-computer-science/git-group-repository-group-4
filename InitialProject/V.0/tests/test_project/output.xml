@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T20:27:11.488990" rpa="false" schemaversion="5">
+<suite id="s1" name="UAT-projectZH" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_project\UAT-projectZH.robot">
+<test id="s1-t1" name="Test Open Project Page" line="63">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:11.809768" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T20:27:11.810774" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T20:27:11.809768" elapsed="2.679952"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T20:27:17.499078" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T20:27:14.489720" elapsed="3.009358"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:17.499078" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Research Project')]'.</msg>
+<arg>${RESEARCHPROJECT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T20:27:17.499078" elapsed="0.648849"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T20:27:20.158730" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T20:27:18.147927" elapsed="2.010803"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:20.174573" level="INFO">Current location is 'http://127.0.0.1:8000/researchproject'.</msg>
+<arg>http://127.0.0.1:8000/researchproject</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T20:27:20.158730" elapsed="0.015843"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:20.346193" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="project_page.png"&gt;&lt;img src="project_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>project_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T20:27:20.174573" elapsed="0.175921"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:20.350798" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<arg>//a[@id='navbarDropdownMenuLink']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T20:27:20.350798" elapsed="0.063313"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T20:27:22.415965" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T20:27:20.414111" elapsed="2.001854"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:22.415965" level="INFO">Opening url 'http://127.0.0.1:8000/lang/zh'</msg>
+<arg>http://127.0.0.1:8000/lang/zh</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-12T20:27:22.415965" elapsed="0.701609"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T20:27:28.123836" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T20:27:23.118303" elapsed="5.005533"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:28.184442" level="INFO">Current page contains element 'xpath=//span[contains(normalize-space(.), '项目期限')]'.</msg>
+<arg>xpath=//span[contains(normalize-space(.), '项目期限')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T20:27:28.123836" elapsed="0.060606"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:28.231807" level="INFO">Current page contains element 'xpath=//span[contains(normalize-space(.), '2020年08月01日 至 2020年08月19日')]'.</msg>
+<arg>xpath=//span[contains(normalize-space(.), '2020年08月01日 至 2020年08月19日')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T20:27:28.190715" elapsed="0.041092"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:28.276271" level="INFO">Current page contains element 'xpath=//span[contains(normalize-space(.), '研究资助类型')]'.</msg>
+<arg>xpath=//span[contains(normalize-space(.), '研究资助类型')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T20:27:28.231807" elapsed="0.044464"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:28.330420" level="INFO">Current page contains element 'xpath=//span[contains(normalize-space(.), '外部项目资助')]'.</msg>
+<arg>xpath=//span[contains(normalize-space(.), '外部项目资助')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T20:27:28.279976" elapsed="0.050444"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:28.366344" level="INFO">Current page contains element 'xpath=//span[contains(normalize-space(.), '资助机构')]'.</msg>
+<arg>xpath=//span[contains(normalize-space(.), '资助机构')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-03-12T20:27:28.332618" elapsed="0.033726"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T20:27:28.531687" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T20:27:28.531687" level="FAIL">Page should have contained element 'xpath=//span[contains(normalize-space(.), '高等教育、科研和创新部')]' but did not.</msg>
+<arg>xpath=//span[contains(normalize-space(.), '高等教育、科研和创新部')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="FAIL" start="2025-03-12T20:27:28.367405" elapsed="0.166626">Page should have contained element 'xpath=//span[contains(normalize-space(.), '高等教育、科研和创新部')]' but did not.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(normalize-space(.), '负责单位')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-03-12T20:27:28.534992" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(normalize-space(.), '计算机科学')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-03-12T20:27:28.535558" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(normalize-space(.), '分配预算')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-03-12T20:27:28.535558" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(normalize-space(.), '90,000 铢')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-03-12T20:27:28.536696" elapsed="0.000685"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(normalize-space(.), 'Lecturer Thanaphon Tangchoopong')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-03-12T20:27:28.537381" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(normalize-space(.), 'Lecturer Warunya Wunnasri')]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2025-03-12T20:27:28.537381" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>project_page_thai.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-03-12T20:27:28.538482" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-12T20:27:28.538482" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Project" และการเปลี่ยนภาษาเป็นจีน</doc>
+<status status="FAIL" start="2025-03-12T20:27:11.807873" elapsed="16.731606">Page should have contained element 'xpath=//span[contains(normalize-space(.), '高等教育、科研和创新部')]' but did not.</status>
+</test>
+<status status="FAIL" start="2025-03-12T20:27:11.490084" elapsed="17.051394"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="UAT-projectZH" id="s1" pass="0" fail="1" skip="0">UAT-projectZH</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-12T20:27:11.809768" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+</errors>
+</robot>

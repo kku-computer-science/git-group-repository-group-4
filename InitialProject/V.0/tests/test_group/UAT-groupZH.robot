@@ -60,81 +60,67 @@ ${REPORT_MENU}               //a[@class='nav-link' and contains(text(), 'Report'
 
 
 *** Test Cases ***
-Test Open Researchers Page
-    [Documentation]    ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย
+Test Open Group Page
+    [Documentation]    ทดสอบการเปิดหน้า "Group" และการเปลี่ยนภาษาเป็นจีน
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
-    Click Element    ${RESEARCHER_MENU}
+    Click Element    ${RESEARCHGROUP_MENU}
     Sleep    2s
-    Location Should Be    http://127.0.0.1:8000/researchers
-    Capture Page Screenshot    researcher_page.png
+    Location Should Be    http://127.0.0.1:8000/researchgroup
+    Capture Page Screenshot    group_page2.png
     
     # คลิกที่เมนูภาษาอังกฤษก่อน
     Click Element    //a[@id='navbarDropdownMenuLink']
     Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
-    # ไปที่ URL ของภาษาไทย
-    Go To    http://127.0.0.1:8000/lang/th
+    # ไปที่ URL ของภาษาจีน
+    Go To    http://127.0.0.1:8000/lang/zh
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
-    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บ
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[2]
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[3]  
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[6] 
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[8]
+    # ตรวจสอบชื่อในหน้าเว็บ
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Wasana Putklang')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Chaiyapon Keeratikasikorn')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Nagon Watanakij')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Pipat Reungsang')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Rasamee Suwanwerakamtorn')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Urawan Chanket')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Sarun Apichontrakul')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Sakpod Tongleamnak')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Chakchai So-In')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Somjit Arch-int')]
 
-    Capture Page Screenshot    researcher_page_thai.png
+    Capture Page Screenshot    group_page_zh.png
 
-    # เลื่อนหน้าจอลงจนพบ "Arfat Ahmad Khan"
-    FOR    ${i}    IN RANGE    0    5  # เลื่อนหน้าจอลง 5 ครั้ง
-        Execute JavaScript    window.scrollBy(0, 1000)   # เลื่อนลงทีละ 1000px
-        Sleep    1s  # ให้เวลาหน้าโหลด
-        # ตรวจสอบว่าเจอ "Arfat Ahmad Khan"
-        Run Keyword If    '${i}' == '9'    Page Should Contain Element    xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]
-        Run Keyword If    '${i}' == '9'    Return From Keyword
-    END
-
-    Capture Page Screenshot    researcher_page_thai.png
     Close Browser
 
-Test Open Researchers Profile Page
-    [Documentation]    ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย
+Test Open Group details Page
+    [Documentation]    ทดสอบการเปิดหน้า "Group" และการเปลี่ยนภาษาเป็นจีน
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
-    Click Element    ${RESEARCHER_MENU}
+    Click Element    ${RESEARCHGROUP_MENU}
     Sleep    2s
-    Location Should Be    http://127.0.0.1:8000/researchers
-    Capture Page Screenshot    researcher_page.png
-    Go To    ${RESEARCHER_PROFILE}
+    Location Should Be    http://127.0.0.1:8000/researchgroup
+    Capture Page Screenshot    group_page2.png
+    Go To    ${RESEARCHDETAILS_MENU}
     Sleep    2s
-    Location Should Be    http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9
-    Capture Page Screenshot    researcherprofile_page.png
+    Location Should Be    http://127.0.0.1:8000/researchgroupdetail/3
+    Capture Page Screenshot    detail_page2.png
 
     # คลิกที่เมนูภาษาอังกฤษก่อน
     Click Element    //a[@id='navbarDropdownMenuLink']
     Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
-    # ไปที่ URL ของภาษาไทย
-    Go To    http://127.0.0.1:8000/lang/th
+    # ไปที่ URL ของภาษาจีน
+    Go To    http://127.0.0.1:8000/lang/zh
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
-   # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บด้วย XPath
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น')]
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2528 พบ.ม. (สถิติประยุกต์) - สถาบันบัณฑิตพัฒนบริหารศาสตร์')]
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2544 วท.ด. (วิทยาการคอมพิวเตอร์) - สถาบันเทคโนโลยีแห่งเอเชีย ประเทศไทย')]
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), 'ศาสตราจารย์')]
+   # ตรวจสอบชื่อในหน้าเว็บ
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Pongsathorn Wongprawamas')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Sewattisit Imnang')]
+    Page Should Contain Element    xpath=//h2[contains(normalize-space(.), 'Teerathum Boonprapapun')]
 
-    Capture Page Screenshot    researcherprofile_page_thai.png
-
-    # เลื่อนหน้าไปยังตำแหน่งที่ต้องการ
-    Execute JavaScript    document.querySelector('html, body').scrollBy(0, 500);
-    Sleep    2s
-
-
-    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บด้วย XPath
-    Page Should Contain Element    xpath=//td[contains(normalize-space(.), 'วารสาร')]
-    Page Should Contain Element    xpath=//teacher[contains(normalize-space(.), 'ศาสตรา วงศ์ธนวสุ')]
+    Capture Page Screenshot    detail_english2.png
     Close Browser
 

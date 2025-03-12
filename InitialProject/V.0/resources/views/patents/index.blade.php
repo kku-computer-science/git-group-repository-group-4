@@ -36,14 +36,24 @@
                             <tr>
                                 <td>{{ $i+1 }}</td>
                                 <td>{{ Str::limit($paper->ac_name,50) }}</td>
-                                <td>{{ $paper->ac_type}}</td>
+                                <td>{{ __('message.patents.' . $paper->ac_type) }}</td>
                                 <td>{{ $paper->ac_year}}</td>
                                 <td>{{ $paper->ac_refnumber,50 }}</td>
-                                <td>@foreach($paper->user as $a)
-                                    {{ $a->fname_th }} {{ $a->lname_th }}
-                                    @if (!$loop->last),@endif
-                                    @endforeach
+                                <td>
+                                    @foreach($paper->user as $a)
+                                        @php
+                                            $locale = App::getLocale();
+                                            // ถ้าภาษาเป็น zh ให้ใช้ en แทน
+                                            if ($locale === 'zh') {
+                                                $locale = 'en';
+                                            }
+                                        @endphp
 
+                                        {{ $locale === 'th' ? $a->fname_th : $a->fname_en }} 
+                                        {{ $locale === 'th' ? $a->lname_th : $a->lname_en }}
+
+                                        @if (!$loop->last),@endif
+                                    @endforeach
                                 </td>
                                 <td>
                                     <form action="{{ route('patents.destroy',$paper->id) }}" method="POST">
@@ -107,15 +117,15 @@
         var name = $(this).data("name");
         event.preventDefault();
         swal({
-                title: `Are you sure?`,
-                text: "If you delete this, it will be gone forever.",
+                title: `{{ __('message.are_you_sure') }}`,
+                text: "{{ __('message.delete_warning') }}",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
             })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Delete Successfully", {
+                    swal("{{ __('message.deleted_successfully') }}", {
                         icon: "success",
                     }).then(function() {
                         location.reload();
