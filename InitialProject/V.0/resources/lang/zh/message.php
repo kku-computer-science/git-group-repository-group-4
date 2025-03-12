@@ -154,6 +154,7 @@ return [
 'doctorate_degree' => '博士学位',
 'add_expertise' => '添加专长',
 'funds' => '基金',
+'fund_research' => '研究經費',
 'add' => '添加',
 'delete' => '删除',
 'view' => '查看',
