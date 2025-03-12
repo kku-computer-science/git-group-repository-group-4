@@ -1,352 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T21:29:37.230719" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T22:03:32.124016" rpa="false" schemaversion="5">
 <suite id="s1" name="UAT-adminTH" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_admin\UAT-adminTH.robot">
-<test id="s1-t1" name="Test Admin Login And Navigate" line="72">
-<kw name="Open Browser To Login Page In English">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-12T21:29:37.516710" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000014F5847F880&gt;</msg>
-<var>${chrome_options}</var>
-<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
-<arg>sys</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.516710" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--disable-gpu</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.528816" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--no-sandbox</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.528816" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--disable-dev-shm-usage</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.528816" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--start-maximized</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.528816" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--disable-extensions</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.528816" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--disable-popup-blocking</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.528816" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--disable-infobars</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.528816" elapsed="0.000000"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-03-12T21:29:37.530823" level="INFO">${chrome_options.binary_location} = C:/Program Files/Google/ChromeNew/chrome-win64/chrome.exe</msg>
-<var>${chrome_options.binary_location}</var>
-<arg>${CHROME_BROWSER_PATH}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.528816" elapsed="0.002007"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-03-12T21:29:37.530823" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x0000014F584D0580&gt;</msg>
-<var>${service}</var>
-<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.530823" elapsed="0.000000"/>
-</kw>
-<kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:37.530823" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<arg>Chrome</arg>
-<arg>options=${chrome_options}</arg>
-<arg>service=${service}</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-03-12T21:29:37.530823" elapsed="1.261784"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:38.792607" level="INFO">Opening url 'http://127.0.0.1:8000/login'</msg>
+<test id="s1-t1" name="Test log in Page" line="68">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T22:03:32.418036" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/login'.</msg>
 <arg>${LOGIN URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-12T21:29:38.792607" elapsed="0.532895"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-12T21:29:39.325502" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2025-03-12T21:29:37.516710" elapsed="1.808792"/>
-</kw>
-<kw name="Change Language To Thai">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//a[contains(@class, 'dropdown-toggle') and contains(@href, '#')]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-12T21:29:39.325502" elapsed="0.023366"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:39.348868" level="INFO">Clicking element 'xpath=//a[contains(@class, 'dropdown-toggle') and contains(@href, '#')]'.</msg>
-<arg>xpath=//a[contains(@class, 'dropdown-toggle') and contains(@href, '#')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T21:29:39.348868" elapsed="0.089157"/>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T22:03:32.418036" elapsed="1.890031"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//a[contains(@href, '/lang/th')]</arg>
-<arg>10s</arg>
+<arg>id=navbarDropdownMenuLink</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-03-12T21:29:39.439024" elapsed="0.018703"/>
+<status status="PASS" start="2025-03-12T22:03:34.309075" elapsed="0.028617"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:39.457727" level="INFO">Clicking element 'xpath=//a[contains(@href, '/lang/th')]'.</msg>
-<arg>xpath=//a[contains(@href, '/lang/th')]</arg>
+<msg time="2025-03-12T22:03:34.337692" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<arg>id=navbarDropdownMenuLink</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T21:29:39.457727" elapsed="0.520205"/>
+<status status="PASS" start="2025-03-12T22:03:34.337692" elapsed="0.121454"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "dropdown-menu show")]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T22:03:34.460963" elapsed="0.022086"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T22:03:34.483049" level="INFO">Clicking element 'xpath=//a[contains(@href, "/lang/th")]'.</msg>
+<arg>xpath=//a[contains(@href, "/lang/th")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T22:03:34.483049" elapsed="0.497344"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T21:29:41.982646" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2025-03-12T22:03:39.989241" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T21:29:39.981358" elapsed="2.001288"/>
+<status status="PASS" start="2025-03-12T22:03:34.980819" elapsed="5.008422"/>
 </kw>
-<doc>Change language to Thai after opening the login page in English.</doc>
-<status status="PASS" start="2025-03-12T21:29:39.325502" elapsed="2.657144"/>
-</kw>
-<kw name="User Login As Admin">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:41.984674" level="INFO">Typing text 'admin@gmail.com' into text field 'id=username'.</msg>
+<msg time="2025-03-12T22:03:39.989241" level="INFO">Typing text 'admin@gmail.com' into text field 'id=username'.</msg>
 <arg>id=username</arg>
 <arg>${USER_USERNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T21:29:41.984674" elapsed="0.251014"/>
+<status status="PASS" start="2025-03-12T22:03:39.989241" elapsed="0.385835"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:42.235688" level="INFO">Typing text '12345678' into text field 'id=password'.</msg>
+<msg time="2025-03-12T22:03:40.377992" level="INFO">Typing text '12345678' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${USER_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T21:29:42.235688" elapsed="0.262902"/>
+<status status="PASS" start="2025-03-12T22:03:40.376512" elapsed="0.362833"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:42.499923" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<msg time="2025-03-12T22:03:40.746326" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
 <arg>xpath=//button[@type='submit']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T21:29:42.499588" elapsed="0.220789"/>
+<status status="PASS" start="2025-03-12T22:03:40.746326" elapsed="2.528396"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T21:29:44.729203" level="INFO">Slept 2 seconds.</msg>
+<msg time="2025-03-12T22:03:45.278405" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T21:29:42.721376" elapsed="2.007827"/>
+<status status="PASS" start="2025-03-12T22:03:43.274722" elapsed="2.003683"/>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:44.832890" level="INFO">Current location is 'http://127.0.0.1:8000/dashboard'.</msg>
-<arg>${USER_URL}</arg>
+<msg time="2025-03-12T22:03:45.287897" level="INFO">Current location is 'http://127.0.0.1:8000/dashboard'.</msg>
+<arg>${USER URL}</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T21:29:44.731222" elapsed="0.101668"/>
+<status status="PASS" start="2025-03-12T22:03:45.278405" elapsed="0.009492"/>
 </kw>
-<status status="PASS" start="2025-03-12T21:29:41.984674" elapsed="2.848216"/>
-</kw>
-<kw name="Navigate To Dashboard And Verify Text">
-<kw name="Navigate To Dashboard">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:44.834898" level="INFO">Clicking element 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/dashboard')]'.</msg>
-<arg>xpath=//a[contains(@class, 'nav-link') and contains(@href, '/dashboard')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T21:29:44.834898" elapsed="0.674073"/>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:45.510978" level="INFO">Current location is 'http://127.0.0.1:8000/dashboard'.</msg>
-<arg>${USER_URL}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T21:29:45.508971" elapsed="0.002007"/>
-</kw>
-<status status="PASS" start="2025-03-12T21:29:44.834898" elapsed="0.676080"/>
-</kw>
-<kw name="Verify Text On Dashboard In Thai">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:50.750442" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T21:29:50.750442" level="FAIL">Element 'xpath=//h3' did not get text 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์' in 5 seconds.</msg>
-<arg>xpath=//h3</arg>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-12T22:03:45.305520" level="INFO">Current page contains text 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์'.</msg>
 <arg>ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="FAIL" start="2025-03-12T21:29:45.515584" elapsed="5.234858">Element 'xpath=//h3' did not get text 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์' in 5 seconds.</status>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-12T22:03:45.287897" elapsed="0.017623"/>
 </kw>
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>xpath=//h4</arg>
-<arg>สวัสดี ผู้ดูแลระบบ</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="NOT RUN" start="2025-03-12T21:29:50.750442" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2025-03-12T21:29:45.515584" elapsed="5.234858">Element 'xpath=//h3' did not get text 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์' in 5 seconds.</status>
-</kw>
-<status status="FAIL" start="2025-03-12T21:29:44.834898" elapsed="5.915544">Element 'xpath=//h3' did not get text 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์' in 5 seconds.</status>
-</kw>
-<kw name="Navigate To Profile And Verify Text">
-<status status="NOT RUN" start="2025-03-12T21:29:50.750442" elapsed="0.000000"/>
-</kw>
-<kw name="Navigate To Manage Fund">
-<status status="NOT RUN" start="2025-03-12T21:29:50.750442" elapsed="0.000000"/>
-</kw>
-<kw name="Navigate To Research Project">
-<status status="NOT RUN" start="2025-03-12T21:29:50.750442" elapsed="0.000000"/>
-</kw>
-<kw name="Navigate To Research Group">
-<status status="NOT RUN" start="2025-03-12T21:29:50.750442" elapsed="0.000000"/>
-</kw>
-<kw name="Navigate To Manage Publications">
-<status status="NOT RUN" start="2025-03-12T21:29:50.750442" elapsed="0.000000"/>
-</kw>
-<kw name="Logout">
-<status status="NOT RUN" start="2025-03-12T21:29:50.766346" elapsed="0.000000"/>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T22:03:45.306519" elapsed="2.162824"/>
 </kw>
 <doc>Test admin login and navigate to each page after language change from English to Thai.</doc>
-<status status="FAIL" start="2025-03-12T21:29:37.516710" elapsed="13.249636">Element 'xpath=//h3' did not get text 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์' in 5 seconds.</status>
+<status status="PASS" start="2025-03-12T22:03:32.418036" elapsed="15.051307"/>
 </test>
-<test id="s1-t2" name="Test Navigate To Dashboard" line="85">
-<kw name="Navigate To Dashboard">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:50.766346" level="INFO">Clicking element 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/dashboard')]'.</msg>
-<arg>xpath=//a[contains(@class, 'nav-link') and contains(@href, '/dashboard')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T21:29:50.766346" elapsed="0.442871"/>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:51.213576" level="INFO">Current location is 'http://127.0.0.1:8000/dashboard'.</msg>
-<arg>${USER_URL}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T21:29:51.209564" elapsed="0.004012"/>
-</kw>
-<status status="PASS" start="2025-03-12T21:29:50.766346" elapsed="0.447230"/>
-</kw>
-<doc>Navigate to Dashboard page and verify URL</doc>
-<status status="PASS" start="2025-03-12T21:29:50.766346" elapsed="0.447230"/>
-</test>
-<test id="s1-t3" name="Test Navigate To Profile" line="89">
-<kw name="Navigate To Profile">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:51.215583" level="INFO">Clicking element 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/profile')]'.</msg>
-<arg>xpath=//a[contains(@class, 'nav-link') and contains(@href, '/profile')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T21:29:51.215583" elapsed="0.553104"/>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:51.774958" level="INFO">Current location is 'http://127.0.0.1:8000/profile'.</msg>
-<arg>${SERVER}/profile</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T21:29:51.769966" elapsed="0.004992"/>
-</kw>
-<status status="PASS" start="2025-03-12T21:29:51.215583" elapsed="0.560377"/>
-</kw>
-<doc>Navigate to Profile page and verify URL</doc>
-<status status="PASS" start="2025-03-12T21:29:51.213576" elapsed="0.562384"/>
-</test>
-<test id="s1-t4" name="Test Navigate To Manage Fund" line="93">
-<kw name="Navigate To Manage Fund">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:51.779106" level="INFO">Clicking element 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-fund')]'.</msg>
-<msg time="2025-03-12T21:29:52.130044" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T21:29:52.131044" level="FAIL">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-fund')]' not found.</msg>
-<arg>xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-fund')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T21:29:51.779106" elapsed="0.356710">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-fund')]' not found.</status>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<arg>${SERVER}/manage-fund</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="NOT RUN" start="2025-03-12T21:29:52.137283" elapsed="0.000419"/>
-</kw>
-<status status="FAIL" start="2025-03-12T21:29:51.778078" elapsed="0.359624">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-fund')]' not found.</status>
-</kw>
-<doc>Navigate to Manage Fund page and verify URL</doc>
-<status status="FAIL" start="2025-03-12T21:29:51.777616" elapsed="0.362262">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-fund')]' not found.</status>
-</test>
-<test id="s1-t5" name="Test Navigate To Research Project" line="97">
-<kw name="Navigate To Research Project">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:52.144307" level="INFO">Clicking element 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-project')]'.</msg>
-<msg time="2025-03-12T21:29:52.433819" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-25.png"&gt;&lt;img src="selenium-screenshot-25.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T21:29:52.433819" level="FAIL">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-project')]' not found.</msg>
-<arg>xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-project')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T21:29:52.144307" elapsed="0.290545">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-project')]' not found.</status>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<arg>${SERVER}/research-project</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="NOT RUN" start="2025-03-12T21:29:52.434852" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2025-03-12T21:29:52.144307" elapsed="0.290545">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-project')]' not found.</status>
-</kw>
-<doc>Navigate to Research Project page and verify URL</doc>
-<status status="FAIL" start="2025-03-12T21:29:52.141905" elapsed="0.292947">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-project')]' not found.</status>
-</test>
-<test id="s1-t6" name="Test Navigate To Research Group" line="101">
-<kw name="Navigate To Research Group">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:52.437560" level="INFO">Clicking element 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-group')]'.</msg>
-<msg time="2025-03-12T21:29:52.532049" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T21:29:52.532049" level="FAIL">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-group')]' not found.</msg>
-<arg>xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-group')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T21:29:52.437560" elapsed="0.095491">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-group')]' not found.</status>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<arg>${SERVER}/research-group</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="NOT RUN" start="2025-03-12T21:29:52.533051" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2025-03-12T21:29:52.436553" elapsed="0.096498">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-group')]' not found.</status>
-</kw>
-<doc>Navigate to Research Group page and verify URL</doc>
-<status status="FAIL" start="2025-03-12T21:29:52.436553" elapsed="0.097423">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/research-group')]' not found.</status>
-</test>
-<test id="s1-t7" name="Test Navigate To Manage Publications" line="105">
-<kw name="Navigate To Manage Publications">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T21:29:52.535631" level="INFO">Clicking element 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-publications')]'.</msg>
-<msg time="2025-03-12T21:29:52.627802" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-27.png"&gt;&lt;img src="selenium-screenshot-27.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T21:29:52.627802" level="FAIL">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-publications')]' not found.</msg>
-<arg>xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-publications')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T21:29:52.535631" elapsed="0.093178">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-publications')]' not found.</status>
-</kw>
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<arg>${USER_URL}/manage-publications</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="NOT RUN" start="2025-03-12T21:29:52.628809" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2025-03-12T21:29:52.534590" elapsed="0.094219">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-publications')]' not found.</status>
-</kw>
-<doc>Navigate to Manage Publications page and verify URL</doc>
-<status status="FAIL" start="2025-03-12T21:29:52.534590" elapsed="0.094761">Element with locator 'xpath=//a[contains(@class, 'nav-link') and contains(@href, '/manage-publications')]' not found.</status>
-</test>
-<status status="FAIL" start="2025-03-12T21:29:37.230719" elapsed="15.400182"/>
+<status status="PASS" start="2025-03-12T22:03:32.124016" elapsed="15.345327"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="5" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="UAT-adminTH" id="s1" pass="2" fail="5" skip="0">UAT-adminTH</stat>
+<stat name="UAT-adminTH" id="s1" pass="1" fail="0" skip="0">UAT-adminTH</stat>
 </suite>
 </statistics>
 <errors>
