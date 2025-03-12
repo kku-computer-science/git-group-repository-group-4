@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 
+
 *** Variables ***
 ${URL}    https://cscp3530040467.cpkkuhost.com/
 ${THAI}    ภาษาไทย
@@ -8,6 +9,26 @@ ${ENGLISH}    English
 ${CHINESE}    中文
 
 *** Test Cases ***
+ทดสอบการเปลี่ยนภาษาไทยเป็นอังกฤษ
+    [Tags]    Language
+    เลือกภาษา    ภาษาไทย
+    ตรวจสอบแบนเนอร์    img/Banner1.png
+    เลือกภาษา    English
+    ตรวจสอบแบนเนอร์    img/Banner1En.png
+
+ทดสอบการเปลี่ยนภาษาอังกฤษเป็นจีน
+    [Tags]    Language
+    เลือกภาษา    English
+    ตรวจสอบแบนเนอร์    img/Banner1En.png
+    เลือกภาษา    中文
+    ตรวจสอบแบนเนอร์    img/Banner1Zh.png
+
+ทดสอบการเปลี่ยนภาษาจีนเป็นไทย
+    [Tags]    Language
+    เลือกภาษา    中文
+    ตรวจสอบแบนเนอร์    img/Banner1Zh.png
+    เลือกภาษา    ภาษาไทย
+    ตรวจสอบแบนเนอร์    img/Banner1.png
 
 Test Thai Language Display
     [Documentation]    ทดสอบว่าหน้าเว็บภาษาไทย แสดงชื่อนักวิจัยเป็นภาษาไทยและบทความเป็นภาษาอังกฤษ

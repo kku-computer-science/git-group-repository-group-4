@@ -4,15 +4,17 @@ Library    String
 
 * Variables *
 ${SERVER}                    http://127.0.0.1:8000
-${USER_USERNAME}             pusadee@kku.ac.th
-${USER_PASSWORD}             123456789
+${USER_USERNAME}             somjit@kku.ac.th
+${USER_PASSWORD}             12345678
 ${LOGIN URL}                  ${SERVER}/login
 ${USER URL}                  ${SERVER}/dashboard
-${CHROME_BROWSER_PATH}    /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
-${CHROME_DRIVER_PATH}    /usr/local/bin/chromedriver
+${CHROME_BROWSER_PATH}       C:/Program Files/Google/ChromeNew/chrome-win64/chrome.exe
+${CHROME_DRIVER_PATH}    C:/driver/chromedriver-win64/chromedriver.exe
 ${VIEW_BUTTON_XPATH}    //a[contains(@class, 'btn-outline-primary')]/i[contains(@class, 'mdi-eye')]
 ${EDIT_BUTTON_XPATH}    //a[contains(@class, 'btn-outline-success') or @title='Edit']
 ${ADD_BUTTON_XPATH}     //a[contains(@class, 'btn-primary') and contains(@class, 'btn-menu') and .//i[contains(@class, 'mdi-plus')]]
+${BROWSER}    chrome
+
 
 @{LANGUAGES}
 ...    en
