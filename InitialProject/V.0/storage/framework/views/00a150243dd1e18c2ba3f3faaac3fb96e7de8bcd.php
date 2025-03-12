@@ -12,7 +12,7 @@
     <?php endif; ?>
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">Published research</h4>
+            <h4 class="card-title"><?php echo e(trans('message.published_research')); ?></h4>
             <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('papers.create')); ?>"><i class="mdi mdi-plus btn-icon-prepend"></i> <?php echo e(__('message.add')); ?> </a>
             <?php if(Auth::user()->hasRole('teacher')): ?>
             <!-- <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('callscopus',Auth::user()->id)); ?>"><i class="mdi mdi-refresh btn-icon-prepend"></i> Call Paper</a> -->

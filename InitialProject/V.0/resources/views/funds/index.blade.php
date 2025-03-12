@@ -14,18 +14,18 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">ทุนวิจัย</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('funds.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD</a>
+            <h4 class="card-title">{{ trans('message.Funds') }}</h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('funds.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> {{ trans('message.add') }}</a>
             <div class="table-responsive">
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Fund name</th>
-                            <th>Fund Type</th>
-                            <th>Fund Level</th>
+                            <th>{{ trans('message.no') }}</th>
+                            <th>{{ trans('message.fund_name') }}</th>
+                            <th>{{ trans('message.fund_type') }}</th>
+                            <th>{{ trans('message.fund_level') }}</th>
                             <!-- <th>Create by</th> -->
-                            <th>Action</th>
+                            <th>{{ trans('message.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -79,7 +79,20 @@
 <script>
     $(document).ready(function() {
         var table = $('#example1').DataTable({
-            fixedHeader: true
+            fixedHeader: true,
+            language: {
+                search: "{{ __('message.search') }}", // Placeholder for the search box
+                lengthMenu: "{{ __('message.show') }} _MENU_ {{ __('message.entries') }}", // Text for entries
+                info: "{{ __('message.showing') }} _START_ {{ __('message.to') }} _END_ {{ __('message.of') }} _TOTAL_ {{ __('message.entries') }}", // Info text
+                infoEmpty: "{{ __('message.no_entries') }}", // Text when there are no entries
+                infoFiltered: "({{ __('message.filtered_from') }} _MAX_ {{ __('message.entries') }})", // Filtered info
+                paginate: {
+                    first: "{{ __('message.first') }}", // First page
+                    previous: "{{ __('message.previous') }}", // Previous page
+                    next: "{{ __('message.next') }}", // Next page
+                    last: "{{ __('message.last') }}" // Last page
+                }
+            }
         });
     });
 </script>

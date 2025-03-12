@@ -12,6 +12,7 @@ return [
 'SUMMARY'=>'สรุป',
 'before'=> 'ก่อน',
 'Reference' => 'อ้างอิง',
+'Funds'=>'ทุนวิจัย',
 'All' => 'ทั้งหมด',
 'Researchers' => 'นักวิจัย',
 'Researchinterests' => 'ค้นหา',
