@@ -457,9 +457,12 @@ return [
            'ทุนภายใน' => 'Internal Project Funding',
            'ทุนภายนอก' => 'External Project Funding',
         ],
+        'Group_name' => 'Research Group Name',
 
-
-
+        'create_research_group' => 'Create Research Group',
+        'edit_research_group_details' => 'Edit Research Group Details',
+        'image' => 'Image',
+        'edit_research_group' => 'Edit Research Group Information',
 
     
     
