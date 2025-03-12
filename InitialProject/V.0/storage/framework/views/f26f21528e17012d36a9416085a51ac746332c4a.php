@@ -264,7 +264,7 @@
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
-                        <td><?php echo e($paper->paper_type); ?></td>
+                        <td><?php echo e(__('message.paper_types.' . $paper->paper_type)); ?></td>
                         <td style="width:100%;"><?php echo e($paper->paper_page); ?></td>
                         <td><?php echo e($paper->paper_sourcetitle); ?></td>
                         <td><?php echo e($paper->paper_citation); ?></td>
@@ -316,7 +316,7 @@
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
-                        <td><?php echo e($paper->paper_type); ?></td>
+                        <td><?php echo e(__('message.paper_types.' . $paper->paper_type)); ?></td>
                         <td style="width:100%;"><?php echo e($paper->paper_page); ?></td>
                         <td><?php echo e($paper->paper_sourcetitle); ?></td>
                         <td><?php echo e($paper->paper_citation); ?></td>
@@ -368,7 +368,7 @@
                             </span>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
-                        <td><?php echo e($paper->paper_type); ?></td>
+                        <td><?php echo e(__('message.paper_types.' . $paper->paper_type)); ?></td>
                         <td style="width:100%;"><?php echo e($paper->paper_page); ?></td>
                         <td><?php echo e($paper->paper_sourcetitle); ?></td>
                         <td><?php echo e($paper->paper_citation); ?></td>
