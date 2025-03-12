@@ -449,6 +449,14 @@ return [
             'Book Series' => 'Book Series',
             'Book' => 'Book',
         ],
+        'currency' => 'Baht',
+        'department' => [
+            'สาขาวิชาวิทยาการคอมพิวเตอร์' => 'Computer Science',
+        ],
+        'funds' => [
+           'ทุนภายใน' => 'Internal Project Funding',
+           'ทุนภายนอก' => 'External Project Funding',
+        ],
 
 
 
