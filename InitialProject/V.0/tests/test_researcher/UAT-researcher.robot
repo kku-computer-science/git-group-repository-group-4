@@ -85,6 +85,17 @@ Test Open Researchers Page
     Page Should Contain    ${EXPECTED_WORDS_USER_TH}[8]
 
     Capture Page Screenshot    researcher_page_thai.png
+
+    # เลื่อนหน้าจอลงจนพบ "Arfat Ahmad Khan"
+    FOR    ${i}    IN RANGE    0    5  # เลื่อนหน้าจอลง 5 ครั้ง
+        Execute JavaScript    window.scrollBy(0, 1000)   # เลื่อนลงทีละ 1000px
+        Sleep    1s  # ให้เวลาหน้าโหลด
+        # ตรวจสอบว่าเจอ "Arfat Ahmad Khan"
+        Run Keyword If    '${i}' == '9'    Page Should Contain Element    xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]
+        Run Keyword If    '${i}' == '9'    Return From Keyword
+    END
+
+    Capture Page Screenshot    researcher_page_thai.png
     Close Browser
 
 Test Open Researchers Profile Page
@@ -109,12 +120,21 @@ Test Open Researchers Profile Page
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
-    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บ
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[4]
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[5]  
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[8] 
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[7]
+   # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บด้วย XPath
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น')]
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2528 พบ.ม. (สถิติประยุกต์) - สถาบันบัณฑิตพัฒนบริหารศาสตร์')]
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2544 วท.ด. (วิทยาการคอมพิวเตอร์) - สถาบันเทคโนโลยีแห่งเอเชีย ประเทศไทย')]
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), 'ศาสตราจารย์')]
 
     Capture Page Screenshot    researcherprofile_page_thai.png
+
+    # เลื่อนหน้าไปยังตำแหน่งที่ต้องการ
+    Execute JavaScript    document.querySelector('html, body').scrollBy(0, 500);
+    Sleep    2s
+
+
+    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บด้วย XPath
+    Page Should Contain Element    xpath=//td[contains(normalize-space(.), 'วารสาร')]
+    Page Should Contain Element    xpath=//teacher[contains(normalize-space(.), 'ศาสตรา วงศ์ธนวสุ')]
     Close Browser
 

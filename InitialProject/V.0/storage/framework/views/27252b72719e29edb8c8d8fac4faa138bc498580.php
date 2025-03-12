@@ -23,6 +23,10 @@
                                 <?php elseif(app()->getLocale() == 'en' and $r->doctoral_degree == 'Ph.D.'): ?>
                                     <?php echo e(str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()})); ?> <?php echo e($r->{'fname_'.app()->getLocale()}); ?> <?php echo e($r->{'lname_'.app()->getLocale()}); ?>, Ph.D.
                                     <br>
+                                <?php elseif(app()->getLocale() == 'zh'): ?> <!-- ถ้าเป็นภาษาจีน จะใช้ข้อมูลภาษาอังกฤษ -->
+                                    <?php echo e($r->{'position_en'}); ?> <?php echo e($r->{'fname_en'}); ?> <?php echo e($r->{'lname_en'}); ?>
+
+                                    <br>
                                 <?php else: ?>                            
                                     <?php echo e($r->{'position_'.app()->getLocale()}); ?> <?php echo e($r->{'fname_'.app()->getLocale()}); ?> <?php echo e($r->{'lname_'.app()->getLocale()}); ?>
 
@@ -35,9 +39,13 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"> <?php echo e($rg->{'group_name_'.app()->getLocale()}); ?></>
+                    <h5 class="card-title">
+                        <?php echo e($rg->{'group_name_'.(app()->getLocale() == 'zh' ? 'en' : app()->getLocale())}); ?>
+
                     </h5>
-                    <h3 class="card-text"><?php echo e(Str::limit($rg->{'group_desc_'.app()->getLocale()}, 350)); ?>
+
+                    <h3 class="card-text">
+                        <?php echo e(Str::limit($rg->{'group_desc_'.(app()->getLocale() == 'zh' ? 'en' : app()->getLocale())}, 350)); ?>
 
                     </h3>
                 </div>
@@ -47,8 +55,10 @@
                     <h5 class="card-title">
                         <?php if(app()->getLocale() == 'en'): ?>
                             Main Research Areas/Topics
-                        <?php else: ?>
+                        <?php elseif(app()->getLocale() == 'th'): ?>
                             หัวข้อวิจัยที่เป็นจุดเน้นของกลุ่ม
+                        <?php else: ?>
+                            主要研究领域/主题
                         <?php endif; ?>
                     </h5>
                     <ul class="card-text-2">
