@@ -20,7 +20,7 @@
                     <thead>
                         <tr>
                             <th><?php echo e(__('message.no')); ?></th>
-                            <th><?php echo e(__('message.group_name_th')); ?></th>
+                            <th><?php echo e(__('message.Group_name')); ?></th>
                             <th><?php echo e(__('message.group_leader')); ?></th>
                             <th><?php echo e(__('message.group_members')); ?></th>
                             <th width="280px"><?php echo e(__('message.action')); ?></th>
@@ -31,26 +31,22 @@
                         <?php $__currentLoopData = $researchGroups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i=>$researchGroup): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td><?php echo e($i+1); ?></td>
-                            <td><?php echo e(Str::limit($researchGroup->group_name_th,50)); ?></td>
+                            <td><?php echo e(Str::limit($researchGroup->{"group_name_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())}, 50)); ?></td>
                             <td>
                                 <?php $__currentLoopData = $researchGroup->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if( $user->pivot->role == 1): ?>
+                                    <?php if($user->pivot->role == 1): ?>
+                                        <?php echo e($user->{"fname_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())} ?: $user->{"fname_en"}); ?>
 
-                                <?php echo e($user->fname_th); ?>
-
-
-                                <?php endif; ?>
-
+                                    <?php endif; ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </td>
                             <td>
                                 <?php $__currentLoopData = $researchGroup->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if( $user->pivot->role == 2): ?>
-                                <?php echo e($user->fname_th); ?>
+                                    <?php if($user->pivot->role == 2): ?>
+                                        <?php echo e($user->{"fname_" . (app()->getLocale() === 'zh' ? 'en' : app()->getLocale())} ?: $user->{"fname_en"}); ?>
 
-                                <?php if(!$loop->last): ?>,<?php endif; ?>
-                                <?php endif; ?>
-
+                                        <?php if(!$loop->last): ?>,<?php endif; ?>
+                                    <?php endif; ?>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </td>
                             <td>
