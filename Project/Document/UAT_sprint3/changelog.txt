@@ -1,0 +1,218 @@
+TUF F15@LAPTOP-37VH1A77 MINGW64 /c/xampp/htdocs (main)
+$ ^[[200~git log --since="2025-03-06" --oneline --graph --decorate --all
+bash: $'\E[200~git': command not found
+
+TUF F15@LAPTOP-37VH1A77 MINGW64 /c/xampp/htdocs (main)
+$ git log --since="2025-03-06" --oneline --graph --decorate --all
+*   7a5465c3 (HEAD -> main, tag: v3.0, origin/main) Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\
+| * 83339eee update blueprint
+| *   22f0177d Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\
+| * | 2f47ef52 Update Manual
+* | | 3db34966 v3.0
+| |/
+|/|
+* |   c73f0512 (tag: v2.0) Clear Repository
+|\ \
+| * \   c64b95a8 Fix admin manage funds
+| |\ \
+| | |/
+| |/|
+| | * c105fca2 (origin/Nithinan_2046) Fix lang fund
+* | | fd63063c Clear Repository
+|/ /
+* | 23884970 move file test and Document into  Project/Document/UAT_sprint3/ and  Project/Test/UAT_sprint3/
+* |   963a8fc7 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\ \
+| * | 3606882a update git
+| * |   86e12c6f Merge Keratipat_3204
+| |\ \
+| | * | 4d115765 (origin/keratipat_3204) Automate Test Staff's dashboard
+| | |/
+| * | b2e550ea update test case
+| * | 143b42f4 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\|
+| | *   c3f256cc  Merge Keratipat_3204
+| | |\
+| | | * 7901424a Automate Test Researcher's dashboard
+| | * |   f3d1af6d dd
+| | |\ \
+| | * | | f42c400e edit change language admin
+| * | | | efd107ca update
+| | |_|/
+| |/| |
+* | | | 09371bb3 Clear Repository
+| |_|/
+|/| |
+* | | 66f711ee (tag: v1.0) ss
+* | | 23a998d5 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\| |
+| * |   d671c798 update
+| |\ \
+| | * \   5164813e Merge Keratipat_3204's branch
+| | |\ \
+| | | * | 085f09cc Test dashboard of researcher
+| | | |/
+| * | | 4977c7bf update test student
+* | | | a5a4d06e aa
+| |/ /
+|/| |
+* | | 78813842 dd
+|\| |
+| * | 456c3e13 update home test
+| * | c1c5e42b Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\|
+| | *   a849d967 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| | |\
+| | | * b00eabba Fix show fund type
+| | | * b188e0f2 Fund page lang
+| | * | 956c0992 edit change language
+| | |/
+| * / aecc2d26 update test
+| |/
+* / f0cf1a3e dd
+|/
+*   9fc736e0 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\
+| *   dbd8d593 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\
+| * | 16dbee17 update test admin
+* | | 72ef6c9c ff
+| |/
+|/|
+* | 9c1b35b8 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\|
+| *   b768de93 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\
+| | *   5413725a Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| | |\
+| | * | 49881774 Fix Funds page
+| | * |   79eb7344 Resolved merge conflict and completed merge
+| | |\ \
+| | * | | 1dfd62df Remove unwanted files
+| | * | | e1c8e86d del file
+| | * | | c9cd9106 Organize file
+| |  / /
+| * | / a575522c Update
+| | |/
+| |/|
+* / | f18c4576 test home
+|/ /
+* |   6ee669b8 update admin test
+|\ \
+| * \   f820464a Removed conflicting files
+| |\ \
+| * | | 535da480 Translate Support resource
+* | | | 1fe5e776 update admin test
+| |/ /
+|/| |
+* | | 0ee21633 updated test
+* | |   564db2e7 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\ \ \
+| * \ \   d977759a Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\ \ \
+| * | | | 73630ff1 aa
+* | | | | c94cc5e8 update
+| |/ / /
+|/| | |
+* | | | 34754edf Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\| | |
+| * | |   f3e39c9c Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\ \ \
+| * | | | adf25dc1 gg
+| | |/ /
+| |/| |
+* | | | bd6c6074 update group test
+| |/ /
+|/| |
+* | | 28759e93 Update groupTH test
+* | | 251a1538 Updated TH,ZH
+| | | * 7af59cb2 (origin/Tanthai_1993) update index
+| | | * 29e51f19 edit switch language in programs and departments
+| | | * 46064893 change
+| | | * bdaddfe1 edit programs
+| | | * 673796df edit change language in departments and Manage programs
+| | | *   fe5acc4d Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4 into Tanthai_1993
+| | | |\
+| |_|_|/
+|/| | |
+* | | | d236907a updated
+| |/ /
+|/| |
+* | | 58d07d90 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\| |
+* | | 392c5367 Updated researcher
+| | * 8b637386 laravel.log
+| |/
+| * b046b0d7 Merge pull request #7 from kku-computer-science/Tanthai_1993
+|/|
+| * eecede21 Merge From Main Kub
+* f7e0eff0 Update laravel.log
+*   f87de4c5 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\
+| * 4bdb6b42 Updated test
+| *   7acad077 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\
+| | *   660edd73 Fix Research Group index , edit , create , show language
+| | |\
+| | | * c60f65cc Fix Research Group index , edit , create , show language
+| * | | 4507840f Ubdated test
+* | | | ef870ab9 Update laravel.log
+| |/ /
+|/| |
+* | | a4298aa4 ii
+* | | 54e96066 Fix Lang
+* | | 4c96903d hh
+* | | 587a147f commit
+|\| |
+| * |   9cd34725 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| |\ \
+| * | | 65a1e5c4 add test
+| * | |   cfa88601 Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+| | * | | bc86824d Translate Paper Type
+| | | |/
+| | |/|
+| * | | 57e32bfb jj
+| * | | a688bfaf ii
+* | | | b5344bc3 test home
+| |/ /
+|/| |
+* | | 0ab0d58a translate papertype
+|/ /
+* |   4720c89d Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\ \
+| * \   4c22dce9 change name to thai
+| |\ \
+| | |/
+| |/|
+| | * bde02b90 (origin/Athitaya_2185) commit chage name eng to thai
+| | * d6c90601 merge from main
+| | * 25a0c5bc gg
+| * bd5d73cc modified Paper types language
+* c95efe0c change test folder
+* 38795b7f (master) Latest install xampp
+(END)
+| | * | | bc86824d Translate Paper Type
+| | | |/
+| | |/|
+| * | | 57e32bfb jj
+| * | | a688bfaf ii
+* | | | b5344bc3 test home
+| |/ /
+|/| |
+* | | 0ab0d58a translate papertype
+|/ /
+* |   4720c89d Merge branch 'main' of https://github.com/kku-computer-science/git-group-repository-group-4
+|\ \
+| * \   4c22dce9 change name to thai
+| |\ \
+| | |/
+| |/|
+| | * bde02b90 (origin/Athitaya_2185) commit chage name eng to thai
+| | * d6c90601 merge from main
+| | * 25a0c5bc gg
+| * bd5d73cc modified Paper types language
+* c95efe0c change test folder
+* 38795b7f (master) Latest install xampp
+~
