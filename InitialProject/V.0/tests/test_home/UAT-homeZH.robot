@@ -57,7 +57,7 @@ ${REPORT_MENU}               //a[@class='nav-link' and contains(text(), 'Report'
 
 *** Test Cases ***
 Test Open Home Page
-    [Documentation]    ทดสอบการเปิดหน้า "Home" และการเปลี่ยนภาษาเป็นไทย
+    [Documentation]    ทดสอบการเปิดหน้า "Home" และการเปลี่ยนภาษาเป็นจีน
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
     Click Element    ${HOME_MENU}
@@ -69,13 +69,13 @@ Test Open Home Page
     Click Element    //a[@id='navbarDropdownMenuLink']
     Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
-    # ไปที่ URL ของภาษาไทย
-    Go To    http://127.0.0.1:8000/lang/th
+    # ไปที่ URL ของภาษาจีน
+    Go To    http://127.0.0.1:8000/lang/zh
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
 
     # ตรวจสอบแหล่งที่มาของแบนเนอร์
     ${banner_src}=    Get Element Attribute    xpath=//div[@class="carousel-inner"]/div[1]/img    src
-    Should Contain    ${banner_src}    Banner1.png  # ตรวจสอบว่าแบนเนอร์เป็นไฟล์ Banner1.png
+    Should Contain    ${banner_src}    Banner1Zh.png  # ตรวจสอบว่าแบนเนอร์เป็นไฟล์ Banner1.png
 
     # เลื่อนหน้าจอลง 5 ครั้ง
     FOR    ${i}    IN RANGE    0    1  # เลื่อนหน้าจอลง 1 ครั้ง
