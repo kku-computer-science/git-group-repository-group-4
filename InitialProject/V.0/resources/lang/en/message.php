@@ -175,6 +175,7 @@ return [
     'fund_type' => 'Fund Type',
     'fund_level' => 'Fund Level',
     'fund_agency' => 'Agency',
+    'fund_research' => 'Research funding',
     'added_by' => 'Added By',
     'back' => 'Back',
     'title' => 'Add Other Academic Works',
