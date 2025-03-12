@@ -215,6 +215,7 @@ return [
     'fill_fund_details' => '填写研究基金详细信息',
     'fund_type' => '基金类型',
     'select_fund_type' => '请选择基金类型',
+
     'internal_fund' => '内部基金',
     'external_fund' => '外部基金',
     'fund_level' => '基金级别',
@@ -382,6 +383,11 @@ return [
     'funds' => [
         'ทุนภายใน' => '内部项目资助',
         'ทุนภายนอก' => '外部项目资助',
+    ],
+    'funds_level' => [
+        'สูง' => '高的',
+        'กลาง' => '中心',
+        'ล่าง' => '降低',
     ],
     'create_research_group' => '创建研究小组',
     'edit_research_group_details' => '填写研究小组详细信息的修改',
