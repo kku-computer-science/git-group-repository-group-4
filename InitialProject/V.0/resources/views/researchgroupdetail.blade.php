@@ -43,7 +43,11 @@
                     <h2 class="card-text-2">
                         @foreach ($rg->user as $user)
                         @if($user->hasRole('student'))
-                        {{$user->{'position_'.app()->getLocale()} }} {{$user->{'fname_'.app()->getLocale()} }} {{$user->{'lname_'.app()->getLocale()} }}
+                        @php
+                // ถ้าภาษาที่เลือกเป็นภาษาจีน (`cn`) ให้แสดงเป็นภาษาอังกฤษ (`en`) แทน
+                        $lang = app()->getLocale() == 'zh' ? 'en' : app()->getLocale();
+                        @endphp
+                        {{$user->{'position_'.$lang} }} {{$user->{'fname_'.$lang} }} {{$user->{'lname_'.$lang} }}
                         <br>
                         @endif
                         @endforeach
