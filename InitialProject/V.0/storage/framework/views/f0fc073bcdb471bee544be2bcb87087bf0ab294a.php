@@ -29,6 +29,10 @@
                             <?php elseif(app()->getLocale() == 'en' and $r->doctoral_degree == 'Ph.D.'): ?>
                             <?php echo e(str_replace('Dr.', ' ', $r->{'position_'.app()->getLocale()})); ?> <?php echo e($r->{'fname_'.app()->getLocale()}); ?> <?php echo e($r->{'lname_'.app()->getLocale()}); ?>, Ph.D.
                             <br>
+                            <?php elseif(app()->getLocale() == 'zh'): ?> <!-- ถ้าเป็นภาษาจีน จะใช้ข้อมูลภาษาอังกฤษ -->
+                            <?php echo e($r->{'position_en'}); ?> <?php echo e($r->{'fname_en'}); ?> <?php echo e($r->{'lname_en'}); ?>
+
+                            <br>
                             <?php else: ?>                            
                             <?php echo e($r->{'position_'.app()->getLocale()}); ?> <?php echo e($r->{'fname_'.app()->getLocale()}); ?> <?php echo e($r->{'lname_'.app()->getLocale()}); ?>
 
@@ -42,7 +46,11 @@
                     <h2 class="card-text-2">
                         <?php $__currentLoopData = $rg->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($user->hasRole('student')): ?>
-                        <?php echo e($user->{'position_'.app()->getLocale()}); ?> <?php echo e($user->{'fname_'.app()->getLocale()}); ?> <?php echo e($user->{'lname_'.app()->getLocale()}); ?>
+                        <?php
+                // ถ้าภาษาที่เลือกเป็นภาษาจีน (`cn`) ให้แสดงเป็นภาษาอังกฤษ (`en`) แทน
+                        $lang = app()->getLocale() == 'zh' ? 'en' : app()->getLocale();
+                        ?>
+                        <?php echo e($user->{'position_'.$lang}); ?> <?php echo e($user->{'fname_'.$lang}); ?> <?php echo e($user->{'lname_'.$lang}); ?>
 
                         <br>
                         <?php endif; ?>
@@ -52,16 +60,25 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body" style="position: relative;">
-                    <h5 class="card-title"> <?php echo e($rg->{'group_name_'.app()->getLocale()}); ?></h5>
-                    <h3 class="card-text"><?php echo e($rg->{'group_detail_'.app()->getLocale()}); ?></h3>
+                    <h5 class="card-title">
+                        <?php echo e($rg->{'group_name_'.(app()->getLocale() == 'zh' ? 'en' : app()->getLocale())}); ?>
+
+                    </h5>
+
+                    <h3 class="card-text">
+                        <?php echo e($rg->{'group_detail_'.(app()->getLocale() == 'zh' ? 'en' : app()->getLocale())}); ?>
+
+                    </h3>
                 </div>
                 <!-- Show Research Focus -->
                 <div class="card-body" style="position: relative;">
                     <h5 class="card-title">
                         <?php if(app()->getLocale() == 'en'): ?>
                             Main Research Areas/Topics
-                        <?php else: ?>
+                        <?php elseif(app()->getLocale() == 'th'): ?>
                             หัวข้อวิจัยที่เป็นจุดเน้นของกลุ่ม
+                        <?php else: ?>
+                            主要研究领域/主题
                         <?php endif; ?>
                     </h5>
                     <ul class="card-text-2">
@@ -75,8 +92,10 @@
     <h5 class="card-title">
         <?php if(app()->getLocale() == 'en'): ?>
             Contact Person
-        <?php else: ?>
+        <?php elseif(app()->getLocale() == 'th'): ?>
             ผู้ติดต่อ
+        <?php else: ?>
+            接触
         <?php endif; ?>
     </h5>
 
@@ -91,10 +110,16 @@
                     <?php echo e($contact->lname_en ?? 'N/A'); ?>,
                     <?php echo e($contact->doctoral_degree ?? ''); ?>
 
-                <?php else: ?>
+                <?php elseif(app()->getLocale() == 'th'): ?>
                     <?php echo e($contact->position_th ?? 'N/A'); ?><?php echo e($contact->fname_th ?? 'N/A'); ?>
 
                     <?php echo e($contact->lname_th ?? 'N/A'); ?>
+
+                <?php else: ?>
+                    <?php echo e($contact->position_en ?? 'N/A'); ?><?php echo e($contact->fname_en ?? 'N/A'); ?>
+
+                    <?php echo e($contact->lname_en ?? 'N/A'); ?>,
+                    <?php echo e($contact->doctoral_degree ?? ''); ?>
 
                 <?php endif; ?>
                 ( <?php echo e($contact->email ?? 'N/A'); ?> )    
@@ -112,8 +137,10 @@
                 <a href="<?php echo e(route('researchgroup')); ?>" class="btn btn-primary back-btn" style="position: absolute; bottom: 20px; right: 20px;">
                         <?php if(app()->getLocale() == 'en'): ?>
                             Back
-                        <?php else: ?>
+                        <?php elseif(app()->getLocale() == 'th'): ?>
                             ย้อนกลับ
+                        <?php else: ?>
+                            后退
                         <?php endif; ?>
                 </a>
             </div>
@@ -172,4 +199,5 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </table>
                 </div> -->
+
 <?php echo $__env->make('layouts.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\resources\views/researchgroupdetail.blade.php ENDPATH**/ ?>

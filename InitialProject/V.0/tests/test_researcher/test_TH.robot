@@ -59,3 +59,59 @@ Test Researcher Information Change - Thai
     Close Browser
 
 
+
+
+
+
+
+
+
+Test Open Research Project Page
+    [Documentation]    ทดสอบการเปิดหน้า "Research Project"
+    Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
+    Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
+    Click Element    ${RESEARCHPROJECT_MENU}
+    Sleep    2s
+    Location Should Be    http://127.0.0.1:8000/researchproject
+    Capture Page Screenshot    researchproject_page.png
+    Close Browser
+
+Test Open Research Group Page
+    [Documentation]    ทดสอบการเปิดหน้า "Research Group"
+    Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
+    Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
+    Click Element    ${RESEARCHGROUP_MENU}
+    Sleep    2s
+    Location Should Be    http://127.0.0.1:8000/researchgroup
+    Capture Page Screenshot    researchgroup_page.png
+    Close Browser
+
+Test Open Research Group Detail Page
+    [Documentation]    ทดสอบการเปิดหน้า "Research Group Detail"
+    Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
+    Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
+    Go To    ${RESEARCHDETAILS_MENU}
+    Sleep    2s
+    Location Should Be    ${RESEARCHDETAILS_MENU}
+    Capture Page Screenshot    researchgroupdetail_page.png
+    Close Browser
+
+Test Open Report Page
+    [Documentation]    ทดสอบการเปิดหน้า "Report"
+    Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
+    Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
+    Click Element    ${REPORT_MENU}
+    Sleep    2s
+    Location Should Be    http://127.0.0.1:8000/reports
+    Capture Page Screenshot    report_page.png
+    Close Browser
+
+Test Open Home Page
+    [Documentation]    ทดสอบการเปิดหน้า "Home"
+    Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
+    Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
+    Click Element    ${HOME_MENU}
+    Sleep    2s
+    Location Should Be    http://127.0.0.1:8000/
+    Capture Page Screenshot    home_page.png
+    Close Browser
