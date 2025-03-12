@@ -91,7 +91,8 @@
                             <span style="font-weight: bold;">{{__('message.supporting_agency')}}</span>
                             <span style="padding-left: 10px;"> @if(is_null($re->fund))
                                 @else
-                                {{$re->fund->support_resource}}
+                                {{ __('message.support_resource.' . $re->fund->support_resource) }}
+                               
                                 @endif</span>
                         </div>
                         <div style="padding-bottom: 10px;">
