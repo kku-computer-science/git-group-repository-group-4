@@ -92,5 +92,59 @@ Test log in Page
     # ตรวจสอบว่า "ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์" แสดงใน Dashboard
     Page Should Contain    ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์
 
-    # ปิดเบราว์เซอร์
-    Close Browser
+Test Navigate To User Profile
+    [Documentation]    Test that clicking "โปรไฟล์ผู้ใช้" to the User Profile page without re-login.
+
+    # คลิกเมนู "โปรไฟล์ผู้ใช้"
+    Click Element    xpath=//span[contains(text(), 'โปรไฟล์ผู้ใช้')]
+
+    # ตรวจสอบว่าเปลี่ยนไปที่หน้าโปรไฟล์ผู้ใช้
+    Location Should Be    ${SERVER}/profile
+
+    # ตรวจสอบว่า "บัญชี" แสดงในหน้าโปรไฟล์
+    Page Should Contain    บัญชี
+
+    # คลิกเมนู "โปรไฟล์ผู้ใช้"
+    Click Element    xpath=//a[@id='account-tab' and contains(@class, 'nav-link') and contains(., 'บัญชี')]
+    Sleep    3s
+
+
+    Click Element    xpath=//a[@id='password-tab' and contains(@class, 'nav-link') and contains(., 'รหัสผ่าน')]
+    Sleep    3s
+
+Test Navigate To Funds Management
+    [Documentation]    Test that clicking "จัดการกองทุน" navigates to the funds management page.
+
+    # คลิกที่เมนู "จัดการกองทุน" ในเมนูด้านข้าง
+    Click Element    xpath=//span[contains(text(), 'จัดการกองทุน')]
+
+    # ตรวจสอบว่าเปลี่ยนไปที่หน้าการจัดการกองทุน
+    Location Should Be    ${SERVER}/funds
+
+    # ตรวจสอบว่า "กองทุน" แสดงในหน้า
+    Page Should Contain    ทุนวิจัย 
+    Page Should Contain    ทุนภายใน
+
+Test Navigate To Research Projects
+    [Documentation]    Test that clicking "โครงการวิจัย" navigates to the research projects page.
+
+    # คลิกที่เมนู "โครงการวิจัย" ในเมนูด้านข้าง
+    Click Element    xpath=//span[contains(text(), 'โครงการวิจัย')]
+
+    # ตรวจสอบว่าเปลี่ยนไปที่หน้าโครงการวิจัย
+    Location Should Be    ${SERVER}/researchProjects
+
+    # ตรวจสอบชื่อหัวหน้ากลุ่มเป็น "Ngamnij" โดยระบุคอลัมน์ที่ 4
+    Element Should Contain    xpath=//tr[@role='row']//td[4]    พุธษดี
+
+Test Navigate To Research Groups
+    [Documentation]    Test that clicking "กลุ่มวิจัย" navigates to the research groups page.
+
+    # คลิกที่เมนู "กลุ่มวิจัย" ในเมนูด้านข้าง
+    Click Element    xpath=//span[contains(text(), 'กลุ่มวิจัย')]
+
+    # ตรวจสอบว่าเปลี่ยนไปที่หน้ากลุ่มวิจัย
+    Location Should Be    ${SERVER}/researchGroups
+
+   # ตรวจสอบชื่อหัวหน้ากลุ่มเป็น "วาสนา" โดยระบุคอลัมน์ที่ 3
+    Element Should Contain    xpath=//tr[@role='row']//td[3]    วาสนา
