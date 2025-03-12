@@ -36,7 +36,10 @@
                             <tr>
                                 <td><?php echo e($i+1); ?></td>
                                 <td><?php echo e(Str::limit($paper->paper_name,50)); ?></td>
-                                <td><?php echo e(Str::limit($paper->paper_type,50)); ?></td>
+                                <td>
+                                <?php echo e(__('message.paper_types.' . $paper->paper_type)); ?>
+
+                                </td>
                                 <td><?php echo e($paper->paper_yearpub); ?></td>
                                 <!-- <td><?php $__currentLoopData = $paper->teacher->take(1); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $teacher): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <?php echo e($teacher->fname_en); ?> <?php echo e($teacher->lname_en); ?>,
