@@ -67,28 +67,28 @@
 
 
                             <!-- <?php if($re->project_start != null): ?>
-                                <td><?php echo e(\Carbon\Carbon::parse($re->project_start)->thaidate('j F Y')); ?><br>ถึง <?php echo e(\Carbon\Carbon::parse($re->project_end)->thaidate('j F Y')); ?></td>
-                                <?php else: ?>
-                                <td></td>
-                                <?php endif; ?> -->
+                                    <td><?php echo e(\Carbon\Carbon::parse($re->project_start)->thaidate('j F Y')); ?><br>ถึง <?php echo e(\Carbon\Carbon::parse($re->project_end)->thaidate('j F Y')); ?></td>
+                                    <?php else: ?>
+                                    <td></td>
+                                    <?php endif; ?> -->
 
                             <!-- <td><?php $__currentLoopData = $re->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php echo e($user->position); ?><?php echo e($user->fname_th); ?> <?php echo e($user->lname_th); ?><br>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                </td> -->
+                                        <?php echo e($user->position); ?><?php echo e($user->fname_th); ?> <?php echo e($user->lname_th); ?><br>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </td> -->
                             <!-- <td>
-                                    <?php if(is_null($re->fund)): ?>
-                                    <?php else: ?>
-                                    <?php echo e($re->fund->fund_type); ?>
+                                        <?php if(is_null($re->fund)): ?>
+                                        <?php else: ?>
+                                        <?php echo e($re->fund->fund_type); ?>
 
-                                    <?php endif; ?>
-                                </td> -->
+                                        <?php endif; ?>
+                                    </td> -->
                             <!-- <td><?php if(is_null($re->fund)): ?>
-                                    <?php else: ?>
-                                    <?php echo e($re->fund->support_resource); ?>
+                                        <?php else: ?>
+                                        <?php echo e($re->fund->support_resource); ?>
 
-                                    <?php endif; ?>
-                                </td> -->
+                                        <?php endif; ?>
+                                    </td> -->
                             <!-- <td><?php echo e($re->budget); ?></td> -->
                             <div style="padding-bottom: 10px;">
                                 <span style="font-weight: bold;"><?php echo e(__('message.research_funding_type')); ?></span>
@@ -152,7 +152,7 @@
                             </td>
                         <?php endif; ?>
                         <!-- <td></td>
-                                <td></td> -->
+                                    <td></td> -->
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>

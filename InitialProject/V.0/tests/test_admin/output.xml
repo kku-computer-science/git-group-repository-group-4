@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <robot generator="Robot 7.1.1 (Python 3.10.4 on win32)" generated="2025-03-13T00:27:27.043848" rpa="false" schemaversion="5">
 <suite id="s1" name="UAT-adminTH" source="C:\Users\tanta\OneDrive\Documents\git-group-repository-group-4\InitialProject\V.0\tests\test_admin\UAT-adminTH.robot">
 <test id="s1-t1" name="Test log in Page" line="68">
@@ -61,22 +62,44 @@ Stacktrace:
 	BaseThreadInitThunk [0x00007FFECC41E8D7+23]
 	RtlUserThreadStart [0x00007FFECE61BF6C+44]
 </status>
+=======
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-13T00:15:46.121783" rpa="false" schemaversion="5">
+<suite id="s1" name="UAT-adminTH" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_admin\UAT-adminTH.robot">
+<test id="s1-t1" name="Test log in Page" line="68">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:46.391506" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/login'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:15:46.391506" elapsed="2.660159"/>
+>>>>>>> 66f711eec5a67744814b426ef8cdb23d5a25cad7
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=navbarDropdownMenuLink</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
+<<<<<<< HEAD
 <status status="NOT RUN" start="2025-03-13T00:27:31.936716" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>id=navbarDropdownMenuLink</arg>
 <doc>Click the element identified by ``locator``.</doc>
 <status status="NOT RUN" start="2025-03-13T00:27:31.937715" elapsed="0.000000"/>
+=======
+<status status="PASS" start="2025-03-13T00:15:49.051665" elapsed="0.036229"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:49.087894" level="INFO">Clicking element 'id=navbarDropdownMenuLink'.</msg>
+<arg>id=navbarDropdownMenuLink</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:15:49.087894" elapsed="0.104374"/>
+>>>>>>> 66f711eec5a67744814b426ef8cdb23d5a25cad7
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath=//div[contains(@class, "dropdown-menu show")]</arg>
 <arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
+<<<<<<< HEAD
 <status status="NOT RUN" start="2025-03-13T00:27:31.937715" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
@@ -269,11 +292,198 @@ Stacktrace:
 <statistics>
 <total>
 <stat pass="0" fail="5" skip="0">All Tests</stat>
+=======
+<status status="PASS" start="2025-03-13T00:15:49.192952" elapsed="0.025314"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:49.219270" level="INFO">Clicking element 'xpath=//a[contains(@href, "/lang/th")]'.</msg>
+<arg>xpath=//a[contains(@href, "/lang/th")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:15:49.219270" elapsed="0.666234"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:15:54.890212" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:15:49.886336" elapsed="5.003876"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:54.890212" level="INFO">Typing text 'admin@gmail.com' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${USER_USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:15:54.890212" elapsed="0.240016"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:55.130228" level="INFO">Typing text '12345678' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${USER_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:15:55.130228" elapsed="0.052182"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:55.182410" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:15:55.182410" elapsed="1.982366"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:15:59.178400" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:15:57.164776" elapsed="2.013624"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:59.178400" level="INFO">Current location is 'http://127.0.0.1:8000/dashboard'.</msg>
+<arg>${USER URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:15:59.178400" elapsed="0.000000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:59.200065" level="INFO">Current page contains text 'ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์'.</msg>
+<arg>ยินดีต้อนรับเข้าสู่ระบบจัดการข้อมูลวิจัยของสาขาวิชาวิทยาการคอมพิวเตอร์</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-13T00:15:59.178400" elapsed="0.021665"/>
+</kw>
+<doc>Test admin login and navigate to each page after language change from English to Thai.</doc>
+<status status="PASS" start="2025-03-13T00:15:46.391506" elapsed="12.809560"/>
+</test>
+<test id="s1-t2" name="Test Navigate To User Profile" line="95">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:59.202065" level="INFO">Clicking element 'xpath=//span[contains(text(), 'โปรไฟล์ผู้ใช้')]'.</msg>
+<arg>xpath=//span[contains(text(), 'โปรไฟล์ผู้ใช้')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:15:59.202065" elapsed="0.454751"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:59.663422" level="INFO">Current location is 'http://127.0.0.1:8000/profile'.</msg>
+<arg>${SERVER}/profile</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:15:59.656816" elapsed="0.006606"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:59.683230" level="INFO">Current page contains text 'บัญชี'.</msg>
+<arg>บัญชี</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-13T00:15:59.663422" elapsed="0.019808"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:15:59.683230" level="INFO">Clicking element 'xpath=//a[@id='account-tab' and contains(@class, 'nav-link') and contains(., 'บัญชี')]'.</msg>
+<arg>xpath=//a[@id='account-tab' and contains(@class, 'nav-link') and contains(., 'บัญชี')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:15:59.683230" elapsed="0.097174"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:16:02.784548" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:15:59.780404" elapsed="3.004144"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:02.784548" level="INFO">Clicking element 'xpath=//a[@id='password-tab' and contains(@class, 'nav-link') and contains(., 'รหัสผ่าน')]'.</msg>
+<arg>xpath=//a[@id='password-tab' and contains(@class, 'nav-link') and contains(., 'รหัสผ่าน')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:16:02.784548" elapsed="0.211455"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-13T00:16:06.008650" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-13T00:16:02.999000" elapsed="3.009650"/>
+</kw>
+<doc>Test that clicking "โปรไฟล์ผู้ใช้" to the User Profile page without re-login.</doc>
+<status status="PASS" start="2025-03-13T00:15:59.201066" elapsed="6.807584"/>
+</test>
+<test id="s1-t3" name="Test Navigate To Funds Management" line="115">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:06.008650" level="INFO">Clicking element 'xpath=//span[contains(text(), 'จัดการกองทุน')]'.</msg>
+<arg>xpath=//span[contains(text(), 'จัดการกองทุน')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:16:06.008650" elapsed="0.859475"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:06.875425" level="INFO">Current location is 'http://127.0.0.1:8000/funds'.</msg>
+<arg>${SERVER}/funds</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:16:06.869079" elapsed="0.006346"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:06.891953" level="INFO">Current page contains text 'ทุนวิจัย'.</msg>
+<arg>ทุนวิจัย</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-13T00:16:06.876399" elapsed="0.015554"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:06.907036" level="INFO">Current page contains text 'ทุนภายใน'.</msg>
+<arg>ทุนภายใน</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-03-13T00:16:06.891953" elapsed="0.015083"/>
+</kw>
+<doc>Test that clicking "จัดการกองทุน" navigates to the funds management page.</doc>
+<status status="PASS" start="2025-03-13T00:16:06.008650" elapsed="0.898745"/>
+</test>
+<test id="s1-t4" name="Test Navigate To Research Projects" line="128">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:06.908400" level="INFO">Clicking element 'xpath=//span[contains(text(), 'โครงการวิจัย')]'.</msg>
+<arg>xpath=//span[contains(text(), 'โครงการวิจัย')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:16:06.908400" elapsed="0.466500"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:07.381473" level="INFO">Current location is 'http://127.0.0.1:8000/researchProjects'.</msg>
+<arg>${SERVER}/researchProjects</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:16:07.374900" elapsed="0.006573"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:07.507066" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-13T00:16:07.507066" level="FAIL">Element 'xpath=//tr[@role='row']//td[4]' should have contained text 'พุธษดี' but its text was 'Pusadee'.</msg>
+<arg>xpath=//tr[@role='row']//td[4]</arg>
+<arg>พุธษดี</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="FAIL" start="2025-03-13T00:16:07.381473" elapsed="0.126592">Element 'xpath=//tr[@role='row']//td[4]' should have contained text 'พุธษดี' but its text was 'Pusadee'.</status>
+</kw>
+<doc>Test that clicking "โครงการวิจัย" navigates to the research projects page.</doc>
+<status status="FAIL" start="2025-03-13T00:16:06.907395" elapsed="0.600670">Element 'xpath=//tr[@role='row']//td[4]' should have contained text 'พุธษดี' but its text was 'Pusadee'.</status>
+</test>
+<test id="s1-t5" name="Test Navigate To Research Groups" line="140">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:07.510173" level="INFO">Clicking element 'xpath=//span[contains(text(), 'กลุ่มวิจัย')]'.</msg>
+<arg>xpath=//span[contains(text(), 'กลุ่มวิจัย')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-13T00:16:07.510173" elapsed="0.438448"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:07.956287" level="INFO">Current location is 'http://127.0.0.1:8000/researchGroups'.</msg>
+<arg>${SERVER}/researchGroups</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-13T00:16:07.949630" elapsed="0.006657"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-03-13T00:16:07.976601" level="INFO">Element 'xpath=//tr[@role='row']//td[3]' contains text 'วาสนา'.</msg>
+<arg>xpath=//tr[@role='row']//td[3]</arg>
+<arg>วาสนา</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-03-13T00:16:07.957628" elapsed="0.018973"/>
+</kw>
+<doc>Test that clicking "กลุ่มวิจัย" navigates to the research groups page.</doc>
+<status status="PASS" start="2025-03-13T00:16:07.509166" elapsed="0.467435"/>
+</test>
+<status status="FAIL" start="2025-03-13T00:15:46.121783" elapsed="21.854818"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+>>>>>>> 66f711eec5a67744814b426ef8cdb23d5a25cad7
 </total>
 <tag>
 </tag>
 <suite>
+<<<<<<< HEAD
 <stat pass="0" fail="5" skip="0" id="s1" name="UAT-adminTH">UAT-adminTH</stat>
+=======
+<stat name="UAT-adminTH" id="s1" pass="4" fail="1" skip="0">UAT-adminTH</stat>
+>>>>>>> 66f711eec5a67744814b426ef8cdb23d5a25cad7
 </suite>
 </statistics>
 <errors>

@@ -14,18 +14,18 @@
     <?php endif; ?>
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">ทุนวิจัย</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('funds.create')); ?>"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD</a>
+            <h4 class="card-title"><?php echo e(__('message.fund_research')); ?></h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('funds.create')); ?>"><i class="mdi mdi-plus btn-icon-prepend"></i> </i> <?php echo e(__('message.add')); ?></a>
+            </a>
             <div class="table-responsive">
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Fund name</th>
-                            <th>Fund Type</th>
-                            <th>Fund Level</th>
-                            <!-- <th>Create by</th> -->
-                            <th>Action</th>
+                        <th><?php echo e(__('message.no')); ?></th>
+                        <th><?php echo e(__('message.fund_name')); ?></th>
+                        <th><?php echo e(__('message.fund_type')); ?></th>
+                        <th><?php echo e(__('message.fund_level')); ?></th>
+                        <th><?php echo e(__('message.action')); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,8 +34,30 @@
 
                             <td><?php echo e($i+1); ?></td>
                             <td><?php echo e(Str::limit($fund->fund_name,80)); ?></td>
-                            <td><?php echo e($fund->fund_type); ?></td>
-                            <td><?php echo e($fund->fund_level); ?></td>
+                            <td>
+                                <?php if(app()->getLocale() == 'th'): ?>
+                                    <?php echo e($fund->fund_type); ?>
+
+                                <?php elseif(app()->getLocale() == 'zh'): ?>
+                                    <?php echo e($fund->fund_type_cn); ?>
+
+                                <?php else: ?>
+                                    <?php echo e($fund->fund_type_en); ?>
+
+                                <?php endif; ?>
+                            </td>
+                            <td>
+                                <?php if(app()->getLocale() == 'th'): ?>
+                                    <?php echo e($fund->fund_level); ?>
+
+                                <?php elseif(app()->getLocale() == 'zh'): ?>
+                                    <?php echo e($fund->fund_level_cn); ?>
+
+                                <?php else: ?>
+                                    <?php echo e($fund->fund_level_en); ?>
+
+                                <?php endif; ?>
+                            </td>
                             <!-- <td><?php echo e($fund->user->fname_en); ?> <?php echo e($fund->user->lname_en); ?></td> -->
 
                             <td>
@@ -79,7 +101,20 @@
 <script>
     $(document).ready(function() {
         var table = $('#example1').DataTable({
-            fixedHeader: true
+            fixedHeader: true,
+            language: {
+                search: "<?php echo e(__('message.search')); ?>", // Placeholder for the search box
+                lengthMenu: "<?php echo e(__('message.show')); ?> _MENU_ <?php echo e(__('message.entries')); ?>", // Text for entries
+                info: "<?php echo e(__('message.showing')); ?> _START_ <?php echo e(__('message.to')); ?> _END_ <?php echo e(__('message.of')); ?> _TOTAL_ <?php echo e(__('message.entries')); ?>", // Info text
+                infoEmpty: "<?php echo e(__('message.no_entries')); ?>", // Text when there are no entries
+                infoFiltered: "(<?php echo e(__('message.filtered_from')); ?> _MAX_ <?php echo e(__('message.entries')); ?>)", // Filtered info
+                paginate: {
+                    first: "<?php echo e(__('message.first')); ?>", // First page
+                    previous: "<?php echo e(__('message.previous')); ?>", // Previous page
+                    next: "<?php echo e(__('message.next')); ?>", // Next page
+                    last: "<?php echo e(__('message.last')); ?>" // Last page
+                }
+            }
         });
     });
 </script>
@@ -102,7 +137,7 @@
                     }).then(function() {
                         location.reload();
                         form.submit();
-                    });
+                    }); 
                 }
             });
     });

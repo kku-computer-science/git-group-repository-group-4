@@ -9,17 +9,17 @@
         <?php endif; ?>
         <div class="card" style="padding: 16px;">
             <div class="card-body">
-                <h4 class="card-title">Roles</h4>
+                <h4 class="card-title"><?php echo e(__('message.roles')); ?></h4>
                 <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('role-create')): ?>
-                <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('roles.create')); ?>"><i class="mdi mdi-plus btn-icon-prepend"></i>Add</a>
+                <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="<?php echo e(route('roles.create')); ?>"><i class="mdi mdi-plus btn-icon-prepend"></i><?php echo e(__('message.add')); ?></a>
                 <?php endif; ?>
 
                 <table class="table table-striped">
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th width="280px">Action</th>
+                            <th><?php echo e(__('message.name')); ?></th>
+                            <th width="280px"><?php echo e(__('message.action')); ?></th>
                         </tr>
                     </thead>
                     <tbody>
