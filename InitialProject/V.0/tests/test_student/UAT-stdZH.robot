@@ -65,7 +65,7 @@ ${BROWSER}                   chrome
 
 *** Test Cases ***
 
-Test log in Page
+Test log in Student Page
     [Documentation]    Test admin login and navigate to each page after language change from English to Thai.
 
     # เปิดเบราว์เซอร์ที่หน้า Login
