@@ -1,243 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T15:24:39.693507" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T16:40:10.185875" rpa="false" schemaversion="5">
 <suite id="s1" name="UAT-website" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\UAT-website.robot">
 <test id="s1-t1" name="Test Open Researchers Page" line="63">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:39.979770" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
-<msg time="2025-03-12T15:24:39.979770" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<msg time="2025-03-12T16:40:10.485374" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T16:40:10.485374" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
 <arg>${SERVER}</arg>
 <arg>${BROWSER}</arg>
 <arg>executable_path=${CHROME_DRIVER_PATH}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-12T15:24:39.979770" elapsed="2.520349"/>
+<status status="PASS" start="2025-03-12T16:40:10.485374" elapsed="6.176947"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:24:45.516579" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-03-12T16:40:19.668778" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:24:42.502887" elapsed="3.013692"/>
+<status status="PASS" start="2025-03-12T16:40:16.662321" elapsed="3.006457"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:45.516579" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<msg time="2025-03-12T16:40:19.668778" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<msg time="2025-03-12T16:40:19.902117" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-23.png"&gt;&lt;img src="selenium-screenshot-23.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T16:40:19.903235" level="FAIL">Element with locator '//a[@class='nav-link' and contains(text(), 'Researchers')]' not found.</msg>
 <arg>${RESEARCHER_MENU}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T15:24:45.516579" elapsed="0.815271"/>
+<status status="FAIL" start="2025-03-12T16:40:19.668778" elapsed="0.237456">Element with locator '//a[@class='nav-link' and contains(text(), 'Researchers')]' not found.</status>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:24:48.341771" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:24:46.331850" elapsed="2.009921"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.907236" elapsed="0.000000"/>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:48.357736" level="INFO">Current location is 'http://127.0.0.1:8000/researchers'.</msg>
 <arg>http://127.0.0.1:8000/researchers</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T15:24:48.341771" elapsed="0.015965"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.907236" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:48.529079" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_page.png"&gt;&lt;img src="researcher_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>researcher_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-03-12T15:24:48.357736" elapsed="0.171343"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.908239" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:48.530080" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
 <arg>//a[@id='navbarDropdownMenuLink']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T15:24:48.529079" elapsed="0.069470"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.908239" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:24:50.599916" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:24:48.598549" elapsed="2.001367"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.908239" elapsed="0.000000"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:50.599916" level="INFO">Opening url 'http://127.0.0.1:8000/lang/th'</msg>
 <arg>http://127.0.0.1:8000/lang/th</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-12T15:24:50.599916" elapsed="0.943777"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.908239" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:24:56.558807" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:24:51.543693" elapsed="5.015114"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.909271" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:56.670942" level="INFO">Current page contains text 'สาขาวิชาวิทยาการคอมพิวเตอร์และเทคโนโลยีสารสนเทศ'.</msg>
 <arg>${EXPECTED_WORDS_USER_TH}[2]</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T15:24:56.558807" elapsed="0.112135"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.909271" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:56.686579" level="INFO">Current page contains text 'สาขาวิชาเทคโนโลยีสารสนเทศ'.</msg>
 <arg>${EXPECTED_WORDS_USER_TH}[3]</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T15:24:56.670942" elapsed="0.015637"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.909271" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:56.711624" level="INFO">Current page contains text 'รองศาสตราจารย์'.</msg>
 <arg>${EXPECTED_WORDS_USER_TH}[6]</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T15:24:56.686579" elapsed="0.025045"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.909271" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:56.734063" level="INFO">Current page contains text 'ศาสตราจารย์'.</msg>
 <arg>${EXPECTED_WORDS_USER_TH}[8]</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T15:24:56.711624" elapsed="0.022439"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.909271" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:56.849540" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_page_thai.png"&gt;&lt;img src="researcher_page_thai.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>researcher_page_thai.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-03-12T15:24:56.734063" elapsed="0.116477"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.909271" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-12T15:24:56.850744" elapsed="2.164060"/>
+<status status="NOT RUN" start="2025-03-12T16:40:19.909271" elapsed="0.000000"/>
 </kw>
 <doc>ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย</doc>
-<status status="PASS" start="2025-03-12T15:24:39.979770" elapsed="19.035034"/>
+<status status="FAIL" start="2025-03-12T16:40:10.485374" elapsed="9.423897">Element with locator '//a[@class='nav-link' and contains(text(), 'Researchers')]' not found.</status>
 </test>
 <test id="s1-t2" name="Test Open Researchers Profile Page" line="90">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:24:59.014804" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
-<msg time="2025-03-12T15:24:59.014804" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<msg time="2025-03-12T16:40:19.909271" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T16:40:19.909271" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
 <arg>${SERVER}</arg>
 <arg>${BROWSER}</arg>
 <arg>executable_path=${CHROME_DRIVER_PATH}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-12T15:24:59.014804" elapsed="2.204699"/>
+<status status="PASS" start="2025-03-12T16:40:19.909271" elapsed="5.728817"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:25:04.223938" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-03-12T16:40:28.645596" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:25:01.219503" elapsed="3.004435"/>
+<status status="PASS" start="2025-03-12T16:40:25.638088" elapsed="3.007508"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:04.223938" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<msg time="2025-03-12T16:40:28.645596" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<msg time="2025-03-12T16:40:28.808423" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T16:40:28.808423" level="FAIL">Element with locator '//a[@class='nav-link' and contains(text(), 'Researchers')]' not found.</msg>
 <arg>${RESEARCHER_MENU}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T15:25:04.223938" elapsed="0.660893"/>
+<status status="FAIL" start="2025-03-12T16:40:28.645596" elapsed="0.162827">Element with locator '//a[@class='nav-link' and contains(text(), 'Researchers')]' not found.</status>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:25:06.889766" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:25:04.884831" elapsed="2.004935"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.809249" elapsed="0.000000"/>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:06.905645" level="INFO">Current location is 'http://127.0.0.1:8000/researchers'.</msg>
 <arg>http://127.0.0.1:8000/researchers</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T15:25:06.889766" elapsed="0.015879"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.809249" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:07.090032" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_page.png"&gt;&lt;img src="researcher_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>researcher_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-03-12T15:25:06.905645" elapsed="0.184387"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.809983" elapsed="0.000000"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:07.090032" level="INFO">Opening url 'http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9'</msg>
 <arg>${RESEARCHER_PROFILE}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-12T15:25:07.090032" elapsed="0.734595"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.809983" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:25:09.841264" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:25:07.825722" elapsed="2.015542"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.809983" elapsed="0.000000"/>
 </kw>
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:09.857217" level="INFO">Current location is 'http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9'.</msg>
 <arg>http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-03-12T15:25:09.841264" elapsed="0.015953"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.809983" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:10.039989" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcherprofile_page.png"&gt;&lt;img src="researcherprofile_page.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>researcherprofile_page.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-03-12T15:25:09.857217" elapsed="0.182772"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.810988" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:10.040549" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
 <arg>//a[@id='navbarDropdownMenuLink']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T15:25:10.040549" elapsed="0.069208"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.811737" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:25:12.111213" level="INFO">Slept 2 seconds.</msg>
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:25:10.109757" elapsed="2.001456"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.811737" elapsed="0.000000"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:12.111213" level="INFO">Opening url 'http://127.0.0.1:8000/lang/th'</msg>
 <arg>http://127.0.0.1:8000/lang/th</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-03-12T15:25:12.111213" elapsed="0.912405"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.811737" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T15:25:18.033611" level="INFO">Slept 5 seconds.</msg>
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T15:25:13.023618" elapsed="5.009993"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.812800" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T15:25:18.321553" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T15:25:18.321553" level="FAIL">Page should have contained text '2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น' but did not.</msg>
 <arg>${EXPECTED_WORDS_USER_TH}[4]</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="FAIL" start="2025-03-12T15:25:18.035643" elapsed="0.286913">Page should have contained text '2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น' but did not.</status>
+<status status="NOT RUN" start="2025-03-12T16:40:28.812800" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>${EXPECTED_WORDS_USER_TH}[5]</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2025-03-12T15:25:18.322556" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.812800" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>${EXPECTED_WORDS_USER_TH}[8]</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2025-03-12T15:25:18.323605" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.812800" elapsed="0.000000"/>
 </kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
 <arg>${EXPECTED_WORDS_USER_TH}[7]</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="NOT RUN" start="2025-03-12T15:25:18.323605" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.813800" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <arg>researcherprofile_page_thai.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-12T15:25:18.324606" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.813800" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2025-03-12T15:25:18.324606" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T16:40:28.813800" elapsed="0.000000"/>
 </kw>
 <doc>ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย</doc>
-<status status="FAIL" start="2025-03-12T15:24:59.014804" elapsed="19.310311">Page should have contained text '2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น' but did not.</status>
+<status status="FAIL" start="2025-03-12T16:40:19.909271" elapsed="8.905563">Element with locator '//a[@class='nav-link' and contains(text(), 'Researchers')]' not found.</status>
 </test>
-<status status="FAIL" start="2025-03-12T15:24:39.693507" elapsed="38.632613"/>
+<status status="FAIL" start="2025-03-12T16:40:10.192385" elapsed="18.623414"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="UAT-website" id="s1" pass="1" fail="1" skip="0">UAT-website</stat>
+<stat name="UAT-website" id="s1" pass="0" fail="2" skip="0">UAT-website</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-03-12T15:24:39.979770" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
-<msg time="2025-03-12T15:24:59.014804" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T16:40:10.485374" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T16:40:19.909271" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
 </errors>
 </robot>
