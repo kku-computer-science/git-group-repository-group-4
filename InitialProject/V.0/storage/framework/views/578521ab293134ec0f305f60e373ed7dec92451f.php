@@ -36,24 +36,29 @@
                     </td>
                     <td>
                         <div style="padding-bottom: 10px">
-
                             <?php if($re->project_start != null): ?>
-                            <span style="font-weight: bold;">
-                            <?php echo e(__('message.project_duration')); ?>
+                                <span style="font-weight: bold;">
+                                    <?php echo e(__('message.project_duration')); ?>
 
-                            </span>
-                            <span style="padding-left: 10px;">
-                                <?php echo e(\Carbon\Carbon::parse($re->project_start)->thaidate('j F Y')); ?> ถึง <?php echo e(\Carbon\Carbon::parse($re->project_end)->thaidate('j F Y')); ?>
+                                </span>
+                                <span style="padding-left: 10px;">
+                                    <?php if(app()->getLocale() === 'th'): ?>
+                                        <?php echo e(\Carbon\Carbon::parse($re->project_start)->thaidate('j F Y')); ?> ถึง <?php echo e(\Carbon\Carbon::parse($re->project_end)->thaidate('j F Y')); ?>
 
-                            </span>
+                                    <?php elseif(app()->getLocale() === 'zh'): ?>
+                                        <?php echo e(\Carbon\Carbon::parse($re->project_start)->format('Y年m月d日')); ?> 至 <?php echo e(\Carbon\Carbon::parse($re->project_end)->format('Y年m月d日')); ?>
+
+                                    <?php else: ?>
+                                        <?php echo e(\Carbon\Carbon::parse($re->project_start)->format('j F Y')); ?> to <?php echo e(\Carbon\Carbon::parse($re->project_end)->format('j F Y')); ?>
+
+                                    <?php endif; ?>
+                                </span>
                             <?php else: ?>
-                            <span style="font-weight: bold;">
-                            <?php echo e(__('message.project_duration')); ?>
+                                <span style="font-weight: bold;">
+                                    <?php echo e(__('message.project_duration')); ?>
 
-                            </span>
-                            <span>
-
-                            </span>
+                                </span>
+                                <span></span>
                             <?php endif; ?>
                         </div>
 
@@ -86,8 +91,9 @@
                             <span style="font-weight: bold;"><?php echo e(__('message.research_funding_type')); ?></span>
                             <span style="padding-left: 10px;"> <?php if(is_null($re->fund)): ?>
                                 <?php else: ?>
-                                <?php echo e($re->fund->fund_type); ?>
+                                <?php echo e(__('message.funds.' . $re->fund->fund_type)); ?>
 
+                                <!--<?php echo e($re->fund->fund_type); ?>-->
                                 <?php endif; ?></span>
                         </div>
                         <div style="padding-bottom: 10px;">
@@ -101,14 +107,15 @@
                         <div style="padding-bottom: 10px;">
                             <span style="font-weight: bold;"><?php echo e(__('message.responsible_unit')); ?></span>
                             <span style="padding-left: 10px;">
-                                <?php echo e($re->responsible_department); ?>
+                                <?php echo e(__('message.department.' . $re->responsible_department)); ?>
 
+                                <!--<?php echo e($re->responsible_department); ?>-->
                             </span>
                         </div>
                         <div style="padding-bottom: 10px;">
 
                             <span style="font-weight: bold;"><?php echo e(__('message.allocated_budget')); ?></span>
-                            <span style="padding-left: 10px;"> <?php echo e(number_format($re->budget)); ?> บาท</span>
+                            <span style="padding-left: 10px;"> <?php echo e(number_format($re->budget)); ?> <?php echo e(__('message.currency')); ?></span>
                         </div>
                     </td>
 
@@ -116,10 +123,10 @@
                     <div style="padding-bottom: 10px;">
                         <span>
                             <?php $__currentLoopData = $re->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if(App::getLocale() == 'en'): ?>
-                                    <?php echo e($user->position_en); ?> <?php echo e($user->fname_en); ?> <?php echo e($user->lname_en); ?><br>
-                                <?php else: ?>
+                                <?php if(App::getLocale() == 'th'): ?>
                                     <?php echo e($user->position_th); ?> <?php echo e($user->fname_th); ?> <?php echo e($user->lname_th); ?><br>
+                                <?php else: ?>
+                                    <?php echo e($user->position_en); ?> <?php echo e($user->fname_en); ?> <?php echo e($user->lname_en); ?><br>
                                 <?php endif; ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </span>
