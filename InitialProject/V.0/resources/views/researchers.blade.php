@@ -52,10 +52,12 @@
                                 @endif
                             </h5>
                             <h5 class="card-title-2">
-                                @if(app()->getLocale() == 'th')
+                            @if(app()->getLocale() == 'th')
                                     {{ $r->academic_ranks_th }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาไทย -->
-                                @else
+                                @elseif(app()->getLocale() == 'en')
                                     {{ $r->academic_ranks_en }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
+                                @else
+                                    {{ $r->academic_ranks_cn }}
                                 @endif
                             </h5>
                                 <!-- 🔹 แสดงสาขาวิจัย -->
@@ -64,8 +66,10 @@
                                     <p class="card-text">
                                         @if(app()->getLocale() == 'th')
                                             {{ $r->program->program_name_th }}
-                                        @else
+                                        @elseif(app()->getLocale() == 'en')
                                             {{ $r->program->program_name_en }}
+                                        @else
+                                            {{ $r->program->program_name_cn }}
                                         @endif
                                     </p>
                                 </div>
@@ -104,17 +108,21 @@
                                 <h5 class="card-title-2">
                                 @if(app()->getLocale() == 'th')
                                     {{ $s->academic_ranks_th }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาไทย -->
-                                @else
+                                @elseif(app()->getLocale() == 'en')
                                     {{ $s->academic_ranks_en }} <!-- ใช้ตำแหน่งทางวิชาการเป็นภาษาอังกฤษ -->
+                                @else
+                                    {{ $s->academic_ranks_cn }}
                                 @endif
                             </h5>
                                 <!-- 🔹 แสดงโปรแกรมที่เรียน -->
 
                                 <div class="card-expertise">
                                     <p class="card-text">
-                                        @if(app()->getLocale() == 'th')
+                                    @if(app()->getLocale() == 'th')
                                             {{ $s->program->program_name_th }}
-                                        @else
+                                        @elseif(app()->getLocale() == 'zh')
+                                            {{ $s->program->program_name_cn }}
+                                        @elseif(app()->getLocale() == 'en')
                                             {{ $s->program->program_name_en }}
                                         @endif
                                     </p>

@@ -53,16 +53,36 @@
                         @else
                         <h6 class="card-text"><b>{{$res->fname_en}} {{$res->lname_en}}</b>
                             @endif</h6>
-                        <h6 class="card-text1"><b>{{$res->academic_ranks_en}}</b></h6>
+                            <h6 class="card-text1">
+                                 <b>
+                                    @if(app()->getLocale() == 'th')
+                                        {{ $res->academic_ranks_th }}
+                                    @elseif(app()->getLocale() == 'en')
+                                        {{ $res->academic_ranks_en }}
+                                    @elseif(app()->getLocale() == 'zh')
+                                        {{ $res->academic_ranks_cn}}
+                                    @endif
+                                 </b>
+                            </h6>
+
                         <!-- <h6 class="card-text1">Department of {{$res->program->program_name_en}}</h6> -->
                         <!-- <h6 class="card-text1">College of Computing</h6>
                     <h6 class="card-text1">Khon Kaen University</h6> -->
                         <h6 class="card-text1">E-mail: {{$res->email}}</h6>
                         <h6 class="card-title">{{ trans('message.education') }}</h6>
                         @foreach($res->education as $edu)
-    <h6 class="card-text2 col-sm-10">
-        {{ $edu->year }}  {{ $edu->qua_name }} - {{ $edu->uname }}
-    </h6>
+                        <h6 class="card-text2 col-sm-10">
+                            {{ $edu->year }}  
+                            
+                            <!-- 🔹 แสดงผลตามภาษาที่เลือก -->
+                            @if(app()->getLocale() == 'th')
+                                {{ $edu->qua_name }} - {{ $edu->uname }}
+                            @elseif(app()->getLocale() == 'en')
+                                {{ $edu->qua_name_en }} - {{ $edu->uname_en }}
+                            @else
+                                {{ $edu->qua_name_cn }} - {{ $edu->uname_cn }}
+                            @endif
+                        </h6>
 @endforeach
                         <!-- <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                             data-bs-target="#exampleModal">
@@ -191,20 +211,13 @@
                             </span>
                             @endforeach
                             @foreach ($paper->teacher as $author)
-                            <span>
-                                <a href="{{ route('detail', Crypt::encrypt($author->id)) }}">
-                                    <teacher>
-                                        @if(app()->getLocale() == 'th')
-                                            {{ $author->fname_th }} {{ $author->lname_th }}
-                                        @else
-                                            {{ $author->fname_en }} {{ $author->lname_en }}
-                                        @endif
-                                    </teacher>
-                                </a>
+                            <span >
+                                <a href="{{ route('detail',Crypt::encrypt($author->id))}}">
+                                    <teacher>{{$author -> fname_en}} {{$author -> lname_en}}</teacher></a>
                             </span>
                             @endforeach
                         </td>
-                        <td>{{ __('message.paper_types.' . $paper->paper_type) }}</td>
+                        <td>{{$paper->paper_type}}</td>
                         <td style="width:100%;">{{$paper->paper_page}}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
@@ -260,7 +273,7 @@
                             </span>
                             @endforeach
                         </td>
-                        <td>{{ __('message.paper_types.' . $paper->paper_type) }}</td>
+                        <td>{{$paper->paper_type}}</td>
                         <td style="width:100%;">{{$paper->paper_page}}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
@@ -312,7 +325,7 @@
                             </span>
                             @endforeach
                         </td>
-                        <td>{{ __('message.paper_types.' . $paper->paper_type) }}</td>
+                        <td>{{$paper->paper_type}}</td>
                         <td style="width:100%;">{{$paper->paper_page}}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
@@ -364,7 +377,7 @@
                             </span>
                             @endforeach
                         </td>
-                        <td>{{ __('message.paper_types.' . $paper->paper_type) }}</td>
+                        <td>{{$paper->paper_type}}</td>
                         <td style="width:100%;">{{$paper->paper_page}}</td>
                         <td>{{$paper->paper_sourcetitle}}</td>
                         <td>{{$paper->paper_citation}}</td>
