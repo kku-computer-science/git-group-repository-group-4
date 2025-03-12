@@ -57,78 +57,38 @@
                                         <?php endif; ?>
                                     </span>
                                 <?php else: ?>
-<<<<<<< HEAD
                                     <span style="font-weight: bold;">
                                         <?php echo e(__('message.project_duration')); ?>
 
                                     </span>
                                     <span></span>
-=======
-                                <?php echo e(__('message.funds.' . $re->fund->fund_type)); ?>
-
-                                <!--<?php echo e($re->fund->fund_type); ?>-->
-                                <?php endif; ?></span>
-                        </div>
-                        <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;"><?php echo e(__('message.supporting_agency')); ?></span>
-                            <span style="padding-left: 10px;"> <?php if(is_null($re->fund)): ?>
-                                <?php else: ?>
-                                <?php echo e(__('message.support_resource.' . $re->fund->support_resource)); ?>
-
-                               
-                                <?php endif; ?></span>
-                        </div>
-                        <div style="padding-bottom: 10px;">
-                            <span style="font-weight: bold;"><?php echo e(__('message.responsible_unit')); ?></span>
-                            <span style="padding-left: 10px;">
-                                <?php echo e(__('message.department.' . $re->responsible_department)); ?>
-
-                                <!--<?php echo e($re->responsible_department); ?>-->
-                            </span>
-                        </div>
-                        <div style="padding-bottom: 10px;">
-
-                            <span style="font-weight: bold;"><?php echo e(__('message.allocated_budget')); ?></span>
-                            <span style="padding-left: 10px;"> <?php echo e(number_format($re->budget)); ?> <?php echo e(__('message.currency')); ?></span>
-                        </div>
-                    </td>
-
-                    <td style="vertical-align: top;text-align: left;">
-                    <div style="padding-bottom: 10px;">
-                        <span>
-                            <?php $__currentLoopData = $re->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <?php if(App::getLocale() == 'th'): ?>
-                                    <?php echo e($user->position_th); ?> <?php echo e($user->fname_th); ?> <?php echo e($user->lname_th); ?><br>
-                                <?php else: ?>
-                                    <?php echo e($user->position_en); ?> <?php echo e($user->fname_en); ?> <?php echo e($user->lname_en); ?><br>
->>>>>>> f820464a4736fd23b4d06c9cbd93be7df3b903c5
                                 <?php endif; ?>
                             </div>
 
 
                             <!-- <?php if($re->project_start != null): ?>
-                                <td><?php echo e(\Carbon\Carbon::parse($re->project_start)->thaidate('j F Y')); ?><br>ถึง <?php echo e(\Carbon\Carbon::parse($re->project_end)->thaidate('j F Y')); ?></td>
-                                <?php else: ?>
-                                <td></td>
-                                <?php endif; ?> -->
+                                    <td><?php echo e(\Carbon\Carbon::parse($re->project_start)->thaidate('j F Y')); ?><br>ถึง <?php echo e(\Carbon\Carbon::parse($re->project_end)->thaidate('j F Y')); ?></td>
+                                    <?php else: ?>
+                                    <td></td>
+                                    <?php endif; ?> -->
 
                             <!-- <td><?php $__currentLoopData = $re->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php echo e($user->position); ?><?php echo e($user->fname_th); ?> <?php echo e($user->lname_th); ?><br>
-                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                </td> -->
+                                        <?php echo e($user->position); ?><?php echo e($user->fname_th); ?> <?php echo e($user->lname_th); ?><br>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </td> -->
                             <!-- <td>
-                                    <?php if(is_null($re->fund)): ?>
-                                    <?php else: ?>
-                                    <?php echo e($re->fund->fund_type); ?>
+                                        <?php if(is_null($re->fund)): ?>
+                                        <?php else: ?>
+                                        <?php echo e($re->fund->fund_type); ?>
 
-                                    <?php endif; ?>
-                                </td> -->
+                                        <?php endif; ?>
+                                    </td> -->
                             <!-- <td><?php if(is_null($re->fund)): ?>
-                                    <?php else: ?>
-                                    <?php echo e($re->fund->support_resource); ?>
+                                        <?php else: ?>
+                                        <?php echo e($re->fund->support_resource); ?>
 
-                                    <?php endif; ?>
-                                </td> -->
+                                        <?php endif; ?>
+                                    </td> -->
                             <!-- <td><?php echo e($re->budget); ?></td> -->
                             <div style="padding-bottom: 10px;">
                                 <span style="font-weight: bold;"><?php echo e(__('message.research_funding_type')); ?></span>
@@ -192,7 +152,7 @@
                             </td>
                         <?php endif; ?>
                         <!-- <td></td>
-                                <td></td> -->
+                                    <td></td> -->
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </tbody>
