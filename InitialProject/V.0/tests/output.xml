@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T14:25:46.139870" rpa="false" schemaversion="5">
+<suite id="s1" name="UAT-website" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\UAT-website.robot">
+<test id="s1-t1" name="Test Open Researchers Page" line="21">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:25:46.426049" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:25:46.426049" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:25:46.426049" elapsed="2.461055"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:25:51.891905" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:25:48.887104" elapsed="3.004801"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:25:51.891905" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Researchers')]'.</msg>
+<arg>${RESEARCHER_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:25:51.891905" elapsed="0.810172"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:25:54.704425" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:25:52.702077" elapsed="2.002348"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:25:54.719960" level="INFO">Current location is 'http://127.0.0.1:8000/researchers'.</msg>
+<arg>http://127.0.0.1:8000/researchers</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:25:54.704425" elapsed="0.015535"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:25:54.978489" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researcher_page.png"&gt;&lt;img src="researcher_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researcher_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T14:25:54.719960" elapsed="0.258529"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T14:25:54.978489" elapsed="2.164947"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Researchers"</doc>
+<status status="PASS" start="2025-03-12T14:25:46.409956" elapsed="10.733480"/>
+</test>
+<test id="s1-t2" name="Test Open Research Project Page" line="31">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:25:57.143436" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:25:57.143436" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:25:57.143436" elapsed="2.465753"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:02.617237" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:25:59.609189" elapsed="3.008048"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:02.619560" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Research Project')]'.</msg>
+<arg>${RESEARCHPROJECT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:26:02.618236" elapsed="0.903998"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:05.526493" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:03.523300" elapsed="2.003193"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:05.542170" level="INFO">Current location is 'http://127.0.0.1:8000/researchproject'.</msg>
+<arg>http://127.0.0.1:8000/researchproject</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:05.526493" elapsed="0.015677"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:05.715064" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researchproject_page.png"&gt;&lt;img src="researchproject_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researchproject_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T14:26:05.542170" elapsed="0.172894"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T14:26:05.715064" elapsed="2.163420"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Research Project"</doc>
+<status status="PASS" start="2025-03-12T14:25:57.143436" elapsed="10.735048"/>
+</test>
+<test id="s1-t3" name="Test Open Research Group Page" line="41">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:07.887776" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:26:07.887776" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:07.885756" elapsed="2.669960"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:13.561522" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:10.557742" elapsed="3.003780"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:13.561522" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Research Group')]'.</msg>
+<arg>${RESEARCHGROUP_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:26:13.561522" elapsed="0.754572"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:16.318621" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:14.316094" elapsed="2.002527"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:16.334419" level="INFO">Current location is 'http://127.0.0.1:8000/researchgroup'.</msg>
+<arg>http://127.0.0.1:8000/researchgroup</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:16.318621" elapsed="0.015798"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:16.519393" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researchgroup_page.png"&gt;&lt;img src="researchgroup_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researchgroup_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T14:26:16.334419" elapsed="0.184974"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T14:26:16.520219" elapsed="2.169425"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Research Group"</doc>
+<status status="PASS" start="2025-03-12T14:26:07.878484" elapsed="10.811160"/>
+</test>
+<test id="s1-t4" name="Test Open Research Group Detail Page" line="51">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:18.689644" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:26:18.689644" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:18.689644" elapsed="2.628138"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:24.325640" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:21.318954" elapsed="3.006686"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:24.325640" level="INFO">Opening url 'http://127.0.0.1:8000/researchgroupdetail/3'</msg>
+<arg>${RESEARCHDETAILS_MENU}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:24.325640" elapsed="0.751790"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:27.081706" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:25.077430" elapsed="2.004276"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:27.097576" level="INFO">Current location is 'http://127.0.0.1:8000/researchgroupdetail/3'.</msg>
+<arg>${RESEARCHDETAILS_MENU}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:27.081706" elapsed="0.015870"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:27.287219" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="researchgroupdetail_page.png"&gt;&lt;img src="researchgroupdetail_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>researchgroupdetail_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T14:26:27.097576" elapsed="0.189643"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T14:26:27.287219" elapsed="2.149835"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Research Group Detail"</doc>
+<status status="PASS" start="2025-03-12T14:26:18.689644" elapsed="10.749445"/>
+</test>
+<test id="s1-t5" name="Test Open Report Page" line="61">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:29.444367" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:26:29.444367" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:29.444367" elapsed="2.586286"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:35.033702" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:32.030653" elapsed="3.003049"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:35.033702" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Report')]'.</msg>
+<arg>${REPORT_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:26:35.033702" elapsed="0.529714"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:37.566577" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:35.563771" elapsed="2.002806"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:37.584514" level="INFO">Current location is 'http://127.0.0.1:8000/reports'.</msg>
+<arg>http://127.0.0.1:8000/reports</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:37.566577" elapsed="0.017937"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:37.774090" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="report_page.png"&gt;&lt;img src="report_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>report_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T14:26:37.584514" elapsed="0.189576"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T14:26:37.778995" elapsed="2.157080"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Report"</doc>
+<status status="PASS" start="2025-03-12T14:26:29.441118" elapsed="10.494957"/>
+</test>
+<test id="s1-t6" name="Test Open Home Page" line="71">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:39.936075" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:26:39.936075" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-12T14:26:39.936075" elapsed="2.614854"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:45.557754" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:42.552153" elapsed="3.005601"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:45.557754" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Home')]'.</msg>
+<arg>${HOME_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T14:26:45.557754" elapsed="0.842415"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T14:26:48.413464" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T14:26:46.400169" elapsed="2.013295"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T14:26:48.678663" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T14:26:48.678663" level="FAIL">Location should have been 'http://127.0.0.1:8000/home' but was 'http://127.0.0.1:8000/'.</msg>
+<arg>http://127.0.0.1:8000/home</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="FAIL" start="2025-03-12T14:26:48.413464" elapsed="0.266205">Location should have been 'http://127.0.0.1:8000/home' but was 'http://127.0.0.1:8000/'.</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>home_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-03-12T14:26:48.680594" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-12T14:26:48.680594" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Home"</doc>
+<status status="FAIL" start="2025-03-12T14:26:39.936075" elapsed="8.744519">Location should have been 'http://127.0.0.1:8000/home' but was 'http://127.0.0.1:8000/'.</status>
+</test>
+<status status="FAIL" start="2025-03-12T14:25:46.139870" elapsed="62.542764"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="UAT-website" id="s1" pass="5" fail="1" skip="0">UAT-website</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-12T14:25:46.426049" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:25:57.143436" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:26:07.887776" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:26:18.689644" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:26:29.444367" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T14:26:39.936075" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+</errors>
+</robot>
