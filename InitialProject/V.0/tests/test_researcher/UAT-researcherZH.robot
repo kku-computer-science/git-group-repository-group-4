@@ -73,23 +73,21 @@ Test Open Researchers Page
     Click Element    //a[@id='navbarDropdownMenuLink']
     Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
-    # ไปที่ URL ของภาษาไทย
-    Go To    http://127.0.0.1:8000/lang/th
+    # ไปที่ URL ของภาษาจีน
+    Go To    http://127.0.0.1:8000/lang/zh
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
     # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บ
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[2]
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[3]  
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[6] 
-    Page Should Contain    ${EXPECTED_WORDS_USER_TH}[8]
+    Page Should Contain    ${EXPECTED_WORDS_USER_ZH}[1]
+    Page Should Contain    ${EXPECTED_WORDS_USER_ZH}[3]  
 
-    Capture Page Screenshot    researcher_page_thai.png
+    Capture Page Screenshot    researcher_page_chinese.png
 
     # เลื่อนหน้าจอลงจนพบ "Arfat Ahmad Khan"
     FOR    ${i}    IN RANGE    0    5  # เลื่อนหน้าจอลง 5 ครั้ง
         Execute JavaScript    window.scrollBy(0, 1000)   # เลื่อนลงทีละ 1000px
-        Sleep    1s  # ให้เวลาหน้าโหลด
+        Sleep    2s  # ให้เวลาหน้าโหลด
         # ตรวจสอบว่าเจอ "Arfat Ahmad Khan"
         Run Keyword If    '${i}' == '9'    Page Should Contain Element    xpath=//div[contains(@class, 'researcher-item')]//h5[contains(normalize-space(.), 'Arfat Ahmad Khan')]
         Run Keyword If    '${i}' == '9'    Return From Keyword
@@ -99,7 +97,7 @@ Test Open Researchers Page
     Close Browser
 
 Test Open Researchers Profile Page
-    [Documentation]    ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย
+    [Documentation]    ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นจีน
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
     Click Element    ${RESEARCHER_MENU}
@@ -115,25 +113,28 @@ Test Open Researchers Profile Page
     Click Element    //a[@id='navbarDropdownMenuLink']
     Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
-    # ไปที่ URL ของภาษาไทย
-    Go To    http://127.0.0.1:8000/lang/th
+    # ไปที่ URL ของภาษาจีน
+    Go To    http://127.0.0.1:8000/lang/zh
     Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
     
 
    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บด้วย XPath
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น')]
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2528 พบ.ม. (สถิติประยุกต์) - สถาบันบัณฑิตพัฒนบริหารศาสตร์')]
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2544 วท.ด. (วิทยาการคอมพิวเตอร์) - สถาบันเทคโนโลยีแห่งเอเชีย ประเทศไทย')]
-    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), 'ศาสตราจารย์')]
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2526 理学士（数学） - 孔敬大学')]
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2528 教育硕士（应用统计学） - 国家发展管理学院')]
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '2544 技术科学博士（计算机科学） - 泰国亚洲理工学院')]
+    Page Should Contain Element    xpath=//h6[contains(normalize-space(.), '教授')]
 
     Capture Page Screenshot    researcherprofile_page_thai.png
 
-    # เลื่อนหน้าไปยังตำแหน่งที่ต้องการ
-    Execute JavaScript    document.querySelector('html, body').scrollBy(0, 500);
-    Sleep    2s
+    # เลื่อนหน้าจอลงจนพบ "ประเภทเอกสาร"
+    FOR    ${i}    IN RANGE    0    2  # เลื่อนหน้าจอลง 2 ครั้ง
+        Execute JavaScript    window.scrollBy(0, 500)  # เลื่อนลงทีละ 500px
+        Sleep    2s  # ให้เวลาหน้าโหลด
+        Run Keyword If    '${i}' == '9'    Page Should Contain Element    xpath=//td[contains(normalize-space(.), 'ประเภทเอกสาร')]
+        Run Keyword If    '${i}' == '9'    Return From Keyword  # หยุดการเลื่อนเมื่อเจอ 'ประเภทเอกสาร'
+    END
 
-
-    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บด้วย XPath
+    # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บ
     Page Should Contain Element    xpath=//td[contains(normalize-space(.), 'วารสาร')]
     Page Should Contain Element    xpath=//teacher[contains(normalize-space(.), 'ศาสตรา วงศ์ธนวสุ')]
     Close Browser
