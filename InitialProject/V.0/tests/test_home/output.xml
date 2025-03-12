@@ -1,194 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.10.11 on win32)" generated="2025-03-12T22:40:38.037895" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.10.11 on win32)" generated="2025-03-12T23:46:28.867501" rpa="false" schemaversion="5">
 <suite id="s1" name="Test" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_home\test.robot">
 <kw name="Open Browser To Home Page" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:38.320941" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<msg time="2025-03-12T23:46:29.072158" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-12T22:40:38.320941" elapsed="3.416179"/>
+<status status="PASS" start="2025-03-12T23:46:29.072158" elapsed="2.638318"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-12T22:40:41.741512" elapsed="0.042070"/>
+<status status="PASS" start="2025-03-12T23:46:31.710476" elapsed="0.139324"/>
 </kw>
-<status status="PASS" start="2025-03-12T22:40:38.320941" elapsed="3.462641"/>
+<status status="PASS" start="2025-03-12T23:46:29.072158" elapsed="2.777642"/>
 </kw>
-<test id="s1-t1" name="Test Banner And Menu In Thai Language" line="43">
+<test id="s1-t1" name="Test Banner And Menu In Thai Language" line="71">
 <kw name="Change Language">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:41.789456" level="INFO">Clicking element 'css=a#navbarDropdownMenuLink'.</msg>
+<msg time="2025-03-12T23:46:31.867134" level="INFO">Clicking element 'css=a#navbarDropdownMenuLink'.</msg>
 <arg>${LANGUAGE_DROPDOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:41.787193" elapsed="0.147714"/>
+<status status="PASS" start="2025-03-12T23:46:31.867134" elapsed="0.152235"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:41.934907" level="INFO">Clicking element 'xpath=//a[@data-lang='th']'.</msg>
+<msg time="2025-03-12T23:46:32.020423" level="INFO">Clicking element 'xpath=//a[@data-lang='th']'.</msg>
 <arg>xpath=//a[@data-lang='${lang_code}']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:41.934907" elapsed="1.190230"/>
+<status status="PASS" start="2025-03-12T23:46:32.020423" elapsed="0.931618"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T22:40:44.138893" level="INFO">Slept 1 second.</msg>
+<msg time="2025-03-12T23:46:33.958668" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T22:40:43.125137" elapsed="1.013756"/>
+<status status="PASS" start="2025-03-12T23:46:32.952041" elapsed="1.006627"/>
 </kw>
 <arg>th</arg>
-<status status="PASS" start="2025-03-12T22:40:41.786565" elapsed="2.352328"/>
+<status status="PASS" start="2025-03-12T23:46:31.867134" elapsed="2.091534"/>
 </kw>
 <kw name="Banner Source Should Be">
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:44.174349" level="INFO">${banner_src} = http://127.0.0.1:8000/img/Banner1.png</msg>
+<msg time="2025-03-12T23:46:33.989128" level="INFO">${banner_src} = http://127.0.0.1:8000/img/Banner1.png</msg>
 <var>${banner_src}</var>
 <arg>xpath=//div[@class="carousel-inner"]/div[1]/img</arg>
 <arg>src</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:44.138893" elapsed="0.035456"/>
+<status status="PASS" start="2025-03-12T23:46:33.958668" elapsed="0.030460"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${banner_src}</arg>
 <arg>${expected_banner_src}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-03-12T22:40:44.174349" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-12T23:46:33.989128" elapsed="0.001123"/>
 </kw>
 <arg>${TH_BANNER_SRC}</arg>
-<status status="PASS" start="2025-03-12T22:40:44.138893" elapsed="0.035456"/>
+<status status="PASS" start="2025-03-12T23:46:33.958668" elapsed="0.031583"/>
 </kw>
 <kw name="Menu Should Contain">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:44.241188" level="INFO">Current page contains text 'นักวิจัย'.</msg>
+<msg time="2025-03-12T23:46:34.027870" level="INFO">Current page contains text 'นักวิจัย'.</msg>
 <arg>${expected_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T22:40:44.177025" elapsed="0.064163"/>
+<status status="PASS" start="2025-03-12T23:46:33.991354" elapsed="0.036516"/>
 </kw>
 <arg>${TH_MENU_TEXT}</arg>
-<status status="PASS" start="2025-03-12T22:40:44.174349" elapsed="0.068360"/>
+<status status="PASS" start="2025-03-12T23:46:33.990251" elapsed="0.037619"/>
 </kw>
 <tag>language</tag>
 <tag>th</tag>
-<status status="PASS" start="2025-03-12T22:40:41.784852" elapsed="2.457857"/>
+<status status="PASS" start="2025-03-12T23:46:31.849800" elapsed="2.179074"/>
 </test>
-<test id="s1-t2" name="Test Banner And Menu In Chinese Language" line="49">
+<test id="s1-t2" name="Test Banner And Menu In Chinese Language" line="77">
 <kw name="Change Language">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:44.250956" level="INFO">Clicking element 'css=a#navbarDropdownMenuLink'.</msg>
+<msg time="2025-03-12T23:46:34.030872" level="INFO">Clicking element 'css=a#navbarDropdownMenuLink'.</msg>
 <arg>${LANGUAGE_DROPDOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:44.245933" elapsed="0.086910"/>
+<status status="PASS" start="2025-03-12T23:46:34.030872" elapsed="0.058448"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:44.334206" level="INFO">Clicking element 'xpath=//a[@data-lang='zh']'.</msg>
+<msg time="2025-03-12T23:46:34.089895" level="INFO">Clicking element 'xpath=//a[@data-lang='zh']'.</msg>
 <arg>xpath=//a[@data-lang='${lang_code}']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:44.333660" elapsed="1.408229"/>
+<status status="PASS" start="2025-03-12T23:46:34.089320" elapsed="0.736521"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T22:40:46.750030" level="INFO">Slept 1 second.</msg>
+<msg time="2025-03-12T23:46:35.827422" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T22:40:45.743003" elapsed="1.007027"/>
+<status status="PASS" start="2025-03-12T23:46:34.825841" elapsed="1.001581"/>
 </kw>
 <arg>zh</arg>
-<status status="PASS" start="2025-03-12T22:40:44.245933" elapsed="2.505061"/>
+<status status="PASS" start="2025-03-12T23:46:34.029870" elapsed="1.797552"/>
 </kw>
 <kw name="Banner Source Should Be">
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:46.793373" level="INFO">${banner_src} = http://127.0.0.1:8000/img/Banner1Zh.png</msg>
+<msg time="2025-03-12T23:46:35.851635" level="INFO">${banner_src} = http://127.0.0.1:8000/img/Banner1Zh.png</msg>
 <var>${banner_src}</var>
 <arg>xpath=//div[@class="carousel-inner"]/div[1]/img</arg>
 <arg>src</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:46.750994" elapsed="0.042379"/>
+<status status="PASS" start="2025-03-12T23:46:35.829514" elapsed="0.022121"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${banner_src}</arg>
 <arg>${expected_banner_src}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-03-12T22:40:46.793373" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-12T23:46:35.852653" elapsed="0.000000"/>
 </kw>
 <arg>${ZH_BANNER_SRC}</arg>
-<status status="PASS" start="2025-03-12T22:40:46.750994" elapsed="0.042379"/>
+<status status="PASS" start="2025-03-12T23:46:35.828437" elapsed="0.024216"/>
 </kw>
 <kw name="Menu Should Contain">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:46.850979" level="INFO">Current page contains text '研究人员'.</msg>
+<msg time="2025-03-12T23:46:35.875832" level="INFO">Current page contains text '研究人员'.</msg>
 <arg>${expected_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T22:40:46.793373" elapsed="0.059740"/>
+<status status="PASS" start="2025-03-12T23:46:35.853634" elapsed="0.022198"/>
 </kw>
 <arg>${ZH_MENU_TEXT}</arg>
-<status status="PASS" start="2025-03-12T22:40:46.793373" elapsed="0.059740"/>
+<status status="PASS" start="2025-03-12T23:46:35.852653" elapsed="0.023179"/>
 </kw>
 <tag>language</tag>
 <tag>zh</tag>
-<status status="PASS" start="2025-03-12T22:40:44.242709" elapsed="2.610404"/>
+<status status="PASS" start="2025-03-12T23:46:34.028874" elapsed="1.846958"/>
 </test>
-<test id="s1-t3" name="Test Banner And Menu In English Language" line="55">
+<test id="s1-t3" name="Test Banner And Menu In English Language" line="83">
 <kw name="Change Language">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:46.858142" level="INFO">Clicking element 'css=a#navbarDropdownMenuLink'.</msg>
+<msg time="2025-03-12T23:46:35.877785" level="INFO">Clicking element 'css=a#navbarDropdownMenuLink'.</msg>
 <arg>${LANGUAGE_DROPDOWN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:46.858142" elapsed="0.125562"/>
+<status status="PASS" start="2025-03-12T23:46:35.877785" elapsed="0.058867"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:46.983704" level="INFO">Clicking element 'xpath=//a[@data-lang='en']'.</msg>
+<msg time="2025-03-12T23:46:35.936652" level="INFO">Clicking element 'xpath=//a[@data-lang='en']'.</msg>
 <arg>xpath=//a[@data-lang='${lang_code}']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:46.983704" elapsed="2.128393"/>
+<status status="PASS" start="2025-03-12T23:46:35.936652" elapsed="0.915301"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-03-12T22:40:50.117451" level="INFO">Slept 1 second.</msg>
+<msg time="2025-03-12T23:46:37.860933" level="INFO">Slept 1 second.</msg>
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-03-12T22:40:49.112097" elapsed="1.005354"/>
+<status status="PASS" start="2025-03-12T23:46:36.852446" elapsed="1.009176"/>
 </kw>
 <arg>en</arg>
-<status status="PASS" start="2025-03-12T22:40:46.858142" elapsed="3.259309"/>
+<status status="PASS" start="2025-03-12T23:46:35.877785" elapsed="1.983837"/>
 </kw>
 <kw name="Banner Source Should Be">
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:50.157766" level="INFO">${banner_src} = http://127.0.0.1:8000/img/Banner1En.png</msg>
+<msg time="2025-03-12T23:46:37.880640" level="INFO">${banner_src} = http://127.0.0.1:8000/img/Banner1En.png</msg>
 <var>${banner_src}</var>
 <arg>xpath=//div[@class="carousel-inner"]/div[1]/img</arg>
 <arg>src</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2025-03-12T22:40:50.119960" elapsed="0.037806"/>
+<status status="PASS" start="2025-03-12T23:46:37.863070" elapsed="0.017570"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${banner_src}</arg>
 <arg>${expected_banner_src}</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2025-03-12T22:40:50.157766" elapsed="0.000000"/>
+<status status="PASS" start="2025-03-12T23:46:37.880640" elapsed="0.000000"/>
 </kw>
 <arg>${EN_BANNER_SRC}</arg>
-<status status="PASS" start="2025-03-12T22:40:50.119960" elapsed="0.037806"/>
+<status status="PASS" start="2025-03-12T23:46:37.862049" elapsed="0.018591"/>
 </kw>
 <kw name="Menu Should Contain">
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2025-03-12T22:40:50.222985" level="INFO">Current page contains text 'Researchers'.</msg>
+<msg time="2025-03-12T23:46:37.892926" level="INFO">Current page contains text 'Researchers'.</msg>
 <arg>${expected_text}</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2025-03-12T22:40:50.167317" elapsed="0.055668"/>
+<status status="PASS" start="2025-03-12T23:46:37.881666" elapsed="0.011260"/>
 </kw>
 <arg>Researchers</arg>
-<status status="PASS" start="2025-03-12T22:40:50.157766" elapsed="0.065219"/>
+<status status="PASS" start="2025-03-12T23:46:37.880640" elapsed="0.012286"/>
 </kw>
 <tag>en</tag>
 <tag>language</tag>
-<status status="PASS" start="2025-03-12T22:40:46.853113" elapsed="3.369872"/>
+<status status="PASS" start="2025-03-12T23:46:35.875832" elapsed="2.017094"/>
+</test>
+<test id="s1-t4" name="Test Publications Section" line="89">
+<kw name="Scroll To Publications Section">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${PUBLICATIONS_SECTION}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-12T23:46:37.892926" elapsed="0.318256"/>
+</kw>
+<status status="PASS" start="2025-03-12T23:46:37.892926" elapsed="0.318422"/>
+</kw>
+<kw name="Expand Accordion And Click Reference Button">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@aria-controls, 'collapse')])[${accordion_index}]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-03-12T23:46:38.211348" elapsed="0.311367"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//button[contains(@aria-controls, 'collapse')])[${accordion_index}]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T23:46:38.522715" elapsed="0.018585"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T23:46:38.541300" level="INFO">Clicking element 'xpath=(//button[contains(@aria-controls, 'collapse')])[5]'.</msg>
+<arg>xpath=(//button[contains(@aria-controls, 'collapse')])[${accordion_index}]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T23:46:38.541300" elapsed="0.081722"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${accordion_index}' == ''</arg>
+<arg>Log</arg>
+<arg>Error: Invalid accordion index</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T23:46:38.623022" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-03-12T23:46:38.627515" level="INFO">"Accordion 5 is expanding, checking the reference button."</msg>
+<arg>"Accordion 5 is expanding, checking the reference button."</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-03-12T23:46:38.627515" elapsed="0.000000"/>
+</kw>
+<arg>'${accordion_index}' == '5'</arg>
+<arg>Log</arg>
+<arg>"Accordion 5 is expanding, checking the reference button."</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-03-12T23:46:38.626190" elapsed="0.001325"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T23:46:38.628924" level="INFO">Clicking element 'xpath=(//div[@id='collapse5']//button[contains(@class, 'open_modal')])[1]'.</msg>
+<msg time="2025-03-12T23:46:38.803830" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-92.png"&gt;&lt;img src="selenium-screenshot-92.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T23:46:38.803830" level="FAIL">Element with locator 'xpath=(//div[@id='collapse5']//button[contains(@class, 'open_modal')])[1]' not found.</msg>
+<arg>xpath=(//div[@id='collapse5']//button[contains(@class, 'open_modal')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-12T23:46:38.627515" elapsed="0.176944">Element with locator 'xpath=(//div[@id='collapse5']//button[contains(@class, 'open_modal')])[1]' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[@id='collapse${accordion_index}']//button[contains(@class, 'open_modal')])[1]</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-12T23:46:38.804459" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=(//div[@id='collapse${accordion_index}']//button[contains(@class, 'open_modal')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-12T23:46:38.804459" elapsed="0.000000"/>
+</kw>
+<arg>5</arg>
+<status status="FAIL" start="2025-03-12T23:46:38.211348" elapsed="0.593111">Element with locator 'xpath=(//div[@id='collapse5']//button[contains(@class, 'open_modal')])[1]' not found.</status>
+</kw>
+<status status="FAIL" start="2025-03-12T23:46:37.892926" elapsed="0.911533">Element with locator 'xpath=(//div[@id='collapse5']//button[contains(@class, 'open_modal')])[1]' not found.</status>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-12T22:40:50.222985" elapsed="2.901114"/>
+<status status="PASS" start="2025-03-12T23:46:38.804459" elapsed="2.475947"/>
 </kw>
-<status status="PASS" start="2025-03-12T22:40:38.048767" elapsed="15.075332"/>
+<status status="FAIL" start="2025-03-12T23:46:28.867501" elapsed="12.412905"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">en</stat>
@@ -197,7 +268,7 @@
 <stat pass="1" fail="0" skip="0">zh</stat>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="3" fail="1" skip="0" id="s1" name="Test">Test</stat>
 </suite>
 </statistics>
 <errors>

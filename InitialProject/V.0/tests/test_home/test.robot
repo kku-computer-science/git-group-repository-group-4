@@ -1,3 +1,7 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 *** Settings ***
 Library    SeleniumLibrary
 Library    OperatingSystem
@@ -16,6 +20,9 @@ ${EN_BANNER_SRC}    Banner1En.png
 ${TH_MENU_TEXT}    นักวิจัย
 ${ZH_MENU_TEXT}    研究人员
 ${EN_MENU_TEXT}    Researchers
+${PUBLICATIONS_SECTION}    xpath=//h3[contains(text(), 'Publications (In the Last 5 Years)')]
+${ACCORDION_BUTTON}    xpath=//button[contains(@aria-controls, 'collapse')]
+${REFERENCE_TEXT}    Reference
 *** Keywords ***
 
 Open Browser To Home Page
@@ -38,6 +45,27 @@ Menu Should Contain
     [Arguments]    ${expected_text}
     Page Should Contain    ${expected_text}
 
+Scroll To Publications Section
+    Scroll Element Into View    ${PUBLICATIONS_SECTION}
+
+*** Keywords ***
+Expand Accordion And Click Reference Button
+    [Arguments]    ${accordion_index}
+    
+    # ขยาย Accordion
+    Scroll Element Into View    xpath=(//button[contains(@aria-controls, 'collapse')])[${accordion_index}]
+    Wait Until Element Is Visible    xpath=(//button[contains(@aria-controls, 'collapse')])[${accordion_index}]  timeout=10s
+    Click Element    xpath=(//button[contains(@aria-controls, 'collapse')])[${accordion_index}]
+
+    # เช็คว่า accordion ขยายแล้ว
+    Run Keyword If    '${accordion_index}' == ''    Log    Error: Invalid accordion index
+    Run Keyword If    '${accordion_index}' == '5'    Log    "Accordion 5 is expanding, checking the reference button."
+    
+    # คลิกปุ่ม open_modal
+    Click Element    xpath=(//div[@id='collapse5']//button[contains(@class, 'open_modal')])[1]
+    Wait Until Element Is Visible    xpath=(//div[@id='collapse${accordion_index}']//button[contains(@class, 'open_modal')])[1]  timeout=10s
+    Click Element    xpath=(//div[@id='collapse${accordion_index}']//button[contains(@class, 'open_modal')])[1]
+
 *** Test Cases ***
 
 Test Banner And Menu In Thai Language
@@ -57,3 +85,7 @@ Test Banner And Menu In English Language
     Change Language    en
     Banner Source Should Be    ${EN_BANNER_SRC}
     Menu Should Contain    Researchers
+
+Test Publications Section
+    Scroll To Publications Section
+    Expand Accordion And Click Reference Button    5  # Adjust index if necessary
