@@ -48,7 +48,7 @@ ${REPORT_MENU}               //a[@class='nav-link' and contains(text(), 'Report'
        
         
 
-@{EXPECTED_WORDS_USER_CN}
+@{EXPECTED_WORDS_USER_ZH}
 ...    信息技术
 ...    计算机科学与信息技术
 ...    副教授
@@ -130,12 +130,12 @@ Test Open Researchers Profile Page
     FOR    ${i}    IN RANGE    0    2  # เลื่อนหน้าจอลง 2 ครั้ง
         Execute JavaScript    window.scrollBy(0, 500)  # เลื่อนลงทีละ 500px
         Sleep    2s  # ให้เวลาหน้าโหลด
-        Run Keyword If    '${i}' == '9'    Page Should Contain Element    xpath=//td[contains(normalize-space(.), 'ประเภทเอกสาร')]
-        Run Keyword If    '${i}' == '9'    Return From Keyword  # หยุดการเลื่อนเมื่อเจอ 'ประเภทเอกสาร'
+        Run Keyword If    '${i}' == '9'    Page Should Contain Element    xpath=//td[contains(normalize-space(.), '文档类型')]
+        Run Keyword If    '${i}' == '9'    Return From Keyword  # หยุดการเลื่อนเมื่อเจอ '文档类型'
     END
 
     # ตรวจสอบคำแปลที่คาดหวังในหน้าเว็บ
-    Page Should Contain Element    xpath=//td[contains(normalize-space(.), 'วารสาร')]
-    Page Should Contain Element    xpath=//teacher[contains(normalize-space(.), 'ศาสตรา วงศ์ธนวสุ')]
+    Page Should Contain Element    xpath=//td[contains(normalize-space(.), '会议论文集')]
+    Page Should Contain Element    xpath=//teacher[contains(normalize-space(.), 'Sartra Wongthanavasu')]
     Close Browser
 
