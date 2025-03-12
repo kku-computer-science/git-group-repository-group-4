@@ -5,7 +5,7 @@ Library           String
 *** Variables ***
 ${SERVER}                    http://127.0.0.1:8000
 ${USER_USERNAME}             staff@gmail.com
-${USER_PASSWORD}             123456789
+${USER_PASSWORD}             123
 ${LOGIN URL}                 ${SERVER}/login
 ${USER URL}                  ${SERVER}/dashboard
 ${VIEW_BUTTON_XPATH}         //a[contains(@class, 'btn-outline-primary')]/i[contains(@class, 'mdi-eye')]
