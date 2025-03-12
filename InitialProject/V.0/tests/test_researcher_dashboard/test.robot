@@ -129,7 +129,7 @@ Test Navigate To Funds Management
     # ตรวจสอบว่า "กองทุน" แสดงในหน้า
     Page Should Contain    ทุนวิจัย 
     Page Should Contain    ทุนภายใน
-
+    Sleep    3s
 
 Test Navigate To Research Projects
     [Documentation]    Test that clicking "โครงการวิจัย" navigates to the research projects page.
@@ -142,6 +142,7 @@ Test Navigate To Research Projects
 
     # ตรวจสอบชื่อหัวหน้ากลุ่มเป็น "Ngamnij" โดยระบุคอลัมน์ที่ 4
     Element Should Contain    xpath=//tr[@role='row']//td[4]    จักรชัย
+    Sleep    3s
 
 Test Navigate To Research Groups
     [Documentation]    Test that clicking "กลุ่มวิจัย" navigates to the research groups page.
@@ -154,3 +155,37 @@ Test Navigate To Research Groups
 
    # ตรวจสอบชื่อหัวหน้ากลุ่มเป็น "วาสนา" โดยระบุคอลัมน์ที่ 3
     Element Should Contain    xpath=//tr[@role='row']//td[3]    วาสนา
+    Sleep    3s
+
+
+Test Navigate To Manage Publications
+    [Documentation]    Test that clicking "จัดการสิ่งพิมพ์" navigates to the research groups page.
+
+    # คลิกที่เมนู "จัดการสิ่งพิมพ์" ในเมนูด้านข้าง
+    Click Element    xpath=//span[contains(text(), 'จัดการสิ่งพิมพ์')]
+    Sleep    2s
+
+    Click Element    xpath=//li/a[contains(text(), 'งานวิจัยที่เผยแพร่')]
+<<<<<<< HEAD
+
+    Location Should Be    ${SERVER}/papers
+    Element Should Contain    xpath=//tr[@role='row']//td[3]    วารสาร
+=======
+    Location Should Be    ${SERVER}/papers
+    Element Should Contain    xpath=//tr[@role='row']//td[3]    วารสาร
+    Sleep    3s
+
+
+    Click Element    xpath=//li/a[contains(text(), 'หนังสือ')]
+    Location Should Be    ${SERVER}/books
+    Sleep    3s
+
+    Click Element    xpath=//li/a[contains(text(), 'ผลงานวิชาการอื่นๆ')]
+    Location Should Be    ${SERVER}/patents
+    Element Should Contain    xpath=//tr[@role='row']//td[3]    	อนุสิทธิบัตร
+    Sleep    3s
+>>>>>>> keratipat_3204
+
+
+
+

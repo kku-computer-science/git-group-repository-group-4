@@ -103,7 +103,7 @@
                                 <span style="font-weight: bold;"><?php echo e(__('message.supporting_agency')); ?></span>
                                 <span style="padding-left: 10px;"> <?php if(is_null($re->fund)): ?>
                                 <?php else: ?>
-                                    <?php echo e($re->fund->support_resource); ?>
+                                    <?php echo e(__('message.support_resource.' . $re->fund->support_resource)); ?>
 
                                 <?php endif; ?></span>
                             </div>

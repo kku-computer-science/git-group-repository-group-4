@@ -98,7 +98,7 @@ Test Open Researchers Page
     Capture Page Screenshot    researcher_page_thai.png
     Close Browser
 
-Test Open Researchers Profile Page
+Test Open Researchers Profile Page TH
     [Documentation]    ทดสอบการเปิดหน้า "Researchers" และการเปลี่ยนภาษาเป็นไทย
     Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
     Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ

@@ -250,6 +250,7 @@ return [
     'fund_name' => 'ชื่อทุน',
     'fund_year' => 'ปี',
     'fund_details' => 'รายละเอียดทุน',
+    'fund_info' => 'ข้อมูลทุน',
     'fund_type' => 'ประเภททุน',
     'fund_level' => 'ระดับทุน',
     'fund_agency' => 'หน่วยงาน',
