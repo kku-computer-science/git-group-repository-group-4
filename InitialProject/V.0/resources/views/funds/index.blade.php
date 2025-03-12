@@ -14,18 +14,18 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">ทุนวิจัย</h4>
-            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('funds.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> ADD</a>
+            <h4 class="card-title">{{ __('message.fund_research') }}</h4>
+            <a class="btn btn-primary btn-menu btn-icon-text btn-sm mb-3" href="{{ route('funds.create') }}"><i class="mdi mdi-plus btn-icon-prepend"></i> </i> {{ __('message.add') }}</a>
+            </a>
             <div class="table-responsive">
                 <table id="example1" class="table table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Fund name</th>
-                            <th>Fund Type</th>
-                            <th>Fund Level</th>
-                            <!-- <th>Create by</th> -->
-                            <th>Action</th>
+                        <th>{{ __('message.no') }}</th>
+                        <th>{{ __('message.fund_name') }}</th>
+                        <th>{{ __('message.fund_type') }}</th>
+                        <th>{{ __('message.fund_level') }}</th>
+                        <th>{{ __('message.action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,8 +34,24 @@
 
                             <td>{{ $i+1 }}</td>
                             <td>{{ Str::limit($fund->fund_name,80) }}</td>
-                            <td>{{ $fund->fund_type }}</td>
-                            <td>{{ $fund->fund_level }}</td>
+                            <td>
+                                @if(app()->getLocale() == 'th')
+                                    {{ $fund->fund_type_th }}
+                                @elseif(app()->getLocale() == 'zh')
+                                    {{ $fund->fund_type_cn }}
+                                @else
+                                    {{ $fund->fund_type_en }}
+                                @endif
+                            </td>
+                            <td>
+                                @if(app()->getLocale() == 'th')
+                                    {{ $fund->fund_level_th }}
+                                @elseif(app()->getLocale() == 'zh')
+                                    {{ $fund->fund_level_cn }}
+                                @else
+                                    {{ $fund->fund_level_en }}
+                                @endif
+                            </td>
                             <!-- <td>{{ $fund->user->fname_en }} {{ $fund->user->lname_en }}</td> -->
 
                             <td>
@@ -79,7 +95,20 @@
 <script>
     $(document).ready(function() {
         var table = $('#example1').DataTable({
-            fixedHeader: true
+            fixedHeader: true,
+            language: {
+                search: "{{ __('message.search') }}", // Placeholder for the search box
+                lengthMenu: "{{ __('message.show') }} _MENU_ {{ __('message.entries') }}", // Text for entries
+                info: "{{ __('message.showing') }} _START_ {{ __('message.to') }} _END_ {{ __('message.of') }} _TOTAL_ {{ __('message.entries') }}", // Info text
+                infoEmpty: "{{ __('message.no_entries') }}", // Text when there are no entries
+                infoFiltered: "({{ __('message.filtered_from') }} _MAX_ {{ __('message.entries') }})", // Filtered info
+                paginate: {
+                    first: "{{ __('message.first') }}", // First page
+                    previous: "{{ __('message.previous') }}", // Previous page
+                    next: "{{ __('message.next') }}", // Next page
+                    last: "{{ __('message.last') }}" // Last page
+                }
+            }
         });
     });
 </script>
@@ -102,7 +131,7 @@
                     }).then(function() {
                         location.reload();
                         form.submit();
-                    });
+                    }); 
                 }
             });
     });
