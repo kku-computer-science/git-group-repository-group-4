@@ -126,6 +126,19 @@
     $(document).ready(function() {
         $('#example1').DataTable({
             responsive: true,
+            language: {
+                search: "{{ __('message.search') }}", // Placeholder for the search box
+                lengthMenu: "{{ __('message.show') }} _MENU_ {{ __('message.entries') }}", // Text for entries
+                info: "{{ __('message.showing') }} _START_ {{ __('message.to') }} _END_ {{ __('message.of') }} _TOTAL_ {{ __('message.entries') }}", // Info text
+                infoEmpty: "{{ __('message.no_entries') }}", // Text when there are no entries
+                infoFiltered: "({{ __('message.filtered_from') }} _MAX_ {{ __('message.entries') }})", // Filtered info
+                paginate: {
+                    first: "{{ __('message.first') }}", // First page
+                    previous: "{{ __('message.previous') }}", // Previous page
+                    next: "{{ __('message.next') }}", // Next page
+                    last: "{{ __('message.last') }}" // Last page
+                }
+            }
         });
 
         $('#new-program').click(function() {
