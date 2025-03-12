@@ -36,21 +36,42 @@
                     <tr>
                         <td><?php echo e($i+1); ?></td>
                         <td><?php echo e($researchProject->project_year); ?></td>
-                        <td><?php echo e(Str::limit($researchProject->project_name,70)); ?></td>
+                        <td>
+                            <?php echo e(Str::limit($researchProject->project_name, 70)); ?>
+
+                        </td>
+
                         <td>
                             <?php $__currentLoopData = $researchProject->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php if($user->pivot->role == 1): ?>
-                            <?php echo e($user->fname_en); ?>
+                                <?php if($user->pivot->role == 1): ?>
+                                    <?php if(App::getLocale() == 'zh'): ?>
+                                        <?php echo e($user->fname_zh ?? $user->fname_en ?? $user->fname_th); ?>
 
-                            <?php endif; ?>
+                                    <?php elseif(App::getLocale() == 'en'): ?>
+                                        <?php echo e($user->fname_en ?? $user->fname_th); ?>
+
+                                    <?php else: ?>
+                                        <?php echo e($user->fname_th); ?>
+
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
+
                         <td>
                             <?php $__currentLoopData = $researchProject->user; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <?php if($user->pivot->role == 2): ?>
-                            <?php echo e($user->fname_en); ?>
+                                <?php if($user->pivot->role == 2): ?>
+                                    <?php if(App::getLocale() == 'zh'): ?>
+                                        <?php echo e($user->fname_zh ?? $user->fname_en ?? $user->fname_th); ?>
 
-                            <?php endif; ?>
+                                    <?php elseif(App::getLocale() == 'en'): ?>
+                                        <?php echo e($user->fname_en ?? $user->fname_th); ?>
+
+                                    <?php else: ?>
+                                        <?php echo e($user->fname_th); ?>
+
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </td>
                         <td>

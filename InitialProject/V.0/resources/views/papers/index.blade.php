@@ -36,7 +36,9 @@
                             <tr>
                                 <td>{{ $i+1 }}</td>
                                 <td>{{ Str::limit($paper->paper_name,50) }}</td>
-                                <td>{{ Str::limit($paper->paper_type,50) }}</td>
+                                <td>
+                                {{ __('message.paper_types.' . $paper->paper_type) }}
+                                </td>
                                 <td>{{ $paper->paper_yearpub }}</td>
                                 <!-- <td>@foreach($paper->teacher->take(1) as $teacher)
                                     {{ $teacher->fname_en }} {{ $teacher->lname_en }},

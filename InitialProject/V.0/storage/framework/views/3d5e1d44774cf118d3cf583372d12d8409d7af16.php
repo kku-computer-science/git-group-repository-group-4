@@ -33,17 +33,17 @@
     <?php endif; ?>
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title" style="text-align: center;">ความเชี่ยวชาญของอาจารย์</h4>
+            <h4 class="card-title" style="text-align: center;"><?php echo e(__('message.Expertise')); ?></h4>
             <table id="example1" class="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <?php if(Auth::user()->hasRole('admin')): ?>
-                        <th>Teacher Name</th>
+                        <th><?php echo e(__('message.Teacher Name')); ?></th>
                         <?php endif; ?>
-                        <th>Name</th>
+                        <th><?php echo e(__('message.name')); ?></th>
 
-                        <th>Action</th>
+                        <th><?php echo e(__('message.action')); ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,7 +96,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
+                                <strong><?php echo e(__('message.Name:')); ?></strong>
                                 <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="Expert_name" onchange="validate()">
                             </div>
                         </div>
@@ -125,6 +125,19 @@
             ],
             rowGroup: {
                 dataSrc: 1
+            },
+            language: {
+                search: "<?php echo e(__('message.search')); ?>", // Placeholder for the search box
+                lengthMenu: "<?php echo e(__('message.show')); ?> _MENU_ <?php echo e(__('message.entries')); ?>", // Text for entries
+                info: "<?php echo e(__('message.showing')); ?> _START_ <?php echo e(__('message.to')); ?> _END_ <?php echo e(__('message.of')); ?> _TOTAL_ <?php echo e(__('message.entries')); ?>", // Info text
+                infoEmpty: "<?php echo e(__('message.no_entries')); ?>", // Text when there are no entries
+                infoFiltered: "(<?php echo e(__('message.filtered_from')); ?> _MAX_ <?php echo e(__('message.entries')); ?>)", // Filtered info
+                paginate: {
+                    first: "<?php echo e(__('message.first')); ?>", // First page
+                    previous: "<?php echo e(__('message.previous')); ?>", // Previous page
+                    next: "<?php echo e(__('message.next')); ?>", // Next page
+                    last: "<?php echo e(__('message.last')); ?>" // Last page
+                }
             }
         });
     });

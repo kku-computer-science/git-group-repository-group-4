@@ -33,17 +33,17 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title" style="text-align: center;">ความเชี่ยวชาญของอาจารย์</h4>
+            <h4 class="card-title" style="text-align: center;">{{ __('message.Expertise') }}</h4>
             <table id="example1" class="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
                         @if(Auth::user()->hasRole('admin'))
-                        <th>Teacher Name</th>
+                        <th>{{ __('message.Teacher Name') }}</th>
                         @endif
-                        <th>Name</th>
+                        <th>{{ __('message.name') }}</th>
 
-                        <th>Action</th>
+                        <th>{{ __('message.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,7 +96,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <strong>Name:</strong>
+                                <strong>{{ __('message.Name:') }}</strong>
                                 <input type="text" name="expert_name" id="expert_name" class="form-control" placeholder="Expert_name" onchange="validate()">
                             </div>
                         </div>
@@ -125,6 +125,19 @@
             ],
             rowGroup: {
                 dataSrc: 1
+            },
+            language: {
+                search: "{{ __('message.search') }}", // Placeholder for the search box
+                lengthMenu: "{{ __('message.show') }} _MENU_ {{ __('message.entries') }}", // Text for entries
+                info: "{{ __('message.showing') }} _START_ {{ __('message.to') }} _END_ {{ __('message.of') }} _TOTAL_ {{ __('message.entries') }}", // Info text
+                infoEmpty: "{{ __('message.no_entries') }}", // Text when there are no entries
+                infoFiltered: "({{ __('message.filtered_from') }} _MAX_ {{ __('message.entries') }})", // Filtered info
+                paginate: {
+                    first: "{{ __('message.first') }}", // First page
+                    previous: "{{ __('message.previous') }}", // Previous page
+                    next: "{{ __('message.next') }}", // Next page
+                    last: "{{ __('message.last') }}" // Last page
+                }
             }
         });
     });

@@ -99,9 +99,9 @@
     @endif
     <div class="card" style="padding: 16px;">
         <div class="card-body">
-            <h4 class="card-title">Users</h4>
-            <a class="btn btn-primary btn-icon-text btn-sm" href="{{ route('users.create')}}"><i class="ti-plus btn-icon-prepend icon-sm"></i>New User</a>
-            <a class="btn btn-primary btn-icon-text btn-sm" href="{{ route('importfiles')}}"><i class="ti-download btn-icon-prepend icon-sm"></i>Import New User</a>
+            <h4 class="card-title">{{ trans('message.Users') }}</h4>
+            <a class="btn btn-primary btn-icon-text btn-sm" href="{{ route('users.create')}}"><i class="ti-plus btn-icon-prepend icon-sm"></i>{{trans('message.new_user')}}</a>
+            <a class="btn btn-primary btn-icon-text btn-sm" href="{{ route('importfiles')}}"><i class="ti-download btn-icon-prepend icon-sm"></i>{{trans('message.new_user')}}</a>
             <!-- <div class="search-box">
                 <div class="input-group">
                     <input type="text" id="search" class="form-control" placeholder="Search by Name">
@@ -114,11 +114,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Department</th>
-                            <th>Email</th>
-                            <th>Roles</th>
-                            <th width="280px">Action</th>
+                            <th>{{ __('message.Name') }}</th>
+                            <th>{{ __('message.departments') }}</th>
+                            <th>{{ __('message.email') }}</th>
+                            <th>{{ __('message.Roles') }}</th>
+                            <th width="280px">{{ __('message.action') }}</th>
                         </tr>
                     </thead>
 
@@ -177,7 +177,20 @@
 <script>
     $(document).ready(function() {
         var table = $('#example1').DataTable({
-            fixedHeader: true
+            fixedHeader: true,
+            language: {
+                search: "{{ __('message.search') }}", // Placeholder for the search box
+                lengthMenu: "{{ __('message.show') }} _MENU_ {{ __('message.entries') }}", // Text for entries
+                info: "{{ __('message.showing') }} _START_ {{ __('message.to') }} _END_ {{ __('message.of') }} _TOTAL_ {{ __('message.entries') }}", // Info text
+                infoEmpty: "{{ __('message.no_entries') }}", // Text when there are no entries
+                infoFiltered: "({{ __('message.filtered_from') }} _MAX_ {{ __('message.entries') }})", // Filtered info
+                paginate: {
+                    first: "{{ __('message.first') }}", // First page
+                    previous: "{{ __('message.previous') }}", // Previous page
+                    next: "{{ __('message.next') }}", // Next page
+                    last: "{{ __('message.last') }}" // Last page
+                }
+            }
         });
     });
 </script>
