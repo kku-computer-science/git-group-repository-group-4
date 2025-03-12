@@ -44,7 +44,7 @@ index.blade.php
                         <th>ID</th>
                         <th>{{ __('programs.name_en') }}</th>
                         <th>{{ __('programs.degree') }}</th>
-                        <th>{{ __('programs.action') }}</th>
+                        <th>{{ __('message.action') }}</th>
                     </tr>
                 </thead>
                 <tbody>
