@@ -463,7 +463,7 @@ return [
         'edit_research_group_details' => 'Edit Research Group Details',
         'image' => 'Image',
         'edit_research_group' => 'Edit Research Group Information',
-
+   
     
     
 

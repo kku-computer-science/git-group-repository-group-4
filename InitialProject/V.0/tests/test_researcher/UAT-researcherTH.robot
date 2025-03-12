@@ -3,8 +3,8 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${SERVER}                    http://127.0.0.1:8000
-${CHROME_BROWSER_PATH}       C:/Program Files/Google/ChromeNew/chrome-win64/chrome.exe
-${CHROME_DRIVER_PATH}        C:/driver/chromedriver-win64/chromedriver.exe
+${CHROME_BROWSER_PATH}       C:/Users/tanta/OneDrive/Documents/chrome-win64/chrome.exe
+${CHROME_DRIVER_PATH}        C:/Users/tanta/OneDrive/Documents/ROBOT_FRAMEWORK/selenium/webdriver/chromedriver.exe
 ${VIEW_BUTTON_XPATH}         //a[contains(@class, 'btn-outline-primary')]/i[contains(@class, 'mdi-eye')]
 ${EDIT_BUTTON_XPATH}         //a[contains(@class, 'btn-outline-success') or @title='Edit']
 ${ADD_BUTTON_XPATH}          //a[contains(@class, 'btn-primary') and contains(@class, 'btn-menu') and .//i[contains(@class, 'mdi-plus')]]
