@@ -84,26 +84,25 @@
 
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span
-                                class="flag-icon flag-icon-<?php echo e(Config::get('languages')[App::getLocale()]['flag-icon']); ?>"></span>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="flag-icon flag-icon-<?php echo e(Config::get('languages')[App::getLocale()]['flag-icon']); ?>"></span>
                             <?php echo e(Config::get('languages')[App::getLocale()]['display']); ?>
 
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <?php $__currentLoopData = Config::get('languages'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lang => $language): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <?php if($lang != App::getLocale()): ?>
-                                    <a class="dropdown-item" href="<?php echo e(route('langswitch', $lang)); ?>">
-                                        <span class="flag-icon flag-icon-<?php echo e($language['flag-icon']); ?>"></span>
-                                        <?php echo e($language['display']); ?>
+                                    <li>
+                                        <a class="dropdown-item" href="<?php echo e(route('langswitch', $lang)); ?>" data-lang="<?php echo e($lang); ?>">
+                                            <span class="flag-icon flag-icon-<?php echo e($language['flag-icon']); ?>"></span>
+                                            <?php echo e($language['display']); ?>
 
-                                    </a>
+                                        </a>
+                                    </li>
                                 <?php endif; ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </div>
-
-                       
+                        </ul>
                     </li>
 
 
