@@ -2,9 +2,25 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${URL}    https://cscp3530040467.cpkkuhost.com/
+* Variables *
+${SERVER}                    http://127.0.0.1:8000
+${CHROME_BROWSER_PATH}       C:/Program Files/Google/ChromeNew/chrome-win64/chrome.exe
+${CHROME_DRIVER_PATH}    C:/driver/chromedriver-win64/chromedriver.exe
+${VIEW_BUTTON_XPATH}    //a[contains(@class, 'btn-outline-primary')]/i[contains(@class, 'mdi-eye')]
+${EDIT_BUTTON_XPATH}    //a[contains(@class, 'btn-outline-success') or @title='Edit']
+${ADD_BUTTON_XPATH}     //a[contains(@class, 'btn-primary') and contains(@class, 'btn-menu') and .//i[contains(@class, 'mdi-plus')]]
+${BROWSER}    chrome
 ${RESEARCHER_MENU}    //a[@class='nav-link' and contains(text(), 'Researchers')]
-${RESEARCHER_PROFILE}    https://cscp3530040467.cpkkuhost.com/detail/eyJpdiI6IjErSENiSWZLL1hGbDEvZ1VncUlGVmc9PSIsInZhbHVlIjoieTdvZzhydWgrS1hRNzIrNTJFaDEyZz09IiwibWFjIjoiYTYwMTAyNWFmZjkyYzllOTE2NjkxNmMwMDBlNGQ1M2QxNDkwZTM4OGI2YTYzYzljZWYwNGQ2M2FmYzM1ZDEwMSIsInRhZyI6IiJ9
+${RESEARCHER_PROFILE}    https:////127.0.0.1:8000/detail/eyJpdiI6IjErSENiSWZLL1hGbDEvZ1VncUlGVmc9PSIsInZhbHVlIjoieTdvZzhydWgrS1hRNzIrNTJFaDEyZz09IiwibWFjIjoiYTYwMTAyNWFmZjkyYzllOTE2NjkxNmMwMDBlNGQ1M2QxNDkwZTM4OGI2YTYzYzljZWYwNGQ2M2FmYzM1ZDEwMSIsInRhZyI6IiJ9
+${HOME_MENU}    //a[@class='nav-link' and contains(text(), 'Home')]
+${RESEARCHPROJECT_MENU}    //a[@class='nav-link' and contains(text(), 'Research Project')]
+${RESEARCHGROUP_MENU}    //a[@class='nav-link' and contains(text(), 'Research Group')]
+${RESEARCHDETAILS_MENU}    http://127.0.0.1:8000/researchgroupdetail/3
+${REPORT_MENU}    //a[@class='nav-link' and contains(text(), 'Report')]
+
+
+
+
 
 *** Test Cases ***
 
