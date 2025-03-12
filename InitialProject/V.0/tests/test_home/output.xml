@@ -1,525 +1,360 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.10.11 on win32)" generated="2025-03-12T19:36:33.179889" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.10.11 on win32)" generated="2025-03-12T19:56:18.665395" rpa="false" schemaversion="5">
 <suite id="s1" name="Test" source="C:\xampp\htdocs\git-group-repository-group-4\InitialProject\V.0\tests\test_home\test.robot">
-<kw name="เปิดหน้าเว็บครั้งเดียว" type="SETUP">
+<test id="s1-t1" name="Test Open Home Page and Check Banner" line="64">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:33.395919" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000/'.</msg>
-<arg>${URL}</arg>
+<msg time="2025-03-12T19:56:18.951352" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2025-03-12T19:56:18.951352" level="INFO">Opening browser 'chrome' to base url 'http://127.0.0.1:8000'.</msg>
+<arg>${SERVER}</arg>
 <arg>${BROWSER}</arg>
+<arg>executable_path=${CHROME_DRIVER_PATH}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-12T19:36:33.395919" elapsed="2.111876"/>
+<status status="PASS" start="2025-03-12T19:56:18.951352" elapsed="2.704824"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-03-12T19:36:35.507795" elapsed="0.766415"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T19:56:24.662001" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T19:56:21.656176" elapsed="3.005825"/>
 </kw>
-<status status="PASS" start="2025-03-12T19:36:33.395919" elapsed="2.878795"/>
-</kw>
-<test id="s1-t1" name="ทดสอบการเปลี่ยนจากไทยเป็นอังกฤษ" line="56">
-<kw name="เลือกภาษา">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:36.274714" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
+<msg time="2025-03-12T19:56:24.662001" level="INFO">Clicking element '//a[@class='nav-link' and contains(text(), 'Home')]'.</msg>
+<arg>${HOME_MENU}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T19:56:24.662001" elapsed="0.806845"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T19:56:27.473575" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T19:56:25.468846" elapsed="2.004729"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:27.489285" level="INFO">Current location is 'http://127.0.0.1:8000/'.</msg>
+<arg>http://127.0.0.1:8000/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-03-12T19:56:27.473575" elapsed="0.015710"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:27.789928" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="home_page.png"&gt;&lt;img src="home_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>home_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-03-12T19:56:27.489285" elapsed="0.300643"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:27.789928" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
 <arg>//a[@id='navbarDropdownMenuLink']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T19:36:36.274714" elapsed="0.108630"/>
+<status status="PASS" start="2025-03-12T19:56:27.789928" elapsed="0.071483"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:36.384349" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., 'ไทย')]'.</msg>
-<arg>//a[@class='dropdown-item' and contains(., '${language}')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T19:36:36.383344" elapsed="0.793816"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T19:56:29.866463" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T19:56:27.862402" elapsed="2.004061"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>//img[contains(@src, 'Banner')]</arg>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:29.869431" level="INFO">Opening url 'http://127.0.0.1:8000/lang/zh'</msg>
+<arg>http://127.0.0.1:8000/lang/zh</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-12T19:56:29.866463" elapsed="0.865725"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-03-12T19:56:35.734285" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-03-12T19:56:30.733187" elapsed="5.001098"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:46.288655" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T19:56:46.288655" level="FAIL">Element '//div[@class='carousel-inner']//div[@class='carousel-item']/img[1]' not visible after 10 seconds.</msg>
+<arg>//div[@class='carousel-inner']//div[@class='carousel-item']/img[1]</arg>
 <arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-03-12T19:36:37.177160" elapsed="0.012775"/>
-</kw>
-<arg>${THAI}</arg>
-<status status="PASS" start="2025-03-12T19:36:36.274714" elapsed="0.915221"/>
-</kw>
-<kw name="ตรวจสอบแบนเนอร์">
-<kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:37.438201" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T19:36:37.438201" level="FAIL">Element with locator '//div[@id='header']//img' not found.</msg>
-<var>${src}</var>
-<arg>//div[@id='header']//img</arg>
-<arg>src</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T19:36:37.189935" elapsed="0.248266">Element with locator '//div[@id='header']//img' not found.</status>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-12T19:56:35.737863" elapsed="10.551794">Element '//div[@class='carousel-inner']//div[@class='carousel-item']/img[1]' not visible after 10 seconds.</status>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
-<arg>${src}</arg>
-<arg>${expected_banner}</arg>
+<arg>//div[@class='carousel-inner']//div[@class='carousel-item']/img[1]</arg>
+<arg>src="http://127.0.0.1:8000/img/Banner1Zh.png"</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:37.438201" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:46.289657" elapsed="0.000000"/>
 </kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>//div[@class='carousel-inner']//div[@class='carousel-item active']/img[1]</arg>
+<arg>src="http://127.0.0.1:8000/img/Banner2Zh.png"</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:46.290478" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>researcher_page_chinese.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:46.290806" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:46.291072" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบการเปิดหน้า "Home" และตรวจสอบแบนเนอร์เมื่อเปลี่ยนภาษาเป็นจีน</doc>
+<status status="FAIL" start="2025-03-12T19:56:18.935525" elapsed="27.355547">Element '//div[@class='carousel-inner']//div[@class='carousel-item']/img[1]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-t2" name="เลื่อนหน้าจอลงไปยังส่วน Publications" line="94">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:46.293620" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.querySelector('.mixpaper').offsetTop)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.querySelector('.mixpaper').offsetTop)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-03-12T19:56:46.293620" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:56.794888" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-41.png"&gt;&lt;img src="selenium-screenshot-41.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T19:56:56.794888" level="FAIL">Element '//h3[contains(., 'Publications')]' not visible after 10 seconds.</msg>
+<arg>//h3[contains(., 'Publications')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-12T19:56:46.293620" elapsed="10.501268">Element '//h3[contains(., 'Publications')]' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-03-12T19:56:46.292235" elapsed="10.502653">Element '//h3[contains(., 'Publications')]' not visible after 10 seconds.</status>
+</test>
+<test id="s1-t3" name="เปิด Accordion แรก" line="97">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:56.800980" level="INFO">Clicking element '//button[@class='accordion-button']'.</msg>
+<arg>//button[@class='accordion-button']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-12T19:56:56.799969" elapsed="0.069308"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[contains(@class, 'accordion-collapse') and contains(@class, 'show')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-12T19:56:56.869277" elapsed="0.473212"/>
+</kw>
+<status status="PASS" start="2025-03-12T19:56:56.794888" elapsed="0.547601"/>
+</test>
+<test id="s1-t4" name="คลิกปุ่ม Reference" line="101">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:57.357763" level="FAIL">Variable '${REFERENCE_BUTTON}' not found.</msg>
+<arg>${REFERENCE_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-03-12T19:56:57.357763" elapsed="0.000000">Variable '${REFERENCE_BUTTON}' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[@id='myModal']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:57.357763" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-12T19:56:57.342489" elapsed="0.015274">Variable '${REFERENCE_BUTTON}' not found.</status>
+</test>
+<test id="s1-t5" name="ตรวจสอบการแสดงผล Modal" line="105">
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-12T19:56:57.584557" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-42.png"&gt;&lt;img src="selenium-screenshot-42.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-12T19:56:57.584557" level="FAIL">The element '//div[@id='myModal']' should be visible, but it is not.</msg>
+<arg>//div[@id='myModal']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-12T19:56:57.357763" elapsed="0.227800">The element '//div[@id='myModal']' should be visible, but it is not.</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Modal is visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:57.585563" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${modal_content}</var>
+<arg>//div[@id='myModal']//div[@id='name']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:57.585563" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Modal content: ${modal_content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:57.586563" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>//div[@id='myModal']//div[@id='name']</arg>
+<arg>อ้างอิง</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:57.586563" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<arg>//div[@id='myModal']//div[@id='name']</arg>
+<arg>${PAPER_TITLE}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:57.586563" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>reference_modal_thai_test.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-03-12T19:56:57.587600" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-12T19:56:57.357763" elapsed="0.229837">The element '//div[@id='myModal']' should be visible, but it is not.</status>
+</test>
+<test id="s1-t6" name="ปิดเบราว์เซอร์" line="114">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-03-12T19:56:57.589289" elapsed="2.188222"/>
+</kw>
+<status status="PASS" start="2025-03-12T19:56:57.588246" elapsed="2.189265"/>
+</test>
+<test id="s1-t7" name="ทดสอบการเปลี่ยนจากไทยเป็นอังกฤษ" line="119">
+<kw name="เลือกภาษา">
+<msg time="2025-03-12T19:56:59.777511" level="FAIL">No keyword with name 'เลือกภาษา' found.</msg>
+<arg>${THAI}</arg>
+<status status="FAIL" start="2025-03-12T19:56:59.777511" elapsed="0.000000">No keyword with name 'เลือกภาษา' found.</status>
+</kw>
+<kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1.png</arg>
-<status status="FAIL" start="2025-03-12T19:36:37.189935" elapsed="0.248266">Element with locator '//div[@id='header']//img' not found.</status>
+<status status="NOT RUN" start="2025-03-12T19:56:59.777511" elapsed="0.000000"/>
 </kw>
 <kw name="เลือกภาษา">
 <arg>${ENGLISH}</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:37.438201" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.793656" elapsed="0.000000"/>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1En.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:37.438201" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.793656" elapsed="0.000000"/>
 </kw>
 <tag>Language</tag>
-<status status="FAIL" start="2025-03-12T19:36:36.274714" elapsed="1.163487">Element with locator '//div[@id='header']//img' not found.</status>
+<status status="FAIL" start="2025-03-12T19:56:59.777511" elapsed="0.016145">No keyword with name 'เลือกภาษา' found.</status>
 </test>
-<test id="s1-t2" name="ทดสอบการเปลี่ยนจากไทยเป็นอังกฤษและจีน" line="64">
+<test id="s1-t8" name="ทดสอบการเปลี่ยนจากไทยเป็นอังกฤษและจีน" line="127">
 <kw name="เลือกภาษา">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:37.438201" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
-<arg>//a[@id='navbarDropdownMenuLink']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T19:36:37.438201" elapsed="0.070718"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:37.508919" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., 'ไทย')]'.</msg>
-<msg time="2025-03-12T19:36:37.770740" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T19:36:37.770740" level="FAIL">Element with locator '//a[@class='dropdown-item' and contains(., 'ไทย')]' not found.</msg>
-<arg>//a[@class='dropdown-item' and contains(., '${language}')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T19:36:37.508919" elapsed="0.261821">Element with locator '//a[@class='dropdown-item' and contains(., 'ไทย')]' not found.</status>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>//img[contains(@src, 'Banner')]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:37.770740" elapsed="0.000000"/>
-</kw>
+<msg time="2025-03-12T19:56:59.793656" level="FAIL">No keyword with name 'เลือกภาษา' found.</msg>
 <arg>${THAI}</arg>
-<status status="FAIL" start="2025-03-12T19:36:37.438201" elapsed="0.332539">Element with locator '//a[@class='dropdown-item' and contains(., 'ไทย')]' not found.</status>
+<status status="FAIL" start="2025-03-12T19:56:59.793656" elapsed="0.000000">No keyword with name 'เลือกภาษา' found.</status>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:37.770740" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.793656" elapsed="0.000000"/>
 </kw>
 <kw name="เลือกภาษา">
 <arg>${ENGLISH}</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:37.770740" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.793656" elapsed="0.000000"/>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1En.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:37.770740" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.793656" elapsed="0.000000"/>
 </kw>
 <kw name="เลือกภาษา">
 <arg>${CHINESE}</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:37.770740" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.793656" elapsed="0.000000"/>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1Zh.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:37.770740" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.793656" elapsed="0.000000"/>
 </kw>
 <doc>ตรวจสอบการเปลี่ยนจากไทยเป็นอังกฤษและจีน</doc>
 <tag>Language</tag>
-<status status="FAIL" start="2025-03-12T19:36:37.438201" elapsed="0.332539">Element with locator '//a[@class='dropdown-item' and contains(., 'ไทย')]' not found.</status>
+<status status="FAIL" start="2025-03-12T19:56:59.793656" elapsed="0.016099">No keyword with name 'เลือกภาษา' found.</status>
 </test>
-<test id="s1-t3" name="ทดสอบการเปลี่ยนจากจีนเป็นไทย" line="74">
+<test id="s1-t9" name="ทดสอบการเปลี่ยนจากจีนเป็นไทย" line="137">
 <kw name="เลือกภาษา">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:37.770740" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
-<arg>//a[@id='navbarDropdownMenuLink']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T19:36:37.770740" elapsed="0.050425"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:37.821165" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., 'English')]'.</msg>
-<msg time="2025-03-12T19:36:38.108015" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T19:36:38.108015" level="FAIL">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=134.0.6998.36)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7B2FFFE45+26629]
-	(No symbol) [0x00007FF7B2F66010]
-	(No symbol) [0x00007FF7B2DF914C]
-	(No symbol) [0x00007FF7B2E50D24]
-	(No symbol) [0x00007FF7B2E428A4]
-	(No symbol) [0x00007FF7B2E77AAA]
-	(No symbol) [0x00007FF7B2E42156]
-	(No symbol) [0x00007FF7B2E77CC0]
-	(No symbol) [0x00007FF7B2EA0169]
-	(No symbol) [0x00007FF7B2E77883]
-	(No symbol) [0x00007FF7B2E40550]
-	(No symbol) [0x00007FF7B2E41803]
-	GetHandleVerifier [0x00007FF7B33572BD+3529853]
-	GetHandleVerifier [0x00007FF7B336DA22+3621858]
-	GetHandleVerifier [0x00007FF7B33624D3+3575443]
-	GetHandleVerifier [0x00007FF7B30CB77A+860474]
-	(No symbol) [0x00007FF7B2F7088F]
-	(No symbol) [0x00007FF7B2F6CBC4]
-	(No symbol) [0x00007FF7B2F6CD66]
-	(No symbol) [0x00007FF7B2F5C2C9]
-	BaseThreadInitThunk [0x00007FF8E6EF259D+29]
-	RtlUserThreadStart [0x00007FF8E836AF38+40]
-</msg>
-<arg>//a[@class='dropdown-item' and contains(., '${language}')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T19:36:37.821165" elapsed="0.287850">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=134.0.6998.36)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7B2FFFE45+26629]
-	(No symbol) [0x00007FF7B2F66010]
-	(No symbol) [0x00007FF7B2DF914C]
-	(No symbol) [0x00007FF7B2E50D24]
-	(No symbol) [0x00007FF7B2E428A4]
-	(No symbol) [0x00007FF7B2E77AAA]
-	(No symbol) [0x00007FF7B2E42156]
-	(No symbol) [0x00007FF7B2E77CC0]
-	(No symbol) [0x00007FF7B2EA0169]
-	(No symbol) [0x00007FF7B2E77883]
-	(No symbol) [0x00007FF7B2E40550]
-	(No symbol) [0x00007FF7B2E41803]
-	GetHandleVerifier [0x00007FF7B33572BD+3529853]
-	GetHandleVerifier [0x00007FF7B336DA22+3621858]
-	GetHandleVerifier [0x00007FF7B33624D3+3575443]
-	GetHandleVerifier [0x00007FF7B30CB77A+860474]
-	(No symbol) [0x00007FF7B2F7088F]
-	(No symbol) [0x00007FF7B2F6CBC4]
-	(No symbol) [0x00007FF7B2F6CD66]
-	(No symbol) [0x00007FF7B2F5C2C9]
-	BaseThreadInitThunk [0x00007FF8E6EF259D+29]
-	RtlUserThreadStart [0x00007FF8E836AF38+40]
-</status>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>//img[contains(@src, 'Banner')]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:38.109015" elapsed="0.001211"/>
-</kw>
+<msg time="2025-03-12T19:56:59.809755" level="FAIL">No keyword with name 'เลือกภาษา' found.</msg>
 <arg>${ENGLISH}</arg>
-<status status="FAIL" start="2025-03-12T19:36:37.770740" elapsed="0.339486">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=134.0.6998.36)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7B2FFFE45+26629]
-	(No symbol) [0x00007FF7B2F66010]
-	(No symbol) [0x00007FF7B2DF914C]
-	(No symbol) [0x00007FF7B2E50D24]
-	(No symbol) [0x00007FF7B2E428A4]
-	(No symbol) [0x00007FF7B2E77AAA]
-	(No symbol) [0x00007FF7B2E42156]
-	(No symbol) [0x00007FF7B2E77CC0]
-	(No symbol) [0x00007FF7B2EA0169]
-	(No symbol) [0x00007FF7B2E77883]
-	(No symbol) [0x00007FF7B2E40550]
-	(No symbol) [0x00007FF7B2E41803]
-	GetHandleVerifier [0x00007FF7B33572BD+3529853]
-	GetHandleVerifier [0x00007FF7B336DA22+3621858]
-	GetHandleVerifier [0x00007FF7B33624D3+3575443]
-	GetHandleVerifier [0x00007FF7B30CB77A+860474]
-	(No symbol) [0x00007FF7B2F7088F]
-	(No symbol) [0x00007FF7B2F6CBC4]
-	(No symbol) [0x00007FF7B2F6CD66]
-	(No symbol) [0x00007FF7B2F5C2C9]
-	BaseThreadInitThunk [0x00007FF8E6EF259D+29]
-	RtlUserThreadStart [0x00007FF8E836AF38+40]
-</status>
+<status status="FAIL" start="2025-03-12T19:56:59.809755" elapsed="0.000000">No keyword with name 'เลือกภาษา' found.</status>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1En.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:38.111234" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.809755" elapsed="0.000000"/>
 </kw>
 <kw name="เลือกภาษา">
 <arg>${CHINESE}</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:38.112233" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.809755" elapsed="0.000000"/>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1Zh.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:38.112233" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.809755" elapsed="0.000000"/>
 </kw>
 <kw name="เลือกภาษา">
 <arg>${THAI}</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:38.113445" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.809755" elapsed="0.000000"/>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:38.113445" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.809755" elapsed="0.000000"/>
 </kw>
 <tag>Language</tag>
-<status status="FAIL" start="2025-03-12T19:36:37.770740" elapsed="0.342705">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=134.0.6998.36)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7B2FFFE45+26629]
-	(No symbol) [0x00007FF7B2F66010]
-	(No symbol) [0x00007FF7B2DF914C]
-	(No symbol) [0x00007FF7B2E50D24]
-	(No symbol) [0x00007FF7B2E428A4]
-	(No symbol) [0x00007FF7B2E77AAA]
-	(No symbol) [0x00007FF7B2E42156]
-	(No symbol) [0x00007FF7B2E77CC0]
-	(No symbol) [0x00007FF7B2EA0169]
-	(No symbol) [0x00007FF7B2E77883]
-	(No symbol) [0x00007FF7B2E40550]
-	(No symbol) [0x00007FF7B2E41803]
-	GetHandleVerifier [0x00007FF7B33572BD+3529853]
-	GetHandleVerifier [0x00007FF7B336DA22+3621858]
-	GetHandleVerifier [0x00007FF7B33624D3+3575443]
-	GetHandleVerifier [0x00007FF7B30CB77A+860474]
-	(No symbol) [0x00007FF7B2F7088F]
-	(No symbol) [0x00007FF7B2F6CBC4]
-	(No symbol) [0x00007FF7B2F6CD66]
-	(No symbol) [0x00007FF7B2F5C2C9]
-	BaseThreadInitThunk [0x00007FF8E6EF259D+29]
-	RtlUserThreadStart [0x00007FF8E836AF38+40]
-</status>
+<status status="FAIL" start="2025-03-12T19:56:59.809755" elapsed="0.000000">No keyword with name 'เลือกภาษา' found.</status>
 </test>
-<test id="s1-t4" name="ทดสอบการแสดงผลภาษาไทย" line="83">
+<test id="s1-t10" name="ทดสอบการแสดงผลภาษาไทย" line="146">
 <kw name="เลือกภาษา">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:38.119516" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
-<arg>//a[@id='navbarDropdownMenuLink']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T19:36:38.119516" elapsed="0.070429"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:38.190945" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., 'English')]'.</msg>
-<arg>//a[@class='dropdown-item' and contains(., '${language}')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T19:36:38.189945" elapsed="0.667483"/>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>//img[contains(@src, 'Banner')]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2025-03-12T19:36:38.858910" elapsed="0.009018"/>
-</kw>
+<msg time="2025-03-12T19:56:59.825475" level="FAIL">No keyword with name 'เลือกภาษา' found.</msg>
 <arg>${ENGLISH}</arg>
-<status status="PASS" start="2025-03-12T19:36:38.119516" elapsed="0.749010"/>
+<status status="FAIL" start="2025-03-12T19:56:59.825475" elapsed="0.000000">No keyword with name 'เลือกภาษา' found.</status>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
-<kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:39.205486" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T19:36:39.205486" level="FAIL">Element with locator '//div[@id='header']//img' not found.</msg>
-<var>${src}</var>
-<arg>//div[@id='header']//img</arg>
-<arg>src</arg>
-<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T19:36:38.869777" elapsed="0.336694">Element with locator '//div[@id='header']//img' not found.</status>
-</kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${src}</arg>
-<arg>${expected_banner}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:39.206471" elapsed="0.000000"/>
-</kw>
 <arg>img/Banner1En.png</arg>
-<status status="FAIL" start="2025-03-12T19:36:38.868732" elapsed="0.338753">Element with locator '//div[@id='header']//img' not found.</status>
+<status status="NOT RUN" start="2025-03-12T19:56:59.825475" elapsed="0.000000"/>
 </kw>
 <kw name="เลือกภาษา">
 <arg>${THAI}</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:39.207485" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.825475" elapsed="0.000000"/>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:39.208363" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.825475" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <arg>thai_language_test.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:39.208363" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.825475" elapsed="0.000000"/>
 </kw>
 <doc>ตรวจสอบว่าเลือกภาษาไทยแล้วแสดงแบนเนอร์และเนื้อหาถูกต้อง</doc>
 <tag>Language</tag>
-<status status="FAIL" start="2025-03-12T19:36:38.116272" elapsed="1.092091">Element with locator '//div[@id='header']//img' not found.</status>
+<status status="FAIL" start="2025-03-12T19:56:59.809755" elapsed="0.015720">No keyword with name 'เลือกภาษา' found.</status>
 </test>
-<test id="s1-t5" name="ทดสอบการแสดงผลภาษาอังกฤษ" line="92">
+<test id="s1-t11" name="ทดสอบการแสดงผลภาษาอังกฤษ" line="155">
 <kw name="เลือกภาษา">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:39.213495" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
-<arg>//a[@id='navbarDropdownMenuLink']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T19:36:39.213495" elapsed="0.069656"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:39.283151" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., 'English')]'.</msg>
-<msg time="2025-03-12T19:36:39.626899" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T19:36:39.626899" level="FAIL">Element with locator '//a[@class='dropdown-item' and contains(., 'English')]' not found.</msg>
-<arg>//a[@class='dropdown-item' and contains(., '${language}')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T19:36:39.283151" elapsed="0.343748">Element with locator '//a[@class='dropdown-item' and contains(., 'English')]' not found.</status>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>//img[contains(@src, 'Banner')]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:39.626899" elapsed="0.000000"/>
-</kw>
+<msg time="2025-03-12T19:56:59.825475" level="FAIL">No keyword with name 'เลือกภาษา' found.</msg>
 <arg>${ENGLISH}</arg>
-<status status="FAIL" start="2025-03-12T19:36:39.213495" elapsed="0.413404">Element with locator '//a[@class='dropdown-item' and contains(., 'English')]' not found.</status>
+<status status="FAIL" start="2025-03-12T19:56:59.825475" elapsed="0.000000">No keyword with name 'เลือกภาษา' found.</status>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1En.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:39.626899" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.825475" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <arg>english_language_test.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:39.626899" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.825475" elapsed="0.000000"/>
 </kw>
 <doc>ตรวจสอบว่าเลือกภาษาอังกฤษแล้วแสดงแบนเนอร์และเนื้อหาถูกต้อง</doc>
 <tag>Language</tag>
-<status status="FAIL" start="2025-03-12T19:36:39.209380" elapsed="0.417519">Element with locator '//a[@class='dropdown-item' and contains(., 'English')]' not found.</status>
+<status status="FAIL" start="2025-03-12T19:56:59.825475" elapsed="0.000000">No keyword with name 'เลือกภาษา' found.</status>
 </test>
-<test id="s1-t6" name="ทดสอบการแสดงผลภาษาจีน" line="99">
+<test id="s1-t12" name="ทดสอบการแสดงผลภาษาจีน" line="162">
 <kw name="เลือกภาษา">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:39.626899" level="INFO">Clicking element '//a[@id='navbarDropdownMenuLink']'.</msg>
-<arg>//a[@id='navbarDropdownMenuLink']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-03-12T19:36:39.626899" elapsed="0.071908"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-03-12T19:36:39.698807" level="INFO">Clicking element '//a[@class='dropdown-item' and contains(., '中文')]'.</msg>
-<msg time="2025-03-12T19:36:40.070557" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-03-12T19:36:40.070557" level="FAIL">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=134.0.6998.36)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7B2FFFE45+26629]
-	(No symbol) [0x00007FF7B2F66010]
-	(No symbol) [0x00007FF7B2DF914C]
-	(No symbol) [0x00007FF7B2E50D24]
-	(No symbol) [0x00007FF7B2E428A4]
-	(No symbol) [0x00007FF7B2E77AAA]
-	(No symbol) [0x00007FF7B2E42156]
-	(No symbol) [0x00007FF7B2E77CC0]
-	(No symbol) [0x00007FF7B2EA0169]
-	(No symbol) [0x00007FF7B2E77883]
-	(No symbol) [0x00007FF7B2E40550]
-	(No symbol) [0x00007FF7B2E41803]
-	GetHandleVerifier [0x00007FF7B33572BD+3529853]
-	GetHandleVerifier [0x00007FF7B336DA22+3621858]
-	GetHandleVerifier [0x00007FF7B33624D3+3575443]
-	GetHandleVerifier [0x00007FF7B30CB77A+860474]
-	(No symbol) [0x00007FF7B2F7088F]
-	(No symbol) [0x00007FF7B2F6CBC4]
-	(No symbol) [0x00007FF7B2F6CD66]
-	(No symbol) [0x00007FF7B2F5C2C9]
-	BaseThreadInitThunk [0x00007FF8E6EF259D+29]
-	RtlUserThreadStart [0x00007FF8E836AF38+40]
-</msg>
-<arg>//a[@class='dropdown-item' and contains(., '${language}')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2025-03-12T19:36:39.698807" elapsed="0.371750">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=134.0.6998.36)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7B2FFFE45+26629]
-	(No symbol) [0x00007FF7B2F66010]
-	(No symbol) [0x00007FF7B2DF914C]
-	(No symbol) [0x00007FF7B2E50D24]
-	(No symbol) [0x00007FF7B2E428A4]
-	(No symbol) [0x00007FF7B2E77AAA]
-	(No symbol) [0x00007FF7B2E42156]
-	(No symbol) [0x00007FF7B2E77CC0]
-	(No symbol) [0x00007FF7B2EA0169]
-	(No symbol) [0x00007FF7B2E77883]
-	(No symbol) [0x00007FF7B2E40550]
-	(No symbol) [0x00007FF7B2E41803]
-	GetHandleVerifier [0x00007FF7B33572BD+3529853]
-	GetHandleVerifier [0x00007FF7B336DA22+3621858]
-	GetHandleVerifier [0x00007FF7B33624D3+3575443]
-	GetHandleVerifier [0x00007FF7B30CB77A+860474]
-	(No symbol) [0x00007FF7B2F7088F]
-	(No symbol) [0x00007FF7B2F6CBC4]
-	(No symbol) [0x00007FF7B2F6CD66]
-	(No symbol) [0x00007FF7B2F5C2C9]
-	BaseThreadInitThunk [0x00007FF8E6EF259D+29]
-	RtlUserThreadStart [0x00007FF8E836AF38+40]
-</status>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>//img[contains(@src, 'Banner')]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:40.070557" elapsed="0.000000"/>
-</kw>
+<msg time="2025-03-12T19:56:59.841197" level="FAIL">No keyword with name 'เลือกภาษา' found.</msg>
 <arg>${CHINESE}</arg>
-<status status="FAIL" start="2025-03-12T19:36:39.626899" elapsed="0.443658">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=134.0.6998.36)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7B2FFFE45+26629]
-	(No symbol) [0x00007FF7B2F66010]
-	(No symbol) [0x00007FF7B2DF914C]
-	(No symbol) [0x00007FF7B2E50D24]
-	(No symbol) [0x00007FF7B2E428A4]
-	(No symbol) [0x00007FF7B2E77AAA]
-	(No symbol) [0x00007FF7B2E42156]
-	(No symbol) [0x00007FF7B2E77CC0]
-	(No symbol) [0x00007FF7B2EA0169]
-	(No symbol) [0x00007FF7B2E77883]
-	(No symbol) [0x00007FF7B2E40550]
-	(No symbol) [0x00007FF7B2E41803]
-	GetHandleVerifier [0x00007FF7B33572BD+3529853]
-	GetHandleVerifier [0x00007FF7B336DA22+3621858]
-	GetHandleVerifier [0x00007FF7B33624D3+3575443]
-	GetHandleVerifier [0x00007FF7B30CB77A+860474]
-	(No symbol) [0x00007FF7B2F7088F]
-	(No symbol) [0x00007FF7B2F6CBC4]
-	(No symbol) [0x00007FF7B2F6CD66]
-	(No symbol) [0x00007FF7B2F5C2C9]
-	BaseThreadInitThunk [0x00007FF8E6EF259D+29]
-	RtlUserThreadStart [0x00007FF8E836AF38+40]
-</status>
+<status status="FAIL" start="2025-03-12T19:56:59.841197" elapsed="0.000000">No keyword with name 'เลือกภาษา' found.</status>
 </kw>
 <kw name="ตรวจสอบแบนเนอร์">
 <arg>img/Banner1Zh.png</arg>
-<status status="NOT RUN" start="2025-03-12T19:36:40.070557" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.841197" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
 <arg>chinese_language_test.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2025-03-12T19:36:40.070557" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-03-12T19:56:59.841197" elapsed="0.000000"/>
 </kw>
 <doc>ตรวจสอบว่าเลือกภาษาจีนแล้วแสดงแบนเนอร์และเนื้อหาถูกต้อง</doc>
 <tag>Language</tag>
-<status status="FAIL" start="2025-03-12T19:36:39.626899" elapsed="0.443658">ElementNotInteractableException: Message: element not interactable
-  (Session info: chrome=134.0.6998.36)
-Stacktrace:
-	GetHandleVerifier [0x00007FF7B2FFFE45+26629]
-	(No symbol) [0x00007FF7B2F66010]
-	(No symbol) [0x00007FF7B2DF914C]
-	(No symbol) [0x00007FF7B2E50D24]
-	(No symbol) [0x00007FF7B2E428A4]
-	(No symbol) [0x00007FF7B2E77AAA]
-	(No symbol) [0x00007FF7B2E42156]
-	(No symbol) [0x00007FF7B2E77CC0]
-	(No symbol) [0x00007FF7B2EA0169]
-	(No symbol) [0x00007FF7B2E77883]
-	(No symbol) [0x00007FF7B2E40550]
-	(No symbol) [0x00007FF7B2E41803]
-	GetHandleVerifier [0x00007FF7B33572BD+3529853]
-	GetHandleVerifier [0x00007FF7B336DA22+3621858]
-	GetHandleVerifier [0x00007FF7B33624D3+3575443]
-	GetHandleVerifier [0x00007FF7B30CB77A+860474]
-	(No symbol) [0x00007FF7B2F7088F]
-	(No symbol) [0x00007FF7B2F6CBC4]
-	(No symbol) [0x00007FF7B2F6CD66]
-	(No symbol) [0x00007FF7B2F5C2C9]
-	BaseThreadInitThunk [0x00007FF8E6EF259D+29]
-	RtlUserThreadStart [0x00007FF8E836AF38+40]
-</status>
+<status status="FAIL" start="2025-03-12T19:56:59.825475" elapsed="0.015722">No keyword with name 'เลือกภาษา' found.</status>
 </test>
-<kw name="ปิดเบราว์เซอร์" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-03-12T19:36:40.070557" elapsed="2.167921"/>
-</kw>
-<status status="PASS" start="2025-03-12T19:36:40.070557" elapsed="2.167921"/>
-</kw>
-<status status="FAIL" start="2025-03-12T19:36:33.181347" elapsed="9.057131"/>
+<status status="FAIL" start="2025-03-12T19:56:18.665395" elapsed="41.175802"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="6" skip="0">All Tests</stat>
+<stat pass="2" fail="10" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="0" fail="6" skip="0">Language</stat>
 </tag>
 <suite>
-<stat pass="0" fail="6" skip="0" id="s1" name="Test">Test</stat>
+<stat name="Test" id="s1" pass="2" fail="10" skip="0">Test</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-03-12T19:56:18.951352" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
 </errors>
 </robot>

@@ -1,32 +1,95 @@
 *** Settings ***
 Library    SeleniumLibrary
-Suite Setup    เปิดหน้าเว็บครั้งเดียว
-Suite Teardown    ปิดเบราว์เซอร์
 
 *** Variables ***
-${URL}    http://127.0.0.1:8000/
-${THAI}    ไทย
-${ENGLISH}    English
-${CHINESE}    中文
-${BROWSER}    chrome
-${REFERENCE_BUTTON}    //button[contains(@class, 'open_modal') and contains(., '[Reference]')]
-${PAPER_TITLE}    An enhanced fuzzy-based clustering protocol with an improved shuffled frog leaping algorithm for WSNs
+${SERVER}                    http://127.0.0.1:8000
+${CHROME_BROWSER_PATH}       C:/Program Files/Google/ChromeNew/chrome-win64/chrome.exe
+${CHROME_DRIVER_PATH}        C:/driver/chromedriver-win64/chromedriver.exe
+${VIEW_BUTTON_XPATH}         //a[contains(@class, 'btn-outline-primary')]/i[contains(@class, 'mdi-eye')]
+${EDIT_BUTTON_XPATH}         //a[contains(@class, 'btn-outline-success') or @title='Edit']
+${ADD_BUTTON_XPATH}          //a[contains(@class, 'btn-primary') and contains(@class, 'btn-menu') and .//i[contains(@class, 'mdi-plus')]]
+${BROWSER}                   chrome
+${RESEARCHER_MENU}           //a[@class='nav-link' and contains(text(), 'Researchers')]
+${RESEARCHER_PROFILE}        http://127.0.0.1:8000/detail/eyJpdiI6IlJ1YThYaVB6SkNSVnZqYnp4b0xmU1E9PSIsInZhbHVlIjoidHE4bjNOQk5WazBXSmRHdHpnYjIvdz09IiwibWFjIjoiNGNkNjM1OWMyYmFjNWMwMDdiMzNlZjMxNzhkNThhODhkNmMwNzNiMWZlNzA2MWYyNzllNTgyMjBjNDI0YjdlMyIsInRhZyI6IiJ9
+${HOME_MENU}                 //a[@class='nav-link' and contains(text(), 'Home')]
+${RESEARCHPROJECT_MENU}      //a[@class='nav-link' and contains(text(), 'Research Project')]
+${RESEARCHGROUP_MENU}        //a[@class='nav-link' and contains(text(), 'Research Group')]
+${RESEARCHDETAILS_MENU}      http://127.0.0.1:8000/researchgroupdetail/3
+${REPORT_MENU}               //a[@class='nav-link' and contains(text(), 'Report')]
 
-*** Keywords ***
-เปิดหน้าเว็บครั้งเดียว
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
 
-เลือกภาษา
-    [Arguments]    ${language}
+
+@{LANGUAGES}
+...    en
+...    th
+...    zh
+
+@{EXPECTED_WORDS_USER_EN}
+...    Chakchai So-In, Ph.D.
+...    Professor
+...    Sartra Wongthanavasu, Ph.D.
+...    Computer Science and Infomation Technology
+...    Infomation Technology
+...    Associate Professor
+...    Journal
+
+
+
+@{EXPECTED_WORDS_USER_TH}
+...    ศ.ดร. จักรชัย โสอินทร์
+...    จักรชัย โสอินทร์ , ศ.ดร.
+...    สาขาวิชาวิทยาการคอมพิวเตอร์และเทคโนโลยีสารสนเทศ
+...    สาขาวิชาเทคโนโลยีสารสนเทศ
+...    2526 วท.บ. (คณิตศาสตร์) - มหาวิทยาลัยขอนแก่น
+...    2528 พบ.ม. (สถิติประยุกต์) - สถาบันบัณฑิตพัฒนบริหารศาสตร์
+...    รองศาสตราจารย์
+...    2544 วท.ด. (วิทยาการคอมพิวเตอร์) - สถาบันเทคโนโลยีแห่งเอเชีย ประเทศไทย
+...    ศาสตราจารย์
+       
+        
+
+@{EXPECTED_WORDS_USER_ZH}
+...    信息技术
+...    计算机科学与信息技术
+...    副教授
+...    教授
+...    2526 理学士（数学） - 孔敬大学
+...    2528 教育硕士（应用统计学） - 国家发展管理学院
+...    2544 技术科学博士（计算机科学） - 泰国亚洲理工学院
+
+
+
+*** Test Cases ***
+
+Test Open Home Page and Check Banner
+    [Documentation]    ทดสอบการเปิดหน้า "Home" และตรวจสอบแบนเนอร์เมื่อเปลี่ยนภาษาเป็นจีน
+    Open Browser    ${SERVER}    ${BROWSER}    executable_path=${CHROME_DRIVER_PATH}
+    Sleep    3s  # ให้เวลาสำหรับการโหลดหน้าเว็บ
+    Click Element    ${HOME_MENU}
+    Sleep    2s
+    Location Should Be    http://127.0.0.1:8000/
+    Capture Page Screenshot    home_page.png
+    
+    # คลิกที่เมนูภาษาอังกฤษก่อน
     Click Element    //a[@id='navbarDropdownMenuLink']
-    Click Element    //a[@class='dropdown-item' and contains(., '${language}')]
-    Wait Until Page Contains Element    //img[contains(@src, 'Banner')]    10s
+    Sleep    2s  # ให้เวลาสำหรับแสดงตัวเลือก
 
-ตรวจสอบแบนเนอร์
-    [Arguments]    ${expected_banner}
-    ${src}    Get Element Attribute    //div[@id='header']//img    src
-    Should Contain    ${src}    ${expected_banner}
+    # ไปที่ URL ของภาษาจีน
+    Go To    http://127.0.0.1:8000/lang/zh
+    Sleep    5s  # รอให้การเปลี่ยนภาษาเสร็จสมบูรณ์
+
+    # รอให้แบนเนอร์ภาษาจีนปรากฏขึ้น
+    Wait Until Element Is Visible    //div[@class='carousel-inner']//div[@class='carousel-item']/img[1]    10s
+    
+    # ตรวจสอบแบนเนอร์ในภาษาจีน
+    Should Contain    //div[@class='carousel-inner']//div[@class='carousel-item']/img[1]    src="http://127.0.0.1:8000/img/Banner1Zh.png"
+    Should Contain    //div[@class='carousel-inner']//div[@class='carousel-item active']/img[1]    src="http://127.0.0.1:8000/img/Banner2Zh.png"
+    
+    Capture Page Screenshot    researcher_page_chinese.png
+
+
+    Close Browser
+
 
 เลื่อนหน้าจอลงไปยังส่วน Publications
     Execute Javascript    window.scrollTo(0, document.querySelector('.mixpaper').offsetTop)
