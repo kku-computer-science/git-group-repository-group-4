@@ -1,7 +1,7 @@
 <?php
 return [
     'title' => 'Programs',
-    'add' => 'Add Program',
+    'add' => 'Add',
     'name_th' => 'Program Name (Thai)',
     'name_en' => 'Program Name (English)',
     'degree' => 'Degree',

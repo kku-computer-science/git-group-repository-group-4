@@ -1,7 +1,7 @@
 <?php
 return [
     'title' => '课程',
-    'add' => '添加课程',
+    'add' => '添加',
     'name_th' => '课程名称（泰语）',
     'name_en' => '课程名称（英语）',
     'degree' => '学位',
